@@ -8,9 +8,13 @@ func get_slot_count() -> int:
 		0:
 			return 2
 		1:
-			return 3
-		_:
 			return 4
+		2:
+			return 6
+		3:
+			return 8
+		_:
+			return 10
 
 # Returns true if an item was successfully added, false otherwise
 func add_item(id: String) -> bool:
@@ -41,14 +45,14 @@ func update(delta: float, reset_cooldown: bool) -> void:
 			item.cooldown = max(item.cooldown - delta, 0.0)
 
 func _to_string() -> String:
-	var str: String = ""
+	var s: String = ""
 	for item: InventoryItem in slots:
-		str += str(item) + ","
-	return str
+		s += str(item) + ","
+	return s
 
-static func parse(str: String) -> Inventory:
+static func parse(s: String) -> Inventory:
 	var inventory: Inventory = Inventory.new()
-	var split = str.split(",")
+	var split = s.split(",")
 	for substr in split:
 		if substr.is_empty():
 			continue
