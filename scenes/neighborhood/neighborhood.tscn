@@ -745,5 +745,14 @@ buy_text = "Bought chocolate! (Left click to use item)"
 price = 4
 add_item = true
 
+[node name="Soda" parent="Store/StoreDisplay2" unique_id=1075520689 instance=ExtResource("54_532a6")]
+position = Vector2(-24, -15)
+display_name = "soda"
+id = "soda"
+description = "Increases speed temporarily."
+buy_text = "Bought soda! (Left click to use item)"
+price = 6
+add_item = true
+
 [connection signal="body_entered" from="SkipDay" to="SkipDay" method="_on_body_entered"]
 [connection signal="body_exited" from="SkipDay" to="SkipDay" method="_on_body_exited"]

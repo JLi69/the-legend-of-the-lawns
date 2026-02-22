@@ -54,8 +54,8 @@ func buy() -> void:
 			player.time_bonus_level = max(player.time_bonus_level, 1)
 		"bike_helmet":
 			player.armor_level = max(player.armor_level, 1)
-		"chocolate":
-			if !player.inventory.add_item("chocolate"):
+		"chocolate", "soda":
+			if !player.inventory.add_item(id):
 				return
 		_:
 			pass

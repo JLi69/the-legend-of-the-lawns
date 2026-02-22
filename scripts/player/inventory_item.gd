@@ -2,11 +2,13 @@ class_name InventoryItem
 
 const USE_COUNTS: Dictionary = {
 	"chocolate" : 3,
+	"soda" : 4,
 }
 const DEFAULT_USE_COUNT: int = 1
 
 const COOLDOWNS: Dictionary = {
 	"chocolate" : 25.0,
+	"soda" : 30.0,
 }
 const DEFAULT_COOLDOWN: float = 1.0
 
@@ -43,6 +45,12 @@ func use(main: Main) -> void:
 				return
 			main.player.heal(20)
 			main.play_sfx("Eat")
+		"soda":
+			var prev_time = main.player.get_status_effect_time("speed")
+			main.player.set_status_effect_time("speed", prev_time + 8.0)
+			# Increase stamina
+			main.player.stamina = min(main.player.stamina + 0.25, 1.0) 
+			main.play_sfx("Drink")
 		_:
 			pass
 

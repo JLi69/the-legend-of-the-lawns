@@ -163,3 +163,8 @@ File: eat.wav
 Author: StarNinjas
 URL: https://opengameart.org/content/7-eating-crunches
 License: CC0
+
+File: drink.wav
+Author: SilverIllusionist
+URL: https://freesound.org/people/SilverIllusionist/sounds/411172/
+License: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)

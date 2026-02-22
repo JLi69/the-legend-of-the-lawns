@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ddol2lvneo2rp" path="res://assets/textures/items/upgrades/bike_helmet.png" id="4_qukav"]
 [ext_resource type="Texture2D" uid="uid://ccgu1gouqgm1" path="res://assets/textures/items/upgrades/watch.png" id="6_ci6ny"]
 [ext_resource type="Texture2D" uid="uid://b12gysuple4ce" path="res://assets/textures/items/consumables/chocolate.png" id="6_evmts"]
+[ext_resource type="Texture2D" uid="uid://ddjpyouo4gff2" path="res://assets/textures/items/consumables/soda.png" id="9_8lkhp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weic1"]
 size = Vector2(13.333333, 28.333332)
@@ -89,6 +90,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"red_shoes",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8lkhp")
+}],
+"loop": true,
+"name": &"soda",
 "speed": 5.0
 }, {
 "frames": [{
