@@ -21,6 +21,8 @@ const KEYS: Array = [
 	KEY_6,
 	KEY_7,
 	KEY_8,
+	KEY_9,
+	KEY_0,
 ]
 
 func _ready() -> void:

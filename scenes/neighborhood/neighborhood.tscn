@@ -708,6 +708,7 @@ scale = Vector2(0.75, 0.75)
 display_name = "backpack"
 id = "backpack0"
 description = "Increases inventory space."
+buy_text = "Increased inventory size! (2 slots -> 4 slots)"
 price = 20
 
 [node name="Watch" parent="Store/StoreDisplay" unique_id=1521992790 instance=ExtResource("54_532a6")]
@@ -715,6 +716,7 @@ position = Vector2(20, -15)
 display_name = "watch"
 id = "watch"
 description = "Increases time bonus."
+buy_text = "Increased time bonus! (x1.00 -> x1.50)"
 price = 20
 
 [node name="BikeHelmet" parent="Store/StoreDisplay" unique_id=794413820 instance=ExtResource("54_532a6")]
@@ -722,6 +724,7 @@ position = Vector2(38, -15)
 display_name = "bike helmet"
 id = "bike_helmet"
 description = "Increases armor."
+buy_text = "Increased armor! (0% -> 7%)"
 price = 15
 
 [node name="SalePoster" type="Sprite2D" parent="Store" unique_id=1531052310]
