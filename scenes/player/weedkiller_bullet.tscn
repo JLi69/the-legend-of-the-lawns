@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dgoe6rb783ym5"]
+
+[ext_resource type="PackedScene" uid="uid://b4a5sdixx0fuv" path="res://scenes/player/bullet.tscn" id="1_dsbc5"]
+[ext_resource type="Texture2D" uid="uid://bb1dgt4w4xhdy" path="res://assets/textures/particles/template_bullet.png" id="2_yl8f4"]
+
+[node name="Bullet" unique_id=1584680529 instance=ExtResource("1_dsbc5")]
+modulate = Color(0, 0.36862746, 0, 1)
+
+[node name="Sprite2D" parent="." index="0" unique_id=1542169634]
+texture = ExtResource("2_yl8f4")
+
+[node name="GPUParticles2D" parent="." index="1" unique_id=1202824058]
+texture = ExtResource("2_yl8f4")

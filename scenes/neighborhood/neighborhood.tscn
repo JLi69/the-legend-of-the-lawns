@@ -997,7 +997,8 @@ display_name = "boom shroom spores"
 id = "boom_shroom_spores"
 description = "Spawns a boom shroom.
 -> Be careful when planting. The McMoneyPants Corporation is not liable for any injury/lost limbs from your stupid gardening experiments."
-buy_text = "Bought boom shroom spores! (Left click to use item)"
+buy_text = "Bought boom shroom spores! (Left click to use item)
+Boom shrooms will only explode when something walks on top of them."
 price = 10
 add_item = true
 
@@ -1008,7 +1009,8 @@ display_name = "boom shroom spores"
 id = "boom_shroom_spores"
 description = "Spawns a boom shroom.
 -> Be careful when planting. The McMoneyPants Corporation is not liable for any injury/lost limbs from your stupid gardening experiments."
-buy_text = "Bought boom shroom spores! (Left click to use item)"
+buy_text = "Bought boom shroom spores! (Left click to use item)
+Boom shrooms will only explode when something walks on top of them."
 price = 10
 add_item = true
 
@@ -1019,7 +1021,8 @@ display_name = "boom shroom spores"
 id = "boom_shroom_spores"
 description = "Spawns a boom shroom.
 -> Be careful when planting. The McMoneyPants Corporation is not liable for any injury/lost limbs from your stupid gardening experiments."
-buy_text = "Bought boom shroom spores! (Left click to use item)"
+buy_text = "Bought boom shroom spores! (Left click to use item)
+Boom shrooms will only explode when something walks on top of them."
 price = 10
 add_item = true
 
@@ -1095,6 +1098,26 @@ add_item = true
 
 [node name="StoreDisplay5" parent="Store" unique_id=1357847614 instance=ExtResource("53_sc68w")]
 position = Vector2(-88, 910)
+
+[node name="Weedkiller" parent="Store/StoreDisplay5" unique_id=2002014443 instance=ExtResource("54_532a6")]
+position = Vector2(-37, -15)
+display_name = "weedkiller"
+id = "weedkiller"
+description = "Use this with your water gun to shoot bullets that do 2 points of damage.
+-> Just a generic brand of weedkiller."
+buy_text = "Bought weedkiller! To use it, select it in your inventory and then pick up the water gun. You will now shoot weedkiller bullets."
+price = 8
+add_item = true
+
+[node name="Weedkiller2" parent="Store/StoreDisplay5" unique_id=446206173 instance=ExtResource("54_532a6")]
+position = Vector2(-21, -15)
+display_name = "weedkiller"
+id = "weedkiller"
+description = "Use this with your water gun to shoot bullets that do 2 points of damage.
+-> Just a generic brand of weedkiller."
+buy_text = "Bought weedkiller! To use it, select it in your inventory and then pick up the water gun. You will now shoot weedkiller bullets."
+price = 8
+add_item = true
 
 [node name="StoreDisplay6" parent="Store" unique_id=1402963401 instance=ExtResource("53_sc68w")]
 position = Vector2(-88, 862)

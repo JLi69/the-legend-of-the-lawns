@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://ba81g8k32trjf" path="res://assets/textures/items/consumables/insecticide.png" id="28_rfce6"]
 [ext_resource type="Texture2D" uid="uid://dnommrruprxex" path="res://assets/textures/items/consumables/tomato_seeds.png" id="29_2am8v"]
 [ext_resource type="Texture2D" uid="uid://k0x1tunq2hhx" path="res://assets/textures/items/consumables/shield_generator.png" id="30_gl38w"]
+[ext_resource type="Texture2D" uid="uid://dj88qgg7tekwy" path="res://assets/textures/items/weapons/weedkiller.png" id="38_xwuje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weic1"]
 size = Vector2(13.333333, 28.333332)
@@ -370,6 +371,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"watch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_xwuje")
+}],
+"loop": true,
+"name": &"weedkiller",
 "speed": 5.0
 }]
 

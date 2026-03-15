@@ -12,6 +12,8 @@ const USE_COUNTS: Dictionary = {
 	"insecticide" : 5,
 	"drone_controller" : 3,
 	"fireworks" : 3,
+	# Weapons
+	"weedkiller" : 60,
 }
 const DEFAULT_USE_COUNT: int = 1
 
@@ -145,6 +147,9 @@ func use(main: Main) -> void:
 		"fireworks":
 			main.player.firework_timer = 0.0
 			main.player.fireworks_to_shoot += randi_range(6, 10)
+		# Ignore weapons
+		"weedkiller":
+			return
 		_:
 			pass
 
