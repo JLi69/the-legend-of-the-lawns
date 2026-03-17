@@ -13,7 +13,10 @@ const USE_COUNTS: Dictionary = {
 	"drone_controller" : 3,
 	"fireworks" : 3,
 	# Weapons
-	"weedkiller" : 60,
+	"weedkiller" : 65,
+	"acidic_weedkiller" : 55,
+	"super_weedkiller" : 50,
+	"ultra_weedkiller" : 50,
 }
 const DEFAULT_USE_COUNT: int = 1
 
@@ -39,6 +42,9 @@ const DISPLAY_NAMES: Dictionary = {
 	"shield_generator" : "shield generator",
 	"electric_doodad" : "electric doodad",
 	"drone_controller" : "drone controller",
+	"acidic_weedkiller" : "acidic weedkiller",
+	"super_weedkiller" : "super duper weed-be-gone (tm)",
+	"ultra_weedkiller" : "ultra weed-be-gone (tm)",
 }
 
 var id: String = ""
@@ -148,7 +154,7 @@ func use(main: Main) -> void:
 			main.player.firework_timer = 0.0
 			main.player.fireworks_to_shoot += randi_range(6, 10)
 		# Ignore weapons
-		"weedkiller":
+		"weedkiller", "acidic_weedkiller", "super_weedkiller", "ultra_weedkiller":
 			return
 		_:
 			pass

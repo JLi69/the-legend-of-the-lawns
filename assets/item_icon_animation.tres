@@ -1,6 +1,7 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://djfxgqly8pts3"]
 
 [ext_resource type="Texture2D" uid="uid://17tmf70i7lm" path="res://assets/textures/items/consumables/boom_shroom_spores.png" id="1_3c3y7"]
+[ext_resource type="Texture2D" uid="uid://8d7bfrknm2e3" path="res://assets/textures/items/weapons/acidic_weedkiller.png" id="1_d8x38"]
 [ext_resource type="Texture2D" uid="uid://b12gysuple4ce" path="res://assets/textures/items/consumables/chocolate.png" id="1_hv134"]
 [ext_resource type="Texture2D" uid="uid://dn0il1ilrb5wd" path="res://assets/textures/items/consumables/ice_cream.png" id="2_gktae"]
 [ext_resource type="Texture2D" uid="uid://ddjpyouo4gff2" path="res://assets/textures/items/consumables/soda.png" id="2_rkkop"]
@@ -12,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://k0x1tunq2hhx" path="res://assets/textures/items/consumables/shield_generator.png" id="5_vn2ag"]
 [ext_resource type="Texture2D" uid="uid://ba81g8k32trjf" path="res://assets/textures/items/consumables/insecticide.png" id="6_e0tc1"]
 [ext_resource type="Texture2D" uid="uid://dj88qgg7tekwy" path="res://assets/textures/items/weapons/weedkiller.png" id="12_cyeoo"]
+[ext_resource type="Texture2D" uid="uid://hpbqq66n3kdn" path="res://assets/textures/items/weapons/super_duper_weedkiller.png" id="12_tquv1"]
+[ext_resource type="Texture2D" uid="uid://cnxiib055pncw" path="res://assets/textures/items/weapons/ultra_high_powered_weedkiller.png" id="14_k8fii"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4ab7"]
 atlas = ExtResource("1_hv134")
@@ -31,6 +34,14 @@ region = Rect2(46, 0, 23, 24)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d8x38")
+}],
+"loop": true,
+"name": &"acidic_weedkiller",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_3c3y7")
@@ -122,10 +133,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("12_tquv1")
+}],
+"loop": true,
+"name": &"super_weedkiller",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_tglea")
 }],
 "loop": true,
 "name": &"tomato_seeds",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_k8fii")
+}],
+"loop": true,
+"name": &"ultra_weedkiller",
 "speed": 5.0
 }, {
 "frames": [{

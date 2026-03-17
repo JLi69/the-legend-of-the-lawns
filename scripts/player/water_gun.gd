@@ -39,6 +39,21 @@ func shoot() -> void:
 					bullet = weedkiller_bullet_scene.instantiate()
 					bullet.damage = 2
 					selected_item.uses_left -= 1
+				"acidic_weedkiller":
+					bullet = weedkiller_bullet_scene.instantiate()
+					bullet.modulate = Color8(255, 0, 255)
+					bullet.damage = 3
+					selected_item.uses_left -= 1
+				"super_weedkiller":
+					bullet = weedkiller_bullet_scene.instantiate()
+					bullet.modulate = Color8(0, 255, 255)
+					bullet.damage = 4
+					selected_item.uses_left -= 1
+				"ultra_weedkiller":
+					bullet = weedkiller_bullet_scene.instantiate()
+					bullet.modulate = Color8(255, 0, 0)
+					bullet.damage = 5
+					selected_item.uses_left -= 1
 				_:	
 					bullet = bullet_scene.instantiate()
 		else:

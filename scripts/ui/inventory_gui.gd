@@ -44,7 +44,7 @@ func can_use_item() -> bool:
 	match selected_item.id:
 		"gasoline":
 			return player.lawn_mower_active()
-		"weedkiller":
+		"weedkiller", "acidic_weedkiller", "super_weedkiller", "ultra_weedkiller":
 			return player.water_gun.visible
 		_:
 			return can_use_inventory()

@@ -11,3 +11,6 @@ texture = ExtResource("2_yl8f4")
 
 [node name="GPUParticles2D" parent="." index="1" unique_id=1202824058]
 texture = ExtResource("2_yl8f4")
+
+[node name="Explosion" parent="." index="3" unique_id=632810471]
+texture = ExtResource("2_yl8f4")
