@@ -93,6 +93,9 @@ func buy() -> void:
 		"shield_generator", "electric_doodad", "insecticide", "drone_controller", "fireworks":
 			if !player.inventory.add_item(id):
 				return
+		"weedkiller", "acidic_weedkiller", "super_weedkiller", "ultra_weedkiller":
+			if !player.inventory.add_item(id):
+				return
 	bought = true
 	print(name, " ", bought)
 	var main: Main = $/root/Main

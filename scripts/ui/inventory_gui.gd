@@ -36,6 +36,19 @@ func _ready() -> void:
 func can_use_inventory() -> bool:
 	return visible and !player.water_gun.visible and !player.lawn_mower_active() and !get_tree().paused
 
+func can_use_item() -> bool:	
+	var selected_item: InventoryItem = player.inventory.get_item(selected)
+	if selected_item == null:
+		return false
+
+	match selected_item.id:
+		"gasoline":
+			return player.lawn_mower_active()
+		"weedkiller", "acidic_weedkiller", "super_weedkiller", "ultra_weedkiller":
+			return player.water_gun.visible
+		_:
+			return can_use_inventory()
+
 func update_selected_slot_with_keys() -> void:
 	if !can_use_inventory():
 		return
@@ -93,7 +106,7 @@ func use_item() -> void:
 	var item: InventoryItem = player.inventory.get_item(selected)
 	if item == null:
 		return
-	if !can_use_inventory() and !(player.lawn_mower_active() and item.id == "gasoline"):
+	if !can_use_item():
 		return
 	if !Input.is_action_just_pressed("shoot_primary"):
 		return
@@ -153,18 +166,8 @@ func _process(delta: float) -> void:
 		if main.lawn_loaded:
 			var selected_item: InventoryItem = player.inventory.get_item(selected)
 			if selected_item:
-				if can_use_inventory() or selected_item.id == "gasoline":
-					# Special case for gasoline, it is disabled when the player
-					# is not holding the lawn mower and enabled when the player
-					# is holding the lawn mower, which is kind of the opposite
-					# for the other items.
-					if selected_item.id == "gasoline":
-						if player.lawn_mower_active():
-							selected_slot.modulate = Color8(255, 255, 255)
-						else:
-							selected_slot.modulate = Color8(255, 255, 255, 64)
-					else:
-						selected_slot.modulate = Color8(255, 255, 255)
+				if can_use_item():
+					selected_slot.modulate = Color8(255, 255, 255)
 				else:
 					selected_slot.modulate = Color8(255, 255, 255, 64)
 				selected_slot.show()

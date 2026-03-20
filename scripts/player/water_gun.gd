@@ -9,6 +9,7 @@ var size = scale.y
 
 @export var bullet_scene: PackedScene
 @export var fire_bullet_scene: PackedScene
+@export var weedkiller_bullet_scene: PackedScene
 var SHOOT_COOLDOWN: float = 0.25
 var shoot_timer: float = 0.0
 
@@ -25,6 +26,42 @@ func update_transform() -> void:
 	else:
 		scale.y = -size
 
+func shoot() -> void:
+	var bullet: PlayerBullet
+	if player.get_status_effect_time("fire") > 0.0:
+		bullet = fire_bullet_scene.instantiate()
+	else:	
+		var selected: int = $/root/Main/HUD/Control/InventoryGUI.selected
+		var selected_item: InventoryItem = player.inventory.get_item(selected)
+		if selected_item:
+			match selected_item.id:
+				"weedkiller":
+					bullet = weedkiller_bullet_scene.instantiate()
+					bullet.damage = 2
+					selected_item.uses_left -= 1
+				"acidic_weedkiller":
+					bullet = weedkiller_bullet_scene.instantiate()
+					bullet.modulate = Color8(255, 0, 255)
+					bullet.damage = 3
+					selected_item.uses_left -= 1
+				"super_weedkiller":
+					bullet = weedkiller_bullet_scene.instantiate()
+					bullet.modulate = Color8(0, 255, 255)
+					bullet.damage = 4
+					selected_item.uses_left -= 1
+				"ultra_weedkiller":
+					bullet = weedkiller_bullet_scene.instantiate()
+					bullet.modulate = Color8(255, 0, 0)
+					bullet.damage = 5
+					selected_item.uses_left -= 1
+				_:	
+					bullet = bullet_scene.instantiate()
+		else:
+			bullet = bullet_scene.instantiate()
+	bullet.dir = Vector2(cos(rotation), sin(rotation))
+	bullet.position = $BulletSpawnPoint.global_position
+	$/root/Main/Lawn.add_child(bullet)
+
 func _process(delta: float) -> void:
 	# particles.emitting = visible
 	# raycast.enabled = visible
@@ -38,14 +75,7 @@ func _process(delta: float) -> void:
 
 	if shoot_timer <= 0.0 and Input.is_action_pressed("shoot_primary"):
 		$/root/Main.play_sfx("Shoot")
-		var bullet 
-		if player.get_status_effect_time("fire") > 0.0:
-			bullet = fire_bullet_scene.instantiate()
-		else:
-			bullet = bullet_scene.instantiate()
-		bullet.dir = Vector2(cos(rotation), sin(rotation))
-		bullet.position = $BulletSpawnPoint.global_position
-		$/root/Main/Lawn.add_child(bullet)
+		shoot()
 		shoot_timer = SHOOT_COOLDOWN
 		return
 	
