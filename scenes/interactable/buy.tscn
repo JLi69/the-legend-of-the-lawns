@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://by0hmorqyn5gl" path="res://scripts/interactable/buy.gd" id="1_8nkxw"]
 [ext_resource type="Texture2D" uid="uid://ceuxs2wfhd4m4" path="res://assets/textures/items/upgrades/apple_juice.png" id="1_vhubf"]
 [ext_resource type="Texture2D" uid="uid://c1mwbw0kon1tr" path="res://assets/textures/shadow.png" id="1_weic1"]
+[ext_resource type="Texture2D" uid="uid://8d7bfrknm2e3" path="res://assets/textures/items/weapons/acidic_weedkiller.png" id="3_1cedh"]
 [ext_resource type="Texture2D" uid="uid://45h4s1aas7g8" path="res://assets/textures/items/upgrades/astronaut_helmet.png" id="4_4mpeq"]
 [ext_resource type="Texture2D" uid="uid://dwrb0cnhvnm22" path="res://assets/textures/items/upgrades/athlete_shoes.png" id="4_crsb4"]
 [ext_resource type="Texture2D" uid="uid://bc5xvgswjvvwi" path="res://assets/textures/items/upgrades/backpack0.png" id="4_f82uq"]
@@ -37,6 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://ba81g8k32trjf" path="res://assets/textures/items/consumables/insecticide.png" id="28_rfce6"]
 [ext_resource type="Texture2D" uid="uid://dnommrruprxex" path="res://assets/textures/items/consumables/tomato_seeds.png" id="29_2am8v"]
 [ext_resource type="Texture2D" uid="uid://k0x1tunq2hhx" path="res://assets/textures/items/consumables/shield_generator.png" id="30_gl38w"]
+[ext_resource type="Texture2D" uid="uid://hpbqq66n3kdn" path="res://assets/textures/items/weapons/super_duper_weedkiller.png" id="37_wfv51"]
+[ext_resource type="Texture2D" uid="uid://dj88qgg7tekwy" path="res://assets/textures/items/weapons/weedkiller.png" id="38_xwuje"]
+[ext_resource type="Texture2D" uid="uid://cnxiib055pncw" path="res://assets/textures/items/weapons/ultra_high_powered_weedkiller.png" id="39_2j57w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weic1"]
 size = Vector2(13.333333, 28.333332)
@@ -83,6 +87,14 @@ region = Rect2(0, 0, 23, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xs01r"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1cedh")
+}],
+"loop": true,
+"name": &"acidic_weedkiller",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_weic1")
@@ -358,6 +370,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("37_wfv51")
+}],
+"loop": true,
+"name": &"super_weedkiller",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("29_2am8v")
 }],
 "loop": true,
@@ -366,10 +386,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("39_2j57w")
+}],
+"loop": true,
+"name": &"ultra_weedkiller",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qukav")
 }],
 "loop": true,
 "name": &"watch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_xwuje")
+}],
+"loop": true,
+"name": &"weedkiller",
 "speed": 5.0
 }]
 

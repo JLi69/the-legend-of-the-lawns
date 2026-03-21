@@ -930,7 +930,7 @@ display_name = "chocolate"
 id = "chocolate"
 description = "Restores 20 health points.
 -> Eating a delicious bar of chocolate always makes everything better, even when you're mortally wounded."
-buy_text = "Bought chocolate! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 6
 add_item = true
 
@@ -941,7 +941,7 @@ display_name = "chocolate"
 id = "chocolate"
 description = "Restores 20 health points.
 -> Eating a delicious bar of chocolate always makes everything better, even when you're mortally wounded."
-buy_text = "Bought chocolate! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 6
 add_item = true
 
@@ -951,7 +951,7 @@ display_name = "soda"
 id = "soda"
 description = "Increases speed temporarily.
 -> I'm not sure if consuming this much sugar is good for you but it definitely will give you quite the rush. (and maybe a bit of type II diabetes...)"
-buy_text = "Bought soda! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 8
 add_item = true
 
@@ -961,7 +961,7 @@ display_name = "soda"
 id = "soda"
 description = "Increases speed temporarily.
 -> I'm not sure if consuming this much sugar is good for you but it definitely will give you quite the rush. (and maybe a bit of type II diabetes...)"
-buy_text = "Bought soda! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 8
 add_item = true
 
@@ -972,7 +972,7 @@ display_name = "ice cream"
 id = "ice_cream"
 description = "Heals 60 health points, but slows you down.
 -> The perfect summer treat. You should probably eat it before it melts though."
-buy_text = "Bought ice cream! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 18
 add_item = true
 
@@ -986,7 +986,7 @@ display_name = "tomato seeds"
 id = "tomato_seeds"
 description = "Spawns a tomato boy.
 -> The McMoneyPants Food Corporation genetically engineered these seeds to be more connected with the \"magical side\" of nature, whatever that means."
-buy_text = "Bought tomato seeds! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 24
 add_item = true
 
@@ -997,7 +997,8 @@ display_name = "boom shroom spores"
 id = "boom_shroom_spores"
 description = "Spawns a boom shroom.
 -> Be careful when planting. The McMoneyPants Corporation is not liable for any injury/lost limbs from your stupid gardening experiments."
-buy_text = "Bought boom shroom spores! (Left click to use item)"
+buy_text = "Left click to use item.
+Boom shrooms will only explode when something walks on top of them."
 price = 10
 add_item = true
 
@@ -1008,7 +1009,8 @@ display_name = "boom shroom spores"
 id = "boom_shroom_spores"
 description = "Spawns a boom shroom.
 -> Be careful when planting. The McMoneyPants Corporation is not liable for any injury/lost limbs from your stupid gardening experiments."
-buy_text = "Bought boom shroom spores! (Left click to use item)"
+buy_text = "Left click to use item.
+Boom shrooms will only explode when something walks on top of them."
 price = 10
 add_item = true
 
@@ -1019,7 +1021,8 @@ display_name = "boom shroom spores"
 id = "boom_shroom_spores"
 description = "Spawns a boom shroom.
 -> Be careful when planting. The McMoneyPants Corporation is not liable for any injury/lost limbs from your stupid gardening experiments."
-buy_text = "Bought boom shroom spores! (Left click to use item)"
+buy_text = "Left click to use item.
+Boom shrooms will only explode when something walks on top of them."
 price = 10
 add_item = true
 
@@ -1036,7 +1039,7 @@ display_name = "shield generator"
 id = "shield_generator"
 description = "Temporarily makes you invulnerable to damage.
 -> Generates an electromagnetic shield to protect you from all kinds of damage. A truly incredible invention, would be nice if it had better battery life though."
-buy_text = "Bought shield generator! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 32
 add_item = true
 
@@ -1047,7 +1050,7 @@ display_name = "electric doodad"
 id = "electric_doodad"
 description = "Shocks nearby enemies.
 -> *Shockingly* effective."
-buy_text = "Bought electric doodad! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 32
 add_item = true
 
@@ -1058,7 +1061,7 @@ display_name = "drone controller"
 id = "drone_controller"
 description = "Spawns a drone that shoots at enemies for you.
 -> A military grade attack drone manufactured by the McMoneyPants Robotics Corporation. Hopefully its AI control systems don't go rogue anytime soon..."
-buy_text = "Bought drone controller! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 27
 add_item = true
 
@@ -1068,7 +1071,7 @@ display_name = "fireworks"
 id = "fireworks"
 description = "Launches a bunch of firework rockets that explode and damage enemies.
 -> This year's Independence Day fireworks show is going to be so awesome!"
-buy_text = "Bought fireworks! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 36
 add_item = true
 
@@ -1078,7 +1081,7 @@ display_name = "gasoline"
 id = "gasoline"
 description = "Gives a short speed boost when using the lawn mower.
 -> High quality premium gasoline to refuel your lawn mower. Warning: flammable."
-buy_text = "Bought gasoline! (Left click while holding the lawn mower to use)"
+buy_text = "Left click while holding the lawn mower to use."
 price = 10
 add_item = true
 
@@ -1089,12 +1092,62 @@ display_name = "insecticide"
 id = "insecticide"
 description = "Creates a cloud of poison that damages enemies.
 -> I'm pretty sure this stuff violates several environmental and health regulations..."
-buy_text = "Bought insecticide! (Left click to use item)"
+buy_text = "Left click to use item."
 price = 14
 add_item = true
 
 [node name="StoreDisplay5" parent="Store" unique_id=1357847614 instance=ExtResource("53_sc68w")]
 position = Vector2(-88, 910)
+
+[node name="Weedkiller" parent="Store/StoreDisplay5" unique_id=2002014443 instance=ExtResource("54_532a6")]
+position = Vector2(19, -15)
+display_name = "weedkiller"
+id = "weedkiller"
+description = "Use this with your water gun to shoot bullets that do 2 damage.
+-> Just a generic brand of weedkiller."
+buy_text = "To use it, select it in your inventory and then pick up the water gun. You will now shoot weedkiller bullets."
+price = 7
+add_item = true
+
+[node name="Weedkiller2" parent="Store/StoreDisplay5" unique_id=446206173 instance=ExtResource("54_532a6")]
+position = Vector2(37, -15)
+display_name = "weedkiller"
+id = "weedkiller"
+description = "Use this with your water gun to shoot bullets that do 2 damage.
+-> Just a generic brand of weedkiller."
+buy_text = "To use it, select it in your inventory and then pick up the water gun. You will now shoot weedkiller bullets."
+price = 7
+add_item = true
+
+[node name="AcidicWeedkiller" parent="Store/StoreDisplay5" unique_id=347868046 instance=ExtResource("54_532a6")]
+position = Vector2(0, -15)
+display_name = "acidic weedkiller"
+id = "acidic_weedkiller"
+description = "Use this with your water gun to shoot bullets that do 3 damage.
+-> A stronger, more acidic weedkiller. Warning: contact with eyes may cause irritation and/or permanent blindness."
+buy_text = "To use it, select it in your inventory and then pick up the water gun. You will now shoot weedkiller bullets."
+price = 10
+add_item = true
+
+[node name="SuperWeedkiller" parent="Store/StoreDisplay5" unique_id=308907565 instance=ExtResource("54_532a6")]
+position = Vector2(-19, -15)
+display_name = "Super Duper Weed-Be-Gone (tm)"
+id = "super_weedkiller"
+description = "Use this with your water gun to shoot bullets that do 4 damage.
+-> Weed-Be-Gone (tm) is known for high quality and high powered weed killer. They're also being sued by the government for violating multiple health regulations."
+buy_text = "To use it, select it in your inventory and then pick up the water gun. You will now shoot weedkiller bullets."
+price = 14
+add_item = true
+
+[node name="UltraWeedkiller" parent="Store/StoreDisplay5" unique_id=1084639360 instance=ExtResource("54_532a6")]
+position = Vector2(-37, -15)
+display_name = "Ultra Weed-Be-Gone (tm)"
+id = "ultra_weedkiller"
+description = "Use this with your water gun to shoot bullets that do 5 damage.
+-> Weed-Be-Gone (tm)'s strongest formula. It's strong enough to melt your face off so be careful."
+buy_text = "To use it, select it in your inventory and then pick up the water gun. You will now shoot weedkiller bullets."
+price = 18
+add_item = true
 
 [node name="StoreDisplay6" parent="Store" unique_id=1402963401 instance=ExtResource("53_sc68w")]
 position = Vector2(-88, 862)
