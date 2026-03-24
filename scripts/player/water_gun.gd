@@ -28,14 +28,18 @@ func update_transform() -> void:
 	else:
 		scale.y = -size
 
-func shoot(angle_offset: float = 0.0) -> void:
+# Return true if we can shoot a bullet
+func shoot(angle_offset: float = 0.0) -> bool:
 	var bullet: PlayerBullet
 	if player.get_status_effect_time("fire") > 0.0:
 		bullet = fire_bullet_scene.instantiate()
 	else:	
 		var selected: int = $/root/Main/HUD/Control/InventoryGUI.selected
-		var selected_item: InventoryItem = player.inventory.get_item(selected)
+		var selected_item: InventoryItem = player.inventory.get_item(selected)	
 		if selected_item:
+			if selected_item.cooldown > 0.0:
+				return false
+
 			match selected_item.id:
 				"weedkiller":
 					bullet = weedkiller_bullet_scene.instantiate()
@@ -59,16 +63,18 @@ func shoot(angle_offset: float = 0.0) -> void:
 				"water_jug":
 					bullet = mega_bullet_scene.instantiate()
 					selected_item.uses_left -= 1
+					selected_item.cooldown = InventoryItem.get_cooldown(selected_item.id)
 				"ice":
 					bullet = ice_bullet_scene.instantiate()
 					selected_item.uses_left -= 1
-				_:	
+				_:
 					bullet = bullet_scene.instantiate()
 		else:
 			bullet = bullet_scene.instantiate()
 	bullet.dir = Vector2(cos(rotation + angle_offset), sin(rotation + angle_offset))
 	bullet.position = $BulletSpawnPoint.global_position
 	$/root/Main/Lawn.add_child(bullet)
+	return true
 
 func _process(delta: float) -> void:
 	# particles.emitting = visible
@@ -82,16 +88,17 @@ func _process(delta: float) -> void:
 	update_transform()
 
 	if shoot_timer <= 0.0 and Input.is_action_pressed("shoot_primary"):
-		$/root/Main.play_sfx("Shoot")
 		var selected: int = $/root/Main/HUD/Control/InventoryGUI.selected
 		var selected_item: InventoryItem = player.inventory.get_item(selected)
-		if selected_item and selected_item.id == "water_bottle_pack":
+		if selected_item and selected_item.id == "water_bottle_pack" and selected_item.cooldown <= 0.0:
 			shoot(-PI / 12.0)
 			shoot(0.0)
-			shoot(PI / 12.0)
+			if shoot(PI / 12.0):
+				$/root/Main.play_sfx("Shoot")
 			selected_item.uses_left -= 1
-		else:
-			shoot()
+			selected_item.cooldown = InventoryItem.get_cooldown(selected_item.id)
+		elif shoot():
+			$/root/Main.play_sfx("Shoot")
 		shoot_timer = SHOOT_COOLDOWN
 		return
 	
