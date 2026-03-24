@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://7l7duh8pmwvx" path="res://scripts/player/tile_map_collision_checker.gd" id="12_fm80t"]
 [ext_resource type="AudioStream" uid="uid://bwwwtyegcjwi" path="res://assets/audio/sfx/footsteps/footsteps_grass.wav" id="12_gx1jg"]
 [ext_resource type="PackedScene" uid="uid://clqqhbbuhe8mm" path="res://scenes/player/mega_bullet.tscn" id="12_ioxgp"]
+[ext_resource type="PackedScene" uid="uid://gdi5i1anbuwg" path="res://scenes/player/ice_bullet.tscn" id="13_cnsyf"]
 [ext_resource type="AudioStream" uid="uid://c2q15ntrokdi0" path="res://assets/audio/sfx/footsteps/footsteps.wav" id="13_gx1jg"]
 [ext_resource type="AudioStream" uid="uid://cteg86na8iivn" path="res://assets/audio/sfx/footsteps/footsteps_wood.wav" id="14_ugbui"]
 [ext_resource type="AudioStream" uid="uid://c5fg7exeno2b6" path="res://assets/audio/sfx/pop.wav" id="16_myrg7"]
@@ -343,6 +344,7 @@ bullet_scene = ExtResource("7_smehm")
 fire_bullet_scene = ExtResource("8_kvlxm")
 weedkiller_bullet_scene = ExtResource("11_yj68g")
 mega_bullet_scene = ExtResource("12_ioxgp")
+ice_bullet_scene = ExtResource("13_cnsyf")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="WaterGun" unique_id=404010942]
 visible = false

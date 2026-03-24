@@ -11,6 +11,7 @@ var size = scale.y
 @export var fire_bullet_scene: PackedScene
 @export var weedkiller_bullet_scene: PackedScene
 @export var mega_bullet_scene: PackedScene
+@export var ice_bullet_scene: PackedScene
 var SHOOT_COOLDOWN: float = 0.25
 var shoot_timer: float = 0.0
 
@@ -57,6 +58,9 @@ func shoot(angle_offset: float = 0.0) -> void:
 					selected_item.uses_left -= 1
 				"water_jug":
 					bullet = mega_bullet_scene.instantiate()
+					selected_item.uses_left -= 1
+				"ice":
+					bullet = ice_bullet_scene.instantiate()
 					selected_item.uses_left -= 1
 				_:	
 					bullet = bullet_scene.instantiate()

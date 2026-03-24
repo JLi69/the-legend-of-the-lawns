@@ -19,6 +19,7 @@ const USE_COUNTS: Dictionary = {
 	"ultra_weedkiller" : 50,
 	"water_bottle_pack" : 50,
 	"water_jug" : 10,
+	"ice" : 25,
 }
 const DEFAULT_USE_COUNT: int = 1
 

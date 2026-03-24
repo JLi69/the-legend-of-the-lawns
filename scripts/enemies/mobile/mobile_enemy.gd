@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export var bullet_cooldown: float = 1.0
 @export var immune_to_friendly_fire: bool = false
 @export var immune_to_fire: bool = false
+@export var immune_to_freeze: bool = false
 @onready var shoot_timer: float = bullet_cooldown
 @onready var health = max_health
 var path: PackedVector2Array = []
@@ -28,6 +29,9 @@ var FIRE_DAMAGE_INTERVAL: float = 0.75
 var fire_time: float = 0.0
 # Other hazards
 var hazards: Dictionary = {}
+# Freeze timer
+const FREEZE_TIME: float = 5.0
+var freeze_timer: float = 0.0
 @onready var spawn_timer: float = spawn_animation_time
 
 const UPDATE_PATH_INTERVAL: float = 0.25
@@ -143,6 +147,9 @@ func in_shooting_range() -> bool:
 	return can_chase_player()
 
 func update_shooting(delta: float) -> void:
+	if freeze_timer > 0.0:
+		return
+
 	if bullet_cooldown < 0.0:
 		return
 
@@ -191,6 +198,8 @@ func take_fire_damage(delta: float) -> void:
 		if fire_particles:
 			fire_particles.queue_free()
 		return
+	# Disable freeze timer if we are on fire
+	freeze_timer = 0.0
 	fire_time -= delta
 	if fire_particles == null:
 		add_child(Fire.fire_particles.instantiate())
@@ -204,17 +213,30 @@ func _process(delta: float) -> void:
 	if spawn_timer > 0.0:
 		spawn_timer -= delta
 		return
-
-	$AnimatedSprite2D.animation = get_animation()
-	if !$AnimatedSprite2D.is_playing():
-		$AnimatedSprite2D.play($AnimatedSprite2D.animation)
+	
+	# Disable animations if the enemy is frozen
+	if freeze_timer > 0.0:
+		if $AnimatedSprite2D.is_playing():
+			$AnimatedSprite2D.pause()
+	# Enable them if the enemy is not frozen
+	else:
+		$AnimatedSprite2D.animation = get_animation()
+		if !$AnimatedSprite2D.is_playing():
+			$AnimatedSprite2D.play($AnimatedSprite2D.animation)
 	$Healthbar.update_bar(health, max_health)
 
 	if health <= 0:
 		explode()
 		queue_free()
 		return
-
+	
+	# Set the color of the enemy if it is frozen
+	if freeze_timer > 0.0:
+		var t: float = min(freeze_timer, 0.5) * 2.0
+		$AnimatedSprite2D.modulate = lerp(Color8(255, 255, 255), Color8(64, 128, 255), t)
+	else:
+		$AnimatedSprite2D.modulate = Color8(255, 255, 255)
+	freeze_timer = max(freeze_timer - delta, 0.0)
 	take_fire_damage(delta)
 	if player.health <= 0.0:
 		return
@@ -234,6 +256,8 @@ func _process(delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	velocity = calculate_velocity()
+	if freeze_timer > 0.0:
+		velocity = Vector2.ZERO
 	move_and_slide()
 
 func get_animation() -> String:
@@ -246,6 +270,9 @@ func set_dir_right() -> void:
 	$AnimatedSprite2D.flip_h = false
 
 func set_sprite_dir() -> void:
+	if freeze_timer > 0.0:
+		return
+
 	if player.global_position.x < global_position.x - 8.0:
 		set_dir_left()
 	elif player.global_position.x > global_position.x + 8.0:
@@ -271,6 +298,8 @@ func _on_bullet_hitbox_area_entered(body: Node2D) -> void:
 			return
 		body.explode()
 		damage(body.damage)
+		if !immune_to_freeze and body.is_in_group("ice_bullet"):
+			freeze_timer = FREEZE_TIME
 	elif body is EnemyBullet:
 		if !body.active():
 			return

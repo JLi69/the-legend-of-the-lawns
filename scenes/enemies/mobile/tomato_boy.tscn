@@ -173,6 +173,7 @@ min_chase_distance = 6.0
 max_chase_distance = 9999.0
 max_health = 8
 explosion_bullet_count = 0
+immune_to_freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1914351121]
 position = Vector2(0, -4.5)

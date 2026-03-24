@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b8lrxt2odr5gb"]
+[gd_scene format=3 uid="uid://b8lrxt2odr5gb"]
 
 [ext_resource type="PackedScene" uid="uid://c0pplynlnjxjg" path="res://scenes/enemies/mobile/wasp.tscn" id="1_i3gt3"]
 [ext_resource type="Script" uid="uid://b5lfygxrxyu4k" path="res://scripts/enemies/mobile/wasp_queen.gd" id="2_1chd1"]
@@ -253,7 +253,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="WaspQueen" instance=ExtResource("1_i3gt3")]
+[node name="WaspQueen" unique_id=289560917 instance=ExtResource("1_i3gt3")]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("2_1chd1")
 wasp_scene = ExtResource("1_i3gt3")
@@ -264,6 +264,7 @@ explosion_bullet_count = 10
 bullet_scene = ExtResource("3_qkar4")
 bullet_cooldown = 1.0
 immune_to_fire = true
+immune_to_freeze = true
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(-0.5, -1.6666667)
@@ -281,7 +282,7 @@ scale = Vector2(1.5, 1.5)
 damage_amt = 12
 attack_cooldown = 1.0
 
-[node name="Digging" type="AudioStreamPlayer2D" parent="." index="8"]
+[node name="Digging" type="AudioStreamPlayer2D" parent="." index="8" unique_id=954305158]
 stream = ExtResource("7_eg8jv")
 max_distance = 320.0
 attenuation = 2.0

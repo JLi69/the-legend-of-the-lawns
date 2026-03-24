@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://gdi5i1anbuwg"]
+
+[ext_resource type="PackedScene" uid="uid://b4a5sdixx0fuv" path="res://scenes/player/bullet.tscn" id="1_4wi7e"]
+[ext_resource type="Texture2D" uid="uid://bb460wrdi0yy6" path="res://assets/textures/player/ice_cube_bullet.png" id="2_l0k6n"]
+[ext_resource type="AudioStream" uid="uid://qaw3sogu76c4" path="res://assets/audio/sfx/shatter.wav" id="3_v0as8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0k6n"]
+radius = 5.0
+
+[node name="Bullet" unique_id=1584680529 groups=["ice_bullet"] instance=ExtResource("1_4wi7e")]
+damage = 2
+
+[node name="Sprite2D" parent="." index="0" unique_id=1542169634]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_l0k6n")
+
+[node name="GPUParticles2D" parent="." index="1" unique_id=1202824058]
+texture = ExtResource("2_l0k6n")
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1254355328]
+shape = SubResource("CircleShape2D_l0k6n")
+
+[node name="Explosion" parent="." index="3" unique_id=632810471]
+texture = ExtResource("2_l0k6n")
+
+[node name="Splash" parent="." index="4" unique_id=1076393220]
+stream = ExtResource("3_v0as8")
+volume_db = 10.0

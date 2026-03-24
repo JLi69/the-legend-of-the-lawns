@@ -1175,6 +1175,20 @@ position = Vector2(-24, -15)
 scale = Vector2(0.65, 0.65)
 display_name = "ice"
 id = "ice"
+description = "Use this with your water gun to shoot ice cubes that freeze enemies.
+-> Imported directly from the arctic."
+buy_text = "To use it, select it in your inventory and then pick up the water gun. You will now shoot ice cubes from your water gun."
+price = 18
+
+[node name="Ice2" parent="Store/StoreDisplay6" unique_id=538126086 instance=ExtResource("54_532a6")]
+position = Vector2(-39, -15)
+scale = Vector2(0.65, 0.65)
+display_name = "ice"
+id = "ice"
+description = "Use this with your water gun to shoot ice cubes that freeze enemies.
+-> Imported directly from the arctic."
+buy_text = "To use it, select it in your inventory and then pick up the water gun. You will now shoot ice cubes from your water gun."
+price = 18
 
 [connection signal="body_entered" from="SkipDay" to="SkipDay" method="_on_body_entered"]
 [connection signal="body_exited" from="SkipDay" to="SkipDay" method="_on_body_exited"]

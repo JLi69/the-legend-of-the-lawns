@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://1fh3tiwr4hty"]
+[gd_scene format=3 uid="uid://1fh3tiwr4hty"]
 
 [ext_resource type="Script" uid="uid://du4et2to7bk2c" path="res://scripts/enemies/flowers/blue_flower.gd" id="1_qca2c"]
 [ext_resource type="PackedScene" uid="uid://dtfabyqtkdwdj" path="res://scenes/enemies/bullets/thorn_bullet.tscn" id="2_q3i0f"]
@@ -82,43 +82,43 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Blueflower" type="Area2D"]
+[node name="Blueflower" type="Area2D" unique_id=1517971969]
 scale = Vector2(0.75, 0.75)
 collision_mask = 5
 script = ExtResource("1_qca2c")
 thorn_bullet = ExtResource("2_q3i0f")
 spore_bullet = ExtResource("3_5ye2o")
-max_health = 6
+max_health = 7
 shoot_cooldown = 6.0
 shoot_range = 132.0
 bullet_speed = 70.0
 stun_amt = 12.0
 explosion_bullet_count = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1078763707]
 position = Vector2(0, -10.3333)
 shape = SubResource("RectangleShape2D_rmm5g")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=960028669]
 position = Vector2(-9.53674e-07, -1.16667)
 scale = Vector2(0.25, 0.179487)
 texture = ExtResource("4_wiwcy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1058797526]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_m8m4i")
 autoplay = "default"
 
-[node name="ContactDamageZone" parent="." instance=ExtResource("7_eul5i")]
+[node name="ContactDamageZone" parent="." unique_id=527562971 instance=ExtResource("7_eul5i")]
 position = Vector2(0, -5.3333683)
 
-[node name="BulletSpawnPoint" type="Node2D" parent="."]
+[node name="BulletSpawnPoint" type="Node2D" parent="." unique_id=1774373494]
 
-[node name="Healthbar" parent="." instance=ExtResource("8_r62hj")]
+[node name="Healthbar" parent="." unique_id=1353858185 instance=ExtResource("8_r62hj")]
 offset_top = -23.6667
 offset_bottom = -21.6667
 
-[node name="StunParticles" parent="." instance=ExtResource("9_141dj")]
+[node name="StunParticles" parent="." unique_id=1602624173 instance=ExtResource("9_141dj")]
 position = Vector2(0, -24)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

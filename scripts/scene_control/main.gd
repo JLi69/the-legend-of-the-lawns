@@ -186,7 +186,9 @@ func update_hud(delta: float) -> void:
 		$HUD.update_money_counter(player_name, money)
 		$HUD.update_lawn_counter(lawns_mowed)
 	if player.health > 0:
-		if player.fire_timer > 0.0:
+		if player.get_status_effect_time("shield") > 0.0:
+			$HUD.update_damage_flash(0.0)
+		elif player.fire_timer > 0.0:
 			$HUD.update_damage_flash(1.0)
 		else:
 			$HUD.update_damage_flash(player.get_damage_timer_perc())

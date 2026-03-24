@@ -20,6 +20,8 @@ extends Area2D
 @export var max_health: int = 10
 @export var boss: bool = false
 @export var grow_delay: float = 0.0
+var freeze_timer: float = 0.0
+const FREEZE_TIME: float = 5.0
 
 @onready var health: int = max_health 
 @onready var shoot_timer: float = bullet_cooldown
@@ -122,6 +124,8 @@ func _on_area_entered(area: Area2D) -> void:
 		area.explode()
 		health -= area.damage
 		health = max(health, 0)
+		if area.is_in_group("ice_bullet") and !boss:
+			freeze_timer = FREEZE_TIME
 	elif area is EnemyBullet:
 		if area.is_in_group("damage_weeds"):
 			area.explode()
@@ -167,6 +171,9 @@ func get_dir() -> String:
 			return "down"
 
 func update_shooting(delta: float) -> void:
+	if freeze_timer > 0.0:
+		return
+
 	shoot_timer -= delta
 
 	if player.health <= 0:
@@ -196,6 +203,17 @@ func _process(delta: float) -> void:
 		explode()
 		return
 
-	$AnimatedSprite2D.animation = get_animation()		
+	if freeze_timer > 0.0:
+		var t: float = min(freeze_timer, 0.5) * 2.0
+		$AnimatedSprite2D.modulate = lerp(Color8(255, 255, 255), Color8(64, 128, 255), t)
+		if $AnimatedSprite2D.is_playing():
+			$AnimatedSprite2D.pause()
+	else:
+		$AnimatedSprite2D.modulate = Color8(255, 255, 255)
+		if !$AnimatedSprite2D.is_playing():
+			$AnimatedSprite2D.play()
+	freeze_timer = max(freeze_timer - delta, 0.0)
+	if freeze_timer <= 0.0:
+		$AnimatedSprite2D.animation = get_animation()		
 	$Healthbar.update_bar(health, max_health)	
 	update_shooting(delta)

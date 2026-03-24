@@ -454,6 +454,9 @@ func _process(delta: float) -> void:
 	else:
 		$NeighborArrow.disabled = false
 
+	if get_status_effect_time("shield") > 0.0:
+		damage_timer = 0.0
+		fire_timer = 0.0
 	take_fire_damage(delta)
 	shoot_fireworks(delta)
 	shoot_eggplant_bullet(delta)
