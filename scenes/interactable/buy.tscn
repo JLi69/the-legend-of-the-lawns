@@ -52,10 +52,6 @@ size = Vector2(13.333333, 28.333332)
 atlas = ExtResource("1_vhubf")
 region = Rect2(0, 0, 23, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_evmts"]
-atlas = ExtResource("4_f82uq")
-region = Rect2(0, 0, 23, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_f82uq"]
 atlas = ExtResource("4_qukav")
 region = Rect2(0, 0, 23, 24)
@@ -79,10 +75,6 @@ region = Rect2(23, 0, 23, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfce6"]
 atlas = ExtResource("18_nmgib")
 region = Rect2(46, 0, 23, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gsonl"]
-atlas = ExtResource("4_ho0xu")
-region = Rect2(0, 0, 23, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qukav"]
 atlas = ExtResource("6_ci6ny")
@@ -124,7 +116,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_evmts")
+"texture": ExtResource("4_f82uq")
 }],
 "loop": true,
 "name": &"backpack0",
@@ -349,7 +341,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gsonl")
+"texture": ExtResource("4_ho0xu")
 }],
 "loop": true,
 "name": &"red_shoes",
