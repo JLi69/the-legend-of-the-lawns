@@ -36,10 +36,7 @@ func shoot(angle_offset: float = 0.0) -> bool:
 	else:	
 		var selected: int = $/root/Main/HUD/Control/InventoryGUI.selected
 		var selected_item: InventoryItem = player.inventory.get_item(selected)	
-		if selected_item:
-			if selected_item.cooldown > 0.0:
-				return false
-
+		if selected_item:	
 			match selected_item.id:
 				"weedkiller":
 					bullet = weedkiller_bullet_scene.instantiate()
@@ -61,6 +58,8 @@ func shoot(angle_offset: float = 0.0) -> bool:
 					bullet.damage = 5
 					selected_item.uses_left -= 1
 				"water_jug":
+					if selected_item.cooldown > 0.0:
+						return false
 					bullet = mega_bullet_scene.instantiate()
 					selected_item.uses_left -= 1
 					selected_item.cooldown = InventoryItem.get_cooldown(selected_item.id)
@@ -90,13 +89,14 @@ func _process(delta: float) -> void:
 	if shoot_timer <= 0.0 and Input.is_action_pressed("shoot_primary"):
 		var selected: int = $/root/Main/HUD/Control/InventoryGUI.selected
 		var selected_item: InventoryItem = player.inventory.get_item(selected)
-		if selected_item and selected_item.id == "water_bottle_pack" and selected_item.cooldown <= 0.0:
-			shoot(-PI / 12.0)
-			shoot(0.0)
-			if shoot(PI / 12.0):
-				$/root/Main.play_sfx("Shoot")
-			selected_item.uses_left -= 1
-			selected_item.cooldown = InventoryItem.get_cooldown(selected_item.id)
+		if selected_item and selected_item.id == "water_bottle_pack":
+			if selected_item.cooldown <= 0.0:
+				shoot(-PI / 12.0)
+				shoot(0.0)
+				if shoot(PI / 12.0):
+					$/root/Main.play_sfx("Shoot")
+				selected_item.uses_left -= 1
+				selected_item.cooldown = InventoryItem.get_cooldown(selected_item.id)
 		elif shoot():
 			$/root/Main.play_sfx("Shoot")
 		shoot_timer = SHOOT_COOLDOWN
