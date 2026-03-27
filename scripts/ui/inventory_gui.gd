@@ -46,6 +46,8 @@ func can_use_item() -> bool:
 			return player.lawn_mower_active()
 		"weedkiller", "acidic_weedkiller", "super_weedkiller", "ultra_weedkiller":
 			return player.water_gun.visible
+		"water_bottle_pack", "water_jug", "ice":
+			return player.water_gun.visible
 		_:
 			return can_use_inventory()
 

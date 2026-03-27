@@ -22,6 +22,8 @@ config/icon="uid://dr2ho07mprhhv"
 [display]
 
 window/size/mode=2
+window/size/window_width_override=1360
+window/size/window_height_override=765
 window/stretch/mode="canvas_items"
 
 [input]

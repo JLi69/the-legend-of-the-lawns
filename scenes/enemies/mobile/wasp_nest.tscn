@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsm20lnybkim0"]
+[gd_scene format=3 uid="uid://bsm20lnybkim0"]
 
 [ext_resource type="Texture2D" uid="uid://c1mwbw0kon1tr" path="res://assets/textures/shadow.png" id="1_ocu5n"]
 [ext_resource type="Script" uid="uid://0admv7wxm5aw" path="res://scripts/enemies/mobile/wasp_nest.gd" id="1_q6o25"]
@@ -14,7 +14,7 @@ size = Vector2(22, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqndr"]
 size = Vector2(24, 11)
 
-[node name="WaspNest" type="Area2D"]
+[node name="WaspNest" type="Area2D" unique_id=1952215212]
 scale = Vector2(1.25, 1.25)
 script = ExtResource("1_q6o25")
 wasp_queen_scene = ExtResource("2_igry7")
@@ -29,27 +29,28 @@ spawn_probability = 0.8
 retaliate_probability = 0.5
 max_health = 16
 explosion_color = Color(0.78431374, 0.73333335, 0.65882355, 1)
+explosion_volume = 0.2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1282418128]
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_ocu5n")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1854271501]
 position = Vector2(0, -1.0000001)
 scale = Vector2(0.75000006, 0.6153846)
 texture = ExtResource("1_ocu5n")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1641312989]
 position = Vector2(0, -10)
 texture = ExtResource("1_t42xr")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=799025631]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2055803874]
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_gqndr")
 
-[node name="Healthbar" parent="." instance=ExtResource("3_gqndr")]
+[node name="Healthbar" parent="." unique_id=377130804 instance=ExtResource("3_gqndr")]
 offset_top = -25.0
 offset_bottom = -23.0
 

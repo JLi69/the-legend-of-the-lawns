@@ -20,6 +20,7 @@ class_name Nest
 @export var max_health: int = 30
 @export var explosion_size: float = 0.75
 @export var explosion_color: Color
+@export var explosion_volume: float = 0.5 
 @onready var health: int = max_health
 @onready var spawn_timer: float = initial_spawn_delay
 @onready var player: Player = $/root/Main/Player
@@ -37,6 +38,7 @@ func explode() -> void:
 	explosion.scale *= 0.5
 	explosion.modulate = explosion_color
 	lawn.add_child(explosion)
+	Sfx.play_at_pos(global_position, "explosion", lawn, explosion_volume)
 	queue_free()
 
 func _process(delta: float) -> void:

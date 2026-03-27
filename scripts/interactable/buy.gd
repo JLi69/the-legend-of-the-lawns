@@ -11,8 +11,28 @@ static var buy_item_list: Array = []
 @export_multiline var description: String
 @export_multiline var buy_text: String
 @export var price: int = 1
-@export var add_item: bool = false
 var bought: bool = false
+
+const ITEM_LIST: Array = [
+	"chocolate", 
+	"soda", 
+	"ice_cream", 
+	"tomato_seeds", 
+	"boom_shroom_spores", 
+	"gasoline",
+	"shield_generator", 
+	"electric_doodad", 
+	"insecticide", 
+	"drone_controller", 
+	"fireworks",
+	"weedkiller", 
+	"acidic_weedkiller", 
+	"super_weedkiller", 
+	"ultra_weedkiller",
+	"water_bottle_pack",
+	"water_jug",
+	"ice",
+]
 
 const ID_TO_LEVEL: Dictionary = {
 	# Juices
@@ -86,21 +106,17 @@ func buy() -> void:
 			player.time_bonus_level = ID_TO_LEVEL[id] + 1
 		"hat", "bike_helmet", "football_helmet", "combat_helmet", "astronaut_helmet":
 			player.armor_level = ID_TO_LEVEL[id] + 1
-		"chocolate", "soda", "ice_cream", "tomato_seeds", "boom_shroom_spores", "gasoline":
-			if !player.inventory.add_item(id):
-				return
-		# Another line in order to prevent the top case from being a giant line
-		"shield_generator", "electric_doodad", "insecticide", "drone_controller", "fireworks":
-			if !player.inventory.add_item(id):
-				return
-		"weedkiller", "acidic_weedkiller", "super_weedkiller", "ultra_weedkiller":
-			if !player.inventory.add_item(id):
-				return
+		_:
+			if id in ITEM_LIST:
+				if !player.inventory.add_item(id):
+					return
 	bought = true
-	print(name, " ", bought)
 	var main: Main = $/root/Main
 	main.money = max(0, main.money - price)
 	player.interact_text = ""
+
+func is_item() -> bool:
+	return id in ITEM_LIST
 
 func _process(_delta: float) -> void:
 	if !available():

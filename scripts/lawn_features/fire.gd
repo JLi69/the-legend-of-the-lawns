@@ -180,7 +180,12 @@ func _on_bullet_hitbox_area_entered(area: Area2D) -> void:
 			return
 		if area.active():
 			area.explode()
-			remove_lifetime_amt += 0.15
+			if area.is_in_group("ice_bullet"):
+				remove_lifetime_amt += 0.4
+			elif area.is_in_group("mega_bullet"):
+				remove_lifetime_amt += 0.25
+			else:
+				remove_lifetime_amt += 0.15
 
 func _on_can_spread_to_area_exited(area: Area2D) -> void:
 	if area.get_path() in can_spread_to:

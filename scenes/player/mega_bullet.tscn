@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://clqqhbbuhe8mm"]
+
+[ext_resource type="PackedScene" uid="uid://b4a5sdixx0fuv" path="res://scenes/player/bullet.tscn" id="1_csg0c"]
+[ext_resource type="Script" uid="uid://dy3xxchlk0iha" path="res://scripts/player/mega_bullet.gd" id="2_tikfs"]
+[ext_resource type="PackedScene" uid="uid://e6kb8yfp0yjr" path="res://scenes/particles/explosion.tscn" id="3_yf03r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_csg0c"]
+radius = 5.0
+
+[node name="Bullet" unique_id=1584680529 instance=ExtResource("1_csg0c")]
+script = ExtResource("2_tikfs")
+explosion_scene = ExtResource("3_yf03r")
+damage = 2
+
+[node name="Sprite2D" parent="." index="0" unique_id=1542169634]
+scale = Vector2(0.4, 0.4)
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1254355328]
+shape = SubResource("CircleShape2D_csg0c")
+
+[node name="Splash" parent="." index="4" unique_id=1076393220 groups=["mega_bullet"]]
+volume_db = 0.0
