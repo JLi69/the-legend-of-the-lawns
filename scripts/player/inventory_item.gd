@@ -1,9 +1,9 @@
 class_name InventoryItem
 
 const USE_COUNTS: Dictionary = {
-	"chocolate" : 3,
+	"chocolate" : 4,
 	"soda" : 4,
-	"ice_cream" : 4,
+	"ice_cream" : 5,
 	"tomato_seeds" : 3,
 	"boom_shroom_spores" : 5,
 	"gasoline" : 3,
@@ -138,7 +138,7 @@ func use(main: Main) -> void:
 		"shield_generator":
 			main.play_sfx("Zap")
 			var prev_time = main.player.get_status_effect_time("shield")
-			main.player.set_status_effect_time("shield", prev_time + 8.0)
+			main.player.set_status_effect_time("shield", prev_time + 14.0)
 		"electric_doodad":
 			main.play_sfx("Zap")
 			var shock = electric_shock_scene.instantiate()
