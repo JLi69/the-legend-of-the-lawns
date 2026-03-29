@@ -68,6 +68,8 @@ func shoot(angle_offset: float = 0.0) -> bool:
 					selected_item.uses_left -= 1
 				_:
 					bullet = bullet_scene.instantiate()
+			if selected_item.uses_left <= 0:
+				player.inventory.remove_item(selected)
 		else:
 			bullet = bullet_scene.instantiate()
 	bullet.dir = Vector2(cos(rotation + angle_offset), sin(rotation + angle_offset))
@@ -97,6 +99,8 @@ func _process(delta: float) -> void:
 					$/root/Main.play_sfx("Shoot")
 				selected_item.uses_left -= 1
 				selected_item.cooldown = InventoryItem.get_cooldown(selected_item.id)
+				if selected_item.uses_left <= 0:
+					player.inventory.remove_item(selected)
 		elif shoot():
 			$/root/Main.play_sfx("Shoot")
 		shoot_timer = SHOOT_COOLDOWN

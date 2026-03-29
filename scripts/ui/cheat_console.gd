@@ -23,6 +23,8 @@ Commands available:
 	position)
 
 	disablecheats - disables cheat console
+
+	die - set health to 0 while in the lawn
 """
 
 ## Should be disabled in release
@@ -127,6 +129,11 @@ func run_command(cmd: String) -> String:
 			return ""
 		"disablecheats":
 			queue_free()
+			return ""
+		"die":
+			if !main.lawn_loaded:
+				return "Lawn must be loaded!"
+			main.player.health = 0
 			return ""
 			
 	return "Invalid command!"

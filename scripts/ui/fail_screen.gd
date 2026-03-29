@@ -31,7 +31,8 @@ func _on_return_pressed() -> void:
 	get_tree().paused = false
 	var main: Main = $/root/Main
 	main.play_sfx("Click")
-	main.advance_day()
 	main.return_to_neighborhood()
-	main.save_progress()
+	# Reload back to the last save point
+	main.load_save()
+	$/root/Main/HUD/Control/TransitionRect.start_animation()
 	hide()

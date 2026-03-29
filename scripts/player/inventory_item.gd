@@ -6,11 +6,11 @@ const USE_COUNTS: Dictionary = {
 	"ice_cream" : 5,
 	"tomato_seeds" : 3,
 	"boom_shroom_spores" : 5,
-	"gasoline" : 3,
-	"shield_generator" : 4,
-	"electric_doodad" : 4,
-	"insecticide" : 5,
-	"drone_controller" : 3,
+	"gasoline" : 4,
+	"shield_generator" : 6,
+	"electric_doodad" : 6,
+	"insecticide" : 8,
+	"drone_controller" : 4,
 	"fireworks" : 3,
 	# Weapons
 	"weedkiller" : 65,
@@ -25,7 +25,7 @@ const DEFAULT_USE_COUNT: int = 1
 
 const COOLDOWNS: Dictionary = {
 	"chocolate" : 25.0,
-	"soda" : 30.0,
+	"soda" : 33.0,
 	"ice_cream" : 40.0,
 	"tomato_seeds" : 80.0,
 	"boom_shroom_spores" : 25.0,
@@ -96,7 +96,7 @@ func use(main: Main) -> void:
 			main.play_sfx("Eat")
 		"soda":
 			var prev_time = main.player.get_status_effect_time("speed")
-			main.player.set_status_effect_time("speed", prev_time + 7.0)
+			main.player.set_status_effect_time("speed", prev_time + 10.0)
 			# Increase stamina
 			main.player.stamina = min(main.player.stamina + 0.25, 1.0) 
 			main.play_sfx("Drink")
