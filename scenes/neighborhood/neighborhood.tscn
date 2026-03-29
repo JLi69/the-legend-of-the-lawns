@@ -64,6 +64,8 @@
 [ext_resource type="PackedScene" uid="uid://cjee4hiyjwavr" path="res://scenes/decorations/checkout_counter.tscn" id="62_rb5n6"]
 [ext_resource type="Texture2D" uid="uid://dyeg7yqiqumw5" path="res://assets/textures/decorations/mcmoneypants_painting.png" id="63_2fw6o"]
 [ext_resource type="Texture2D" uid="uid://32q8xuowprgl" path="res://assets/textures/decorations/swapdeck_poster.png" id="64_fwf17"]
+[ext_resource type="JSON" path="res://assets/dialog/npcs/martin_dialog.json" id="65_2qen0"]
+[ext_resource type="JSON" path="res://assets/dialog/npcs/cashier_guy_dialog.json" id="66_bg1hm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0lcp"]
 atlas = ExtResource("21_6hoof")
@@ -1057,7 +1059,7 @@ id = "fireworks"
 description = "Launches a bunch of firework rockets that explode and damage enemies.
 -> This year's Independence Day fireworks show is going to be so awesome!"
 buy_text = "Left click to use item."
-price = 27
+price = 30
 
 [node name="Gasoline" parent="Store/StoreDisplay4" unique_id=1841829751 instance=ExtResource("54_532a6")]
 position = Vector2(25, -15)
@@ -1197,14 +1199,11 @@ position = Vector2(23.881084, 755.87744)
 [node name="PottedPlant2" parent="Store/PottedPlants" unique_id=55038417 instance=ExtResource("48_0l5da")]
 position = Vector2(-24.118916, 755.87744)
 
-[node name="PottedPlant3" parent="Store/PottedPlants" unique_id=1762024933 instance=ExtResource("50_s3i68")]
-position = Vector2(152, 755)
-
 [node name="PottedPlant4" parent="Store/PottedPlants" unique_id=598448702 instance=ExtResource("49_6sx2y")]
-position = Vector2(167, 757)
+position = Vector2(168, 757)
 
 [node name="PottedPlant5" parent="Store/PottedPlants" unique_id=729203600 instance=ExtResource("49_6sx2y")]
-position = Vector2(158, 761)
+position = Vector2(161, 761)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Store/PottedPlants" unique_id=5331699]
 position = Vector2(159, 753)
@@ -1235,15 +1234,40 @@ position = Vector2(-54, -13.5)
 [node name="PottedPlant4" parent="Store/CheckoutCounter" unique_id=256526804 instance=ExtResource("50_s3i68")]
 position = Vector2(55, -39.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="Store" unique_id=1639100205]
+[node name="Painting" type="Sprite2D" parent="Store" unique_id=1639100205]
 position = Vector2(-156.00002, 719.00006)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("63_2fw6o")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Store" unique_id=927053415]
+[node name="SwapdeckPoster" type="Sprite2D" parent="Store" unique_id=927053415]
 position = Vector2(-92.00001, 724)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("64_fwf17")
+
+[node name="MrManager" parent="Store" unique_id=170870513 instance=ExtResource("4_dcvy4")]
+position = Vector2(-33, 809.00006)
+animation = &"mr_manager"
+display_name = "Mr. Manager"
+min_level = 5
+
+[node name="Martin" parent="Store" unique_id=1479892227 instance=ExtResource("4_dcvy4")]
+position = Vector2(153, 758)
+animation = &"martin"
+display_name = "Martin"
+dialog_json = ExtResource("65_2qen0")
+
+[node name="Robot" parent="Store" unique_id=13456353 instance=ExtResource("4_dcvy4")]
+position = Vector2(16, 826.00006)
+animation = &"robot"
+display_name = "StoreCorp Robot"
+min_level = 5
+can_talk = false
+
+[node name="CashierGuy" parent="Store" unique_id=375736299 instance=ExtResource("4_dcvy4")]
+position = Vector2(-121.00001, 756)
+animation = &"cashier_guy"
+display_name = "Cashier Guy"
+dialog_json = ExtResource("66_bg1hm")
 
 [connection signal="body_entered" from="SkipDay" to="SkipDay" method="_on_body_entered"]
 [connection signal="body_exited" from="SkipDay" to="SkipDay" method="_on_body_exited"]

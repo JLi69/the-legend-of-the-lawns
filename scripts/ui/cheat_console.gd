@@ -121,7 +121,13 @@ func run_command(cmd: String) -> String:
 			if main.lawn_loaded:
 				return "Can not go to neighbor while in lawn."
 			if args.size() <= 1:
-				return "Missing argument: neighbor."
+				return "Missing argument: location."
+			if args[1] == "store":
+				var node: Node2D = main.neighborhood.get_node_or_null("Store/StoreDoor/StoreExterior")
+				if node:
+					main.player.global_position = node.global_position
+					return ""
+				return "Store does not exist!"
 			var neighbor: NeighborNPC = main.neighborhood.get_neighbor(args[1])
 			if neighbor == null:
 				return "Neighbor does not exist."

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bmfatvi0c60nn"]
+[gd_scene format=3 uid="uid://bmfatvi0c60nn"]
 
 [ext_resource type="Texture2D" uid="uid://di85fhpd0nqap" path="res://assets/textures/npcs/neighbors/neighbor_bob.png" id="1_8cdwt"]
 [ext_resource type="Texture2D" uid="uid://c8063uw57s5x4" path="res://assets/textures/npcs/neighbors/mr_mcmoneypants.png" id="1_h1x1f"]
@@ -410,7 +410,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrakx"]
 size = Vector2(18, 42)
 
-[node name="Neighbor" type="AnimatedSprite2D" groups=["neighbor"]]
+[node name="Neighbor" type="AnimatedSprite2D" unique_id=1784388205 groups=["neighbor"]]
 y_sort_enabled = true
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_k1hep")
@@ -419,15 +419,15 @@ offset = Vector2(0, -20)
 script = ExtResource("1_k1hep")
 lawn_template = ExtResource("3_x7cql")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=869519391]
 position = Vector2(0, -20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=52541084]
 shape = SubResource("RectangleShape2D_nrakx")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=378860302]
 z_index = -1
-position = Vector2(0, -1)
+position = Vector2(0, -0.5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_dsynj")
 
