@@ -82,15 +82,15 @@ static func update_buy_list() -> void:
 func available() -> bool:
 	match id:
 		"apple_juice", "orange_juice", "grape_juice", "milk", "carrot_juice", "golden_apple_juice":
-			return player.max_health_level == ID_TO_LEVEL[id] and visible
+			return player.max_health_level == ID_TO_LEVEL[id]
 		"red_shoes", "blue_shoes", "gray_shoes", "athlete_shoes":
-			return player.speed_level == ID_TO_LEVEL[id] and visible
+			return player.speed_level == ID_TO_LEVEL[id]
 		"backpack0", "backpack1", "backpack2", "backpack3":
-			return player.inventory.inventory_level == ID_TO_LEVEL[id] and visible
+			return player.inventory.inventory_level == ID_TO_LEVEL[id]
 		"watch", "digital_watch", "pocket_watch", "rollx_watch":
-			return player.time_bonus_level == ID_TO_LEVEL[id] and visible
+			return player.time_bonus_level == ID_TO_LEVEL[id]
 		"hat", "bike_helmet", "football_helmet", "combat_helmet", "astronaut_helmet":
-			return player.armor_level == ID_TO_LEVEL[id] and visible
+			return player.armor_level == ID_TO_LEVEL[id]
 		_:
 			return !bought
 
@@ -121,7 +121,10 @@ func is_item() -> bool:
 func _process(_delta: float) -> void:
 	if !available():
 		hide()
-		return	
+		return
+
+	if !visible:
+		return
 	
 	if player_in_area:
 		player.interact_text = get_interact_text()
