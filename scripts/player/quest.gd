@@ -122,8 +122,8 @@ static var list: Array[Quest] = [
 	# Quest 6
 	Quest.new(
 		Reward.new(
-			"$4",
-			func(main: Main) -> void: main.money += 4
+			"$5",
+			func(main: Main) -> void: main.money += 5
 		),
 		[
 			Goal.new(
@@ -140,8 +140,8 @@ static var list: Array[Quest] = [
 	# Quest 7
 	Quest.new(
 		Reward.new(
-			"$5",
-			func(main: Main) -> void: main.money += 5
+			"$6",
+			func(main: Main) -> void: main.money += 6
 		),
 		[]
 	),

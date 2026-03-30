@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://brunwv4cwnhk8" path="res://assets/textures/decorations/photo.png" id="38_00oce"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/dad_intro_dialog.json" id="38_8tbsa"]
 [ext_resource type="Texture2D" uid="uid://dwm571dc4civd" path="res://assets/textures/decorations/control_poster.png" id="38_ad8ph"]
+[ext_resource type="JSON" path="res://assets/dialog/neighbors/hunter_dialog.json" id="38_i07me"]
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/george_dialog.json" id="38_s4g4y"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/mom_intro_dialog.json" id="39_78k8p"]
 [ext_resource type="Texture2D" uid="uid://cg7h2eha218hg" path="res://assets/textures/decorations/birb_run_poster.png" id="39_f70if"]
@@ -408,8 +409,10 @@ animation = &"neighbor_hunter"
 display_name = "Neighbor Hunter"
 lawn_template = ExtResource("37_kg5j4")
 level = 7
+wage = 15
 max_bonus = 8
 hedge_penalty = 0
+dialog_json = ExtResource("38_i07me")
 
 [node name="Poofball" parent="Neighbors" unique_id=1980798908 instance=ExtResource("3_tqujx")]
 position = Vector2(504, -540)
@@ -808,7 +811,7 @@ id = "blue_shoes"
 description = "Increases speed.
 -> The company that made these advertises that they designed the soles to be supposedly more efficient for walking."
 buy_text = "Increased speed! (x1.00 -> x1.10)"
-price = 22
+price = 16
 
 [node name="GrayShoes" parent="Store/StoreDisplay/Shoes" unique_id=1132238852 instance=ExtResource("54_532a6")]
 position = Vector2(-19, -15)
@@ -818,7 +821,7 @@ id = "gray_shoes"
 description = "Increases speed.
 -> These are the cheap knock-offs of the shoes that a lot of famous athletes wear."
 buy_text = "Increased speed! (x1.10 -> x1.25)"
-price = 32
+price = 26
 
 [node name="AthleteShoes" parent="Store/StoreDisplay/Shoes" unique_id=2011781773 instance=ExtResource("54_532a6")]
 position = Vector2(-19, -15)
@@ -828,7 +831,7 @@ id = "athlete_shoes"
 description = "Increases speed.
 -> Almost every professional athlete that played in the International Games swears by these shoes, they are just that good. Either that or they're just repeating the sponsor script."
 buy_text = "Increased speed! (x1.25 -> x1.33)"
-price = 50
+price = 40
 
 [node name="Backpacks" type="Node2D" parent="Store/StoreDisplay" unique_id=2138569241]
 
@@ -850,7 +853,7 @@ id = "backpack1"
 description = "Increases inventory space.
 -> It has a picture of a cute frog on it. What's not to love about it?"
 buy_text = "Increased inventory size! (4 slots -> 6 slots)"
-price = 28
+price = 24
 
 [node name="Backpack2" parent="Store/StoreDisplay/Backpacks" unique_id=849988165 instance=ExtResource("54_532a6")]
 position = Vector2(0, -15)
@@ -890,7 +893,7 @@ id = "digital_watch"
 description = "Increases time bonus.
 -> A fancy digital watch. It can track your steps, give you the weather forecast, and even comes with a (somewhat) helpful AI assistant."
 buy_text = "Increased time bonus! (x1.50 -> x2.00)"
-price = 40
+price = 30
 
 [node name="PocketWatch" parent="Store/StoreDisplay/Watches" unique_id=829682900 instance=ExtResource("54_532a6")]
 position = Vector2(20, -15)
@@ -899,7 +902,7 @@ id = "pocket_watch"
 description = "Increases time bonus.
 -> Supposedly this used to be the property of some noble from the 1800s."
 buy_text = "Increased time bonus! (x2.00 -> x2.50)"
-price = 65
+price = 55
 
 [node name="RollxWatch" parent="Store/StoreDisplay/Watches" unique_id=2123175744 instance=ExtResource("54_532a6")]
 position = Vector2(20, -15)
@@ -928,7 +931,7 @@ id = "bike_helmet"
 description = "Increases armor.
 -> Pretty good protection for when you crash your bike into a tree."
 buy_text = "Increased armor! (7% -> 10%)"
-price = 24
+price = 18
 
 [node name="FootballHelmet" parent="Store/StoreDisplay/Helmets" unique_id=1884394142 instance=ExtResource("54_532a6")]
 position = Vector2(38, -15)
@@ -937,7 +940,7 @@ id = "football_helmet"
 description = "Increases armor.
 -> I'm not entirely sure if this can stop a concussion but maybe it can protect your face from an angry shrubdemon?"
 buy_text = "Increased armor! (10% -> 14%)"
-price = 35
+price = 30
 
 [node name="CombatHelmet" parent="Store/StoreDisplay/Helmets" unique_id=280737930 instance=ExtResource("54_532a6")]
 position = Vector2(38, -15)
@@ -946,7 +949,7 @@ id = "combat_helmet"
 description = "Increases armor.
 -> It even comes with leaves for camouflage! I don't think it will trick the weeds though..."
 buy_text = "Increased armor! (14% -> 18%)"
-price = 60
+price = 50
 
 [node name="AstronautHelmet" parent="Store/StoreDisplay/Helmets" unique_id=105126978 instance=ExtResource("54_532a6")]
 position = Vector2(38, -15)

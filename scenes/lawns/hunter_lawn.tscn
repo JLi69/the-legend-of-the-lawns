@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cm4b5rcedfd1n" path="res://scenes/lawn_features/boom_shroom.tscn" id="7_cjb4i"]
 
 [node name="Lawn" unique_id=1949302452 instance=ExtResource("1_cwsww")]
+time_limit = 480.0
 difficulty = 3
 
 [node name="TileMapLayer" parent="." index="0" unique_id=1119632854]
@@ -52,29 +53,44 @@ spawn_count = 1
 possible_enemies = Array[PackedScene]([ExtResource("5_mpj1b")])
 trigger_upon_lawn_completion = true
 
-[node name="ExplosiveBarrel2" parent="." index="7" unique_id=2046776325 instance=ExtResource("3_l38sl")]
+[node name="ExplosiveBarrel" parent="." index="7" unique_id=2096935802 instance=ExtResource("3_l38sl")]
 position = Vector2(254, 54)
 
-[node name="ExplosiveBarrel4" parent="." index="8" unique_id=609025614 instance=ExtResource("3_l38sl")]
+[node name="ExplosiveBarrel2" parent="." index="8" unique_id=2046776325 instance=ExtResource("3_l38sl")]
+position = Vector2(-33, 92)
+
+[node name="ExplosiveBarrel3" parent="." index="9" unique_id=29280869 instance=ExtResource("3_l38sl")]
+position = Vector2(114, 106)
+
+[node name="ExplosiveBarrel4" parent="." index="10" unique_id=609025614 instance=ExtResource("3_l38sl")]
 position = Vector2(199, 155)
 
-[node name="ExplosiveBarrel6" parent="." index="9" unique_id=1048896166 instance=ExtResource("3_l38sl")]
+[node name="ExplosiveBarrel5" parent="." index="11" unique_id=580089645 instance=ExtResource("3_l38sl")]
+position = Vector2(10, -171)
+
+[node name="ExplosiveBarrel6" parent="." index="12" unique_id=1048896166 instance=ExtResource("3_l38sl")]
 position = Vector2(-240, 150)
 
-[node name="ExplosiveBarrel9" parent="." index="10" unique_id=1521900660 instance=ExtResource("3_l38sl")]
-position = Vector2(-164, -160)
+[node name="ExplosiveBarrel7" parent="." index="13" unique_id=1900664967 instance=ExtResource("3_l38sl")]
+position = Vector2(-7, -159)
 
-[node name="BoomShroom" parent="." index="11" unique_id=2045686728 instance=ExtResource("7_cjb4i")]
+[node name="ExplosiveBarrel8" parent="." index="14" unique_id=1521900660 instance=ExtResource("3_l38sl")]
+position = Vector2(-128, -141)
+
+[node name="ExplosiveBarrel9" parent="." index="15" unique_id=1745985006 instance=ExtResource("3_l38sl")]
+position = Vector2(116, -119)
+
+[node name="BoomShroom" parent="." index="16" unique_id=2045686728 instance=ExtResource("7_cjb4i")]
 position = Vector2(-254, 34)
 
-[node name="BoomShroom2" parent="." index="12" unique_id=2091572263 instance=ExtResource("7_cjb4i")]
+[node name="BoomShroom2" parent="." index="17" unique_id=2091572263 instance=ExtResource("7_cjb4i")]
 position = Vector2(248, -91)
 
-[node name="BoomShroom3" parent="." index="13" unique_id=415996778 instance=ExtResource("7_cjb4i")]
+[node name="BoomShroom3" parent="." index="18" unique_id=415996778 instance=ExtResource("7_cjb4i")]
 position = Vector2(68, -72)
 
-[node name="BoomShroom4" parent="." index="14" unique_id=880930552 instance=ExtResource("7_cjb4i")]
+[node name="BoomShroom4" parent="." index="19" unique_id=880930552 instance=ExtResource("7_cjb4i")]
 position = Vector2(-77, -112)
 
-[node name="BoomShroom5" parent="." index="15" unique_id=884243894 instance=ExtResource("7_cjb4i")]
+[node name="BoomShroom5" parent="." index="20" unique_id=884243894 instance=ExtResource("7_cjb4i")]
 position = Vector2(79, -123)

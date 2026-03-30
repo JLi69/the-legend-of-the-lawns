@@ -1,0 +1,32 @@
+{
+	"possible_dialog": [
+		"*grunt*",
+		"*grunt* *grunt*",
+		"*grunt* *burp*",
+		"*grunt* Sure, my lawn could use a trim today.",
+		"*grunt* *drinks from soda can*"
+	],
+	"reject_dialog": [
+		"*grunt* My lawn doesn't need to be mowed today.",
+		"*grunt* What do you want? I don't need anything today.",
+		"*grunt* I'm watching the football game right now, scram."
+	],
+	"unavailable_msg": "The door is locked...\nThe weeds in the front lawn are glaring at you.",
+	"first_dialog": [
+		"*grunt* What do you want? Make it quick, I need to go back to clearing weeds in my backyard - they're so tough these days...",
+		"*grunt* Oh - well that was actually what I was working on just before you came and bothered me.",
+		"*grunt* Those weeds did a number on me, they'd probably eat you alive.",
+		"*grunt* Mr. Big Shot here, huh? Well you know what, I don't care anymore, those weeds... I think they're putting something in the water to make them so... ugh... thinking about that thing...",
+		"*grunt* Ugh, well I need a break anyway. If you can take on my lawn then you'll have my respect. Heck, you can even burn down half my lawn and I'll still pay you - anything to get rid of... that monster...",
+		"Well good luck kid. You're going to need it. I'm going to get myself another can of soda and go watch football."
+	],
+	"player_dialog": [
+		"Hi, I'm here to mow your lawn!",
+		"So... would you like some help?",
+		"I can handle it.",
+		"What?",
+		"Uhm... Okay?",
+		"Alright."
+	],
+	"first_job_offer": "*grunt*"
+}

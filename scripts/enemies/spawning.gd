@@ -393,6 +393,7 @@ static func spawn_around_point(
 	min_dist: float,
 	max_dist: float,
 	rand_offset: float = 0.0,
+	ignore_cut: bool = false,
 ) -> bool:
 	if lawn == null:
 		return false
@@ -416,6 +417,9 @@ static func spawn_around_point(
 			var tile: Vector2i = lawn.get_tile(tile_pos.x + dx, tile_pos.y + dy)
 			if !LawnGenerationUtilities.is_grass(tile) and !LawnGenerationUtilities.is_cut_grass(tile):
 				return false
+	var tile: Vector2i = lawn.get_tile(tile_pos.x, tile_pos.y)
+	if LawnGenerationUtilities.is_cut_grass(tile) and ignore_cut:
+		return false
 	# Spawn the object centered on the tile
 	node.global_position = Vector2(
 		(tile_pos.x + 0.5) * lawn.tile_size.x, 
@@ -457,10 +461,11 @@ static func try_spawning_around_point(
 	min_dist: float,
 	max_dist: float,
 	tries: int,
-	rand_offset: float = 0.0
+	rand_offset: float = 0.0,
+	ignore_cut: bool = false,
 ) -> bool:
 	for i in range(tries):
-		var res: bool = spawn_around_point(lawn, parent, position, scene, min_dist, max_dist, rand_offset)
+		var res: bool = spawn_around_point(lawn, parent, position, scene, min_dist, max_dist, rand_offset, ignore_cut)
 		if res:
 			return true
 	return false
