@@ -65,7 +65,9 @@
 [ext_resource type="Texture2D" uid="uid://dyeg7yqiqumw5" path="res://assets/textures/decorations/mcmoneypants_painting.png" id="63_2fw6o"]
 [ext_resource type="Texture2D" uid="uid://32q8xuowprgl" path="res://assets/textures/decorations/swapdeck_poster.png" id="64_fwf17"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/martin_dialog.json" id="65_2qen0"]
+[ext_resource type="JSON" path="res://assets/dialog/npcs/mr_manager_dialog.json" id="65_xio3b"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/cashier_guy_dialog.json" id="66_bg1hm"]
+[ext_resource type="JSON" path="res://assets/dialog/npcs/robot_dialog.json" id="66_qqjl7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0lcp"]
 atlas = ExtResource("21_6hoof")
@@ -1203,7 +1205,7 @@ position = Vector2(-24.118916, 755.87744)
 position = Vector2(168, 757)
 
 [node name="PottedPlant5" parent="Store/PottedPlants" unique_id=729203600 instance=ExtResource("49_6sx2y")]
-position = Vector2(161, 761)
+position = Vector2(160, 763)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Store/PottedPlants" unique_id=5331699]
 position = Vector2(159, 753)
@@ -1249,6 +1251,7 @@ position = Vector2(-33, 809.00006)
 animation = &"mr_manager"
 display_name = "Mr. Manager"
 min_level = 5
+dialog_json = ExtResource("65_xio3b")
 
 [node name="Martin" parent="Store" unique_id=1479892227 instance=ExtResource("4_dcvy4")]
 position = Vector2(153, 758)
@@ -1262,6 +1265,7 @@ animation = &"robot"
 display_name = "StoreCorp Robot"
 min_level = 5
 can_talk = false
+dialog_json = ExtResource("66_qqjl7")
 
 [node name="CashierGuy" parent="Store" unique_id=375736299 instance=ExtResource("4_dcvy4")]
 position = Vector2(-121.00001, 756)

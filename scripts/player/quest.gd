@@ -91,13 +91,31 @@ static var list: Array[Quest] = [
 		[]
 	),
 
-	# Quest 3
+	# Quest 4
 	Quest.new(
 		Reward.new(
 			"$6",
 			func(main: Main) -> void: main.money += 6
 		),
 		[]
+	),
+
+	# Quest 5
+	Quest.new(
+		Reward.new(
+			"$4",
+			func(main: Main) -> void: main.money += 6
+		),
+		[
+			Goal.new(
+				"Talk to Mr. Manager at the store.",
+				func(main: Main) -> bool: return talked_to_npc(main, "Store/MrManager")
+			),
+			Goal.new(
+				"Talk to the new robot employee at the store.", 
+				func(main: Main) -> bool: return talked_to_npc(main, "Store/Robot")
+			),
+		]
 	),
 ]
 
