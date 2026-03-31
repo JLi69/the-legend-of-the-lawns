@@ -189,5 +189,11 @@ func npc_menu_open() -> bool:
 func quest_screen_open() -> bool:
 	return $Control/QuestScreen/InfoScreen.visible
 
+func cheat_console_open() -> bool:
+	var cheat_console = get_node_or_null("Control/CheatConsole")
+	if cheat_console == null:
+		return false
+	return cheat_console.visible
+
 func reset() -> void:
 	$Control/InventoryGUI.reset()

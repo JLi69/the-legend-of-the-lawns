@@ -11,6 +11,8 @@ extends Area2D
 # Whether the bullet points in the direction it is going or if it
 # just rotates as it moves
 @export var directional: bool = false
+# Bullet ignores walls
+@export var ignore_lawn_obstacles: bool = false
 var timer: float = 0.0
 @onready var hit_sfx: AudioStreamPlayer2D = get_node_or_null("HitSfx")
 
@@ -52,7 +54,7 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("lawn_obstacle") and $Sprite2D.visible:
+	if body.is_in_group("lawn_obstacle") and $Sprite2D.visible and !ignore_lawn_obstacles:
 		explode()	
 
 func _on_area_entered(area: Area2D) -> void:

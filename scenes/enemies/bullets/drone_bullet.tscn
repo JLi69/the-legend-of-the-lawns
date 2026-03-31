@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bljuxksg17toe" path="res://assets/audio/sfx/drone_shoot.wav" id="4_v25rk"]
 
 [node name="Dronebullet" unique_id=1981990357 groups=["damage_weeds", "player_immune", "target_all_mobile"] instance=ExtResource("1_fsl5v")]
+damage_amt = 2
 
 [node name="Sprite2D" parent="." index="0"]
 modulate = Color(1, 1, 1, 0.78431374)

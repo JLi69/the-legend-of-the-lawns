@@ -1,0 +1,21 @@
+{
+	"first_dialog": [
+		"*He's pulling crab grass out of the ground.*",
+		"Yo, what's up dude? My summer has been fine - I went with my Mom on a trip to Aldoria which was really fun. The fungal rainforests there are epic. However, I'm now grounded.",
+		"I accidentally killed some of my mom's flowers with my water gun and she got really mad at me. I'm now stuck pulling crab grass out of the lawn for the rest of the summer.",
+		"Yeah, it sucks. Those flowers are really mean now for some reason though, they're always shooting thorns at you. Just a tip: you can shoot the flowers with a water gun to stun them but if you hit them too many times they die.",
+		"Anyway, I have to get back to pulling out crab grass. See ya later!"
+	],
+	"player_dialog": [
+		"Hey Carlos! How has your summer been?",
+		"What happened?",
+		"Yikes, sorry to hear that man.",
+		"Huh, interesting.",
+		"Catch you later."
+	],
+	"possible_dialog": [
+		"*He's pulling crab grass out of the ground.*",
+		"I'd love to hang out but I'm grounded right now.",
+		"I'm kind of busy removing crab grass, we can play Space Raiders together later."
+	]
+}

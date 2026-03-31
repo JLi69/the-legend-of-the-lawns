@@ -10,6 +10,8 @@ extends AnimatedSprite2D
 @export var display_name: String = "NPC"
 # Set this to false if you do not want a first time dialog
 @export var first_time: bool = true
+@export var min_level: int = -1
+@export var max_level: int = -1
 
 @export_group("Dialog")
 @export var use_female_voice: bool = false
@@ -19,6 +21,7 @@ var player_dialog: PackedStringArray = [ "Hello!" ]
 var possible_dialog: PackedStringArray = []
 @export_multiline var interact_text = ""
 @export var dialog_json: JSON
+@onready var custom_voice: AudioStreamPlayer = get_node_or_null("CustomVoice")
 
 var current_dialog: String = ""
 var player_in_area: bool = false
@@ -40,6 +43,23 @@ func generate_dialog() -> void:
 	current_dialog = possible_dialog[randi() % len(possible_dialog)]
 
 func _process(_delta: float) -> void:
+	var main: Main = $/root/Main
+	if min_level > main.current_level:
+		hide()
+		$Area2D/CollisionShape2D.disabled = true
+		return
+	elif max_level < main.current_level and max_level >= 0:
+		hide()
+		$Area2D/CollisionShape2D.disabled = true
+		return
+	elif max_level == main.current_level and max_level >= 0 and Quest.get_quest(main.current_level).completed(main):
+		hide()
+		$Area2D/CollisionShape2D.disabled = true
+		return
+	else:
+		show()
+		$Area2D/CollisionShape2D.disabled = false
+
 	var menu_visible = $/root/Main/HUD/Control/NPCMenu.visible
 	# Have the player interact with the neighbor
 	if Input.is_action_just_pressed("interact") and player_in_area and !menu_visible:

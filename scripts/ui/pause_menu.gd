@@ -13,8 +13,9 @@ func _on_yes_pressed() -> void:
 	var main: Main = $/root/Main
 	main.play_sfx("Click")
 	main.return_to_neighborhood()
-	main.advance_day()
-	main.save_progress()
+	# Reload the save
+	main.load_save()	
+	$/root/Main/HUD/Control/TransitionRect.start_animation()
 	$/root/Main/Player/Lawnmower.hide()
 
 func _on_main_menu_pressed() -> void:

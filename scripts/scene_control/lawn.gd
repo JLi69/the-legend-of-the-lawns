@@ -37,10 +37,10 @@ var astar_update_timer: float = ASTAR_UPDATE_INTERVAL
 const DIFFICULTY_SPEED: float = 0.95
 @export var max_weeds: int = 20
 @export var max_mobs: int = 20
-@onready var weed_spawn_timer: float = max(24.0 * pow(DIFFICULTY_SPEED, difficulty), 10.0)
-@onready var weed_spawn_frequency: float = max(20.0 * pow(DIFFICULTY_SPEED, difficulty), 10.0)
-@onready var mob_spawn_timer: float = max(32.0 * pow(DIFFICULTY_SPEED, difficulty), 15.0)
-@onready var mob_spawn_frequency: float = max(32.0 * pow(DIFFICULTY_SPEED, difficulty), 15.0)
+@onready var weed_spawn_timer: float = max(30.0 * pow(DIFFICULTY_SPEED, difficulty), 15.0)
+@onready var weed_spawn_frequency: float = max(25.0 * pow(DIFFICULTY_SPEED, difficulty), 15.0)
+@onready var mob_spawn_timer: float = max(40.0 * pow(DIFFICULTY_SPEED, difficulty), 20.0)
+@onready var mob_spawn_frequency: float = max(40.0 * pow(DIFFICULTY_SPEED, difficulty), 20.0)
 # Valid tiles that enemies  can spawn on
 var valid_spawn_tiles: Dictionary
 
@@ -150,6 +150,9 @@ func drop_water_gun() -> void:
 		player.disable_water_gun()
 
 func water_gun_interaction() -> void:
+	if $/root/Main/HUD.cheat_console_open():
+		return
+
 	if water_gun_item.is_inside_tree():
 		pickup_water_gun()
 	else:
@@ -180,7 +183,8 @@ func spawn_weeds(pos: Vector2) -> void:
 			3.0,
 			8.0,
 			2,
-			0.2
+			0.2,
+			true
 		)
 
 func spawn_mobs(pos: Vector2) -> void:	

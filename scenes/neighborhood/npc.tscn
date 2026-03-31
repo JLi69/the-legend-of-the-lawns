@@ -1,10 +1,32 @@
-[gd_scene load_steps=16 format=3 uid="uid://g5qtancilglp"]
+[gd_scene format=3 uid="uid://g5qtancilglp"]
 
 [ext_resource type="Texture2D" uid="uid://bq125ravxla2y" path="res://assets/textures/npcs/dad.png" id="1_abqhh"]
+[ext_resource type="Texture2D" uid="uid://xjnhr26uia08" path="res://assets/textures/npcs/cashier_guy.png" id="1_gtr5b"]
 [ext_resource type="Texture2D" uid="uid://c1mwbw0kon1tr" path="res://assets/textures/shadow.png" id="1_nh2m4"]
+[ext_resource type="Texture2D" uid="uid://hflox037e56h" path="res://assets/textures/npcs/carlos.png" id="1_p1bmu"]
+[ext_resource type="Texture2D" uid="uid://df4oiaw8vik6o" path="res://assets/textures/npcs/martin.png" id="2_6lv84"]
 [ext_resource type="Texture2D" uid="uid://bf6s87rxw88ot" path="res://assets/textures/npcs/mom.png" id="2_7n8xq"]
 [ext_resource type="Script" uid="uid://8ydcu6g7fdhb" path="res://scripts/npc/npc.gd" id="2_rv78h"]
 [ext_resource type="Texture2D" uid="uid://c51yfqi7bpdyc" path="res://assets/textures/npcs/spotty.png" id="3_4wlns"]
+[ext_resource type="Texture2D" uid="uid://c8063uw57s5x4" path="res://assets/textures/npcs/neighbors/mr_mcmoneypants.png" id="3_nosrm"]
+[ext_resource type="Texture2D" uid="uid://ddb5uy861jnlu" path="res://assets/textures/npcs/mr_gov_job_man.png" id="5_cw63i"]
+[ext_resource type="Texture2D" uid="uid://b235qhfs52p4u" path="res://assets/textures/npcs/robot.png" id="5_w4eg2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmd0u"]
+atlas = ExtResource("1_p1bmu")
+region = Rect2(0, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hp88"]
+atlas = ExtResource("1_p1bmu")
+region = Rect2(18, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcc3h"]
+atlas = ExtResource("1_gtr5b")
+region = Rect2(0, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4vms"]
+atlas = ExtResource("1_gtr5b")
+region = Rect2(18, 0, 18, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rv78h"]
 atlas = ExtResource("1_abqhh")
@@ -14,12 +36,44 @@ region = Rect2(0, 0, 18, 40)
 atlas = ExtResource("1_abqhh")
 region = Rect2(18, 0, 18, 40)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtr5b"]
+atlas = ExtResource("2_6lv84")
+region = Rect2(0, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw63i"]
+atlas = ExtResource("2_6lv84")
+region = Rect2(18, 0, 18, 40)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wlns"]
 atlas = ExtResource("2_7n8xq")
 region = Rect2(0, 0, 18, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tl2vt"]
 atlas = ExtResource("2_7n8xq")
+region = Rect2(18, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ff7o"]
+atlas = ExtResource("5_cw63i")
+region = Rect2(0, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix8r2"]
+atlas = ExtResource("5_cw63i")
+region = Rect2(18, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lv84"]
+atlas = ExtResource("3_nosrm")
+region = Rect2(0, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4eg2"]
+atlas = ExtResource("3_nosrm")
+region = Rect2(18, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1bmu"]
+atlas = ExtResource("5_w4eg2")
+region = Rect2(0, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_360nv"]
+atlas = ExtResource("5_w4eg2")
 region = Rect2(18, 0, 18, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwkja"]
@@ -42,6 +96,28 @@ region = Rect2(51, 0, 17, 40)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_dmd0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hp88")
+}],
+"loop": true,
+"name": &"carlos",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcc3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4vms")
+}],
+"loop": true,
+"name": &"cashier_guy",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rv78h")
 }, {
 "duration": 1.0,
@@ -53,6 +129,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gtr5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw63i")
+}],
+"loop": true,
+"name": &"martin",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4wlns")
 }, {
 "duration": 1.0,
@@ -60,6 +147,39 @@ animations = [{
 }],
 "loop": true,
 "name": &"mom",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ff7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix8r2")
+}],
+"loop": true,
+"name": &"mr_gov_job_man",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lv84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4eg2")
+}],
+"loop": true,
+"name": &"mr_manager",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1bmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_360nv")
+}],
+"loop": true,
+"name": &"robot",
 "speed": 2.0
 }, {
 "frames": [{
@@ -83,7 +203,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcuxl"]
 size = Vector2(18.6667, 20)
 
-[node name="Npc" type="AnimatedSprite2D"]
+[node name="Npc" type="AnimatedSprite2D" unique_id=170870513]
 y_sort_enabled = true
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_tcuxl")
@@ -91,15 +211,15 @@ animation = &"dad"
 offset = Vector2(0, -20)
 script = ExtResource("2_rv78h")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=215819710]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=519362274]
 position = Vector2(0, -8.66666)
 shape = SubResource("RectangleShape2D_tcuxl")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1289390537]
 z_index = -1
-position = Vector2(0, -1)
+position = Vector2(0, -0.5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_nh2m4")
 

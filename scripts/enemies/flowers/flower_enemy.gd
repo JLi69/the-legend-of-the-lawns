@@ -21,6 +21,12 @@ const LAWNMOWER_DAMAGE_COOLDOWN: float = 1.0
 var lawnmower_damage_timer: float = 0.0
 var stun_timer: float = 0.0
 
+func _ready() -> void:
+	# Set random frame for animation
+	var sprite_frames: SpriteFrames = $AnimatedSprite2D.sprite_frames
+	var frame: int = randi_range(0, sprite_frames.get_frame_count($AnimatedSprite2D.animation))
+	$AnimatedSprite2D.set_frame(frame)
+
 # Stuns the flower, this is triggered whenever the flower is hit by a bullet
 # When the flower is stunned it can not attack
 func stun() -> void:

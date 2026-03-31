@@ -1,0 +1,24 @@
+{
+	"first_dialog": [
+		"...",
+		"Oh no, I am not Mr. McMoneyPants, I just happen to look a lot like him, a lot of people confuse me for him. I'm just the local manager. By the cash register you can see a portrait of McMoneyPants. How may I help you?",
+		"Unfortunately no, we likely won't get a shipment for another year at least, the war in Siliconia really messed up the supply chains.",
+		"I'm sorry for the disappointment, I know a lot of people were excited about the new Swapdeck. How about this, we can compensate you with a small gift card, valid for all StoreCorp purchases!",
+		"You can save it up and also get some extra money on the side doing odd jobs - for instance: mowing lawns. You can claim your gift card outside by the job board.",
+		"Now, run along, I need to figure out why our new robot employee is malfunctioning."
+	],
+	"player_dialog": [
+		"Uhm, hi, are you Mr. McMoneyPants?",
+		"Are there any Swapdecks available to buy?",
+		"Oh...",
+		"...",
+		"Sure, thanks I guess..."
+	],
+	"possible_dialog": [
+		"*He's reading the manual for the Robot Employee*",
+		"Sorry, I can't help right now, I need to fix the robot.",
+		"Hmph, what could possibly be going wrong with this robot?",
+		"*He's on the phone calling technical support.*",
+		"Ah ha! I think I got it - never mind it's still busted."
+	]
+}

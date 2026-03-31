@@ -25,12 +25,12 @@ var cooldown: int = 0
 @export_group("Wage Info")
 @export var wage: int = 10
 @export var max_wage: int = 20
-@export var bonus_base: int = 2
+@export var bonus_base: int = 1
 @export var max_bonus: int = 5
 ## How much they remove from the player's wage when they destroy each flower
-@export var flower_penalty: int = 0
+@export var flower_penalty: int = 1
 ## How much they remove from the player's wage when they destroy each hedge
-@export var hedge_penalty: int = 0
+@export var hedge_penalty: int = 1
 
 @export_group("Dialog")
 @export var use_female_voice: bool = false
@@ -55,7 +55,7 @@ func _ready() -> void:
 		knock_sound = get_node_or_null("/root/Main/Sfx/DoorKnock")
 
 func unavailable() -> bool:
-	return $/root/Main.current_level < level 
+	return $/root/Main.current_level < level or (level < 0 and !is_test)
 
 func reject() -> bool:
 	var main: Main = $/root/Main
@@ -123,3 +123,7 @@ func load_from(data: Dictionary) -> void:
 	times_mowed = Save.get_val(data, "times_mowed", 0)
 	first_time = Save.get_val(data, "first_time", true)
 	cooldown = Save.get_val(data, "cooldown", 0)
+
+func enable() -> void:
+	disabled = false
+	$Area2D/CollisionShape2D.disabled = disabled

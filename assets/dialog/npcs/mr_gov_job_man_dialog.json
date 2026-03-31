@@ -1,0 +1,21 @@
+{
+	"first_dialog": [
+		"Hello! I am your friendly local Government Job Man! How may I help you?",
+		"With AI and Robots replacing a lot of people's jobs, Congress created the Job Creation Agency to address the rising unemployment and help folks get jobs and make money!",
+		"Behind me is the local job board, people post work and jobs they need help with there. It usually gets updated each day and once you complete a job you usually get paid by the person hiring you and also get a reward from the job board!",
+		"You should check the job board daily for new job postings, though some days there might not be any work available. If so, you can just go back home and skip to the next day and check again!",
+		"Make sure to keep a journal to track the jobs you have going on.",
+		"Now that you have completed the basic job training course, you are entitled to a $1 check from the federal government! Go to the job board to claim it and also check for any available jobs. Good luck!"
+	],
+	"player_dialog": [
+		"So what is this?",
+		"Hmm, that's cool.",
+		"Okay",
+		"Okay",
+		"Okay",
+		"Gee, thanks."
+	],
+	"possible_dialog": [
+		"Time to get to work! Good luck!"
+	]
+}

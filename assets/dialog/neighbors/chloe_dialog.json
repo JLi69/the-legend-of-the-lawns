@@ -1,0 +1,20 @@
+{
+	"unavailable_msg": "The door is locked...\nYou feel like something is watching you from the hedges though...",
+	"first_dialog": [
+		"Willow is that yo- oh, uhm, hello?",
+		"Oh, okay... it has been a while since my grass has been cut but there's one small problem...",
+		"Well, the thing is, uhm, how do I put it? Whenever I go into my backyard, I feel like something is watching me, and I don't think it's friendly...",
+		"Never mind, I might just be kind of paranoid, my friend Willow should be back from university by now but I haven't heard or seen her yet, I'm worried about her.",
+		"Yeah, thanks. I did swear I saw some red eyes hiding inside a bush though...",
+		"..."
+	],
+	"player_dialog": [
+		"Hi, I'm here to mow your lawn!",
+		"I'm pretty sure whatever it is I can handle it.",
+		"Uhm... what?",
+		"Oh, well, I hope your friend is okay.",
+		"...",
+		"Alright, so would you like your lawn mowed?"
+	],
+	"first_job_offer": "Oh, of course, I nearly forgot about that! Just be careful, okay?"
+}

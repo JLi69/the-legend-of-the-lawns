@@ -1,0 +1,31 @@
+{
+	"first_dialog": [
+		"Achoo! Achoo! Achoo!",
+		"*Sniff* Sorry, my allergies were acting up, for some reason upper management wants potted plants inside the store, I guess they think it will improve productivity if we feel like we're in nature? How may I help you?",
+		"Sorry, it seems that we're out of stock right now, I can tell you about - wait did you hear that?",
+		"Sorry, I swear I've been hearing some banging and growling sounds in the vents, I think the sound is coming from below the store which is really weird. Maybe the pollen is making me delirious...",
+		"Apologies for that, anyway, you can buy other things here at StoreCorp, whether it is high powered weedkiller or the best apple juice this side of the Kolorian Mountains.",
+		"You can buy upgrades to improve your stats, such as buying apple juice to increase your max health or a backpack to increase your inventory size.",
+		"Sorry, I sometimes make nerdy metaphors. You can also buy items that can be used while you're say, mowing the lawn, to help you out. We restock items at the beginning of each day.",
+		"So yeah, that's *Achoo!* it, do you have any other questions? *ACHOO!!!*"
+	],
+	"player_dialog": [
+		"Bless you!",
+		"Where can I get a Swapdeck?",
+		"What?",
+		"...",
+		"Okay...",
+		"What? This isn't a video game.",
+		"Alright.",
+		"No, I should go now..."
+	],
+	"possible_dialog": [
+		"Achoo! Achoo! Achoo!",
+		"This is the worst summer job ever...",
+		"*sniff*",
+		"Sorry, I'm *ACHOO!* busy right now..",
+		"I have to water these plants right now and then restock, can you talk to one of my coworkers instead?",
+		"Stupid plants, always making me *ACHOO!* sneeze...",
+		"*He's watering the potted plants.*"
+	]
+}

@@ -4,6 +4,7 @@ extends FlowerEnemy
 @export var spore_bullet: PackedScene
 
 func _ready() -> void:
+	super._ready()
 	# Set bullet_scene to be spore_bullet so that when the enemy dies they
 	# explode into a collection of spore bullets
 	bullet_scene = spore_bullet

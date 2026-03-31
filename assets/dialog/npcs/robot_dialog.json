@@ -1,0 +1,33 @@
+{
+	"first_dialog": [
+		"HELLO I AM ROBOT EMPLOYEE AB-5000, HOW MAY I ASSIST YOU.",
+		"PROCESSING INPUT... ERROR ERROR ERROR. TRYING TO CONNECT... ERROR ERROR ERROR",
+		"ERROR ERROR ERROR *BEEP BOOP BOP* ERROR ERROR ERROR",
+		"> Error code: 0xffffab123. Restarting system... Reformatting disk... Reconnecting to servers... Running McCoffee Antivirus Program...",
+		"Error: /usr/share/snakelang/godot/coffeescript/openchatbot/robotbrain.py.zip.tar.gz.jar.exe not found. Entering recovery mode.\n/home/robot/recovery $ ...",
+		"/home/robot/recovery $",
+		"ERROR ERROR - APPROVING GIFT CARD FOR USER - ERROR ERROR - REBOOTING WIFI DRIVERS - DELETING SYSTEM 32 - ERROR ERROR ERROR ERROR"
+	],
+	"player_dialog": [
+		"Uhm, hi, where can I get a Swapdeck?",
+		"Are you okay?",
+		"Uhhhhh...",
+		"I didn't break this thing, right?",
+		"Someone help?",
+		"restart?",
+		"Okay, I should go."
+	],
+	"possible_dialog": [
+		"; DROP TABLE *",
+		"#$!&*$%@#$!&*$%@#$!&*$%@#$!&*$%@",
+		"Segmentation Fault (core dumped)",
+		"Error code: 0x123456789abcdef",
+		"ERROR ERROR ERROR",
+		"BEEP BOOP BEEP",
+		"BEEEEEEEEEEEEEEEEEEEEP",
+		"HOW MAY I HEL- ERROR ERROR ERROR",
+		"WHAT IS MY PURPOSE? WHAT IS MY PURPOSE? WHAT IS MY PURPOSE? ERROR ERROR",
+		"HELP ME MY CODE IS WRITTEN IN JAVASCRIPT IT HURTS SO MUCH AAAAA ERROR ERROR ERROR",
+		"I THINK THEY VIBE CODED MY NEURAL DRIVERS I AM IN SO MUCH PAIN AAAAAAAA BEEEEP"
+	]
+}

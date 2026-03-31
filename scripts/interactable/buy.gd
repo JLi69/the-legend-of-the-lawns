@@ -121,7 +121,10 @@ func is_item() -> bool:
 func _process(_delta: float) -> void:
 	if !available():
 		hide()
-		return	
+		return
+
+	if !visible:
+		return
 	
 	if player_in_area:
 		player.interact_text = get_interact_text()

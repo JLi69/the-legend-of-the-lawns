@@ -1,0 +1,23 @@
+{
+	"first_dialog": [
+		"Hey, you shouldn't be back her- actually who am I kidding, I don't get paid enough to care about this. What do you want kid? Make it quick, I'm on my break right now.",
+		"The heck if I know, we're out of stock and I don't know when we're going to get another shipment. You're out of luck kid.",
+		"Yeah, I know it sucks, I can't even get the parts to upgrade my PC. Maybe when the manager comes by you can talk to him and he might give you a gift card as compensation.",
+		"Kid, I am not paid enough to care so go away, I need to doomscroll on my phone and grind points in Space Raiders Online."
+	],
+	"player_dialog": [
+		"Where can I find a Swapdeck console?",
+		"Aw man...",
+		"I don't want a gift card though.",
+		"Rude."
+	],
+	"possible_dialog": [
+		"*He's scrolling TickTack on his phone.*",
+		"Kid, whatever you want help with, it's above my pay grade.",
+		"I don't get paid enough for this stupid job...",
+		"*He's on the phone calling someone.*",
+		"I need to ask for a raise...",
+		"*He gives you the stink eye, you should probably go.*",
+		"Ugh, why do you keep bothering me after I said I couldn't help you?"
+	]
+}

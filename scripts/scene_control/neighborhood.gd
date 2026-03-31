@@ -8,6 +8,10 @@ func update_neighbors() -> void:
 		neighbor.cooldown = max(neighbor.cooldown, 0)
 		neighbor.player_in_area = false
 
+# Returns null if no neighbor is found
+func get_neighbor(id: String) -> NeighborNPC:
+	return $Neighbors.get_node_or_null(id)
+
 func save() -> Array:
 	var data = []
 

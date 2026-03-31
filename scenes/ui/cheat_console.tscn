@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://fx5q8awvi6n8"]
+
+[ext_resource type="Script" uid="uid://chvtvfwgcjy2j" path="res://scripts/ui/cheat_console.gd" id="1_c8g2t"]
+
+[node name="CheatConsole" type="HBoxContainer" unique_id=71937657]
+offset_right = 1129.0
+offset_bottom = 40.0
+script = ExtResource("1_c8g2t")
+
+[node name="Input" type="LineEdit" parent="." unique_id=1334484908]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+
+[node name="Run" type="Button" parent="." unique_id=229658616]
+layout_mode = 2
+text = ">>>"
+
+[node name="Panel" type="Panel" parent="." unique_id=1903270189]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+
+[node name="ErrMessage" type="Label" parent="." unique_id=195053679]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.043137256, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "< Error Goes Here >"
+
+[connection signal="pressed" from="Run" to="." method="_on_run_pressed"]

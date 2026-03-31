@@ -52,7 +52,10 @@ static func format_wage(wage: int) -> String:
 func set_menu_unavailable(neighbor: NeighborNPC) -> void:
 	set_menu_name("???")
 	set_wage_text("")
-	set_description_text(neighbor.current_dialog)
+	if neighbor.level > 0:
+		set_description_text(neighbor.current_dialog)
+	else:
+		set_description_text(neighbor.current_dialog + "\nThis neighbor is not available in this version.")
 	buttons[0].show()
 	buttons[0].text = "Leave"
 	buttons[0].connect("pressed", on_leave_pressed)
@@ -87,10 +90,11 @@ func advance_first_dialog(neighbor: NeighborNPC, index: int) -> void:
 # This displays the conversation that the player has with the neighbor npc
 # when they first meet them.
 func set_menu_first(neighbor: NeighborNPC, index: int) -> void:
-	if neighbor.use_female_voice:
-		$/root/Main.play_sfx("FemaleTalk")
-	else:
-		$/root/Main.play_sfx("MaleTalk")
+	if neighbor.first_dialog[index] != "...":
+		if neighbor.use_female_voice:
+			$/root/Main.play_sfx("FemaleTalk")
+		else:
+			$/root/Main.play_sfx("MaleTalk")
 
 	set_menu_name(neighbor.display_name)
 	set_wage_text("")
@@ -149,8 +153,10 @@ func set_menu(neighbor: NeighborNPC) -> void:
 	set_mowing_menu(neighbor)
 
 func set_menu_first_npc(npc: NPC, index: int) -> void:
-	if npc.can_talk:
-		if npc.use_female_voice:
+	if npc.can_talk and npc.first_dialog[index] != "...":
+		if npc.custom_voice:
+			npc.custom_voice.play()
+		elif npc.use_female_voice:
 			$/root/Main.play_sfx("FemaleTalk")
 		else:
 			$/root/Main.play_sfx("MaleTalk")
@@ -187,8 +193,10 @@ func set_npc_menu(npc: NPC) -> void:
 	if npc.first_time and !npc.first_dialog.is_empty():
 		set_menu_first_npc(npc, 0)
 	else:
-		if npc.can_talk:
-			if npc.use_female_voice:
+		if npc.can_talk and npc.current_dialog != "...":
+			if npc.custom_voice:
+				npc.custom_voice.play()
+			elif npc.use_female_voice:
 				$/root/Main.play_sfx("FemaleTalk")
 			else:
 				$/root/Main.play_sfx("MaleTalk")

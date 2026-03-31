@@ -1,0 +1,24 @@
+{
+	"unavailable_msg": "Nobody answers the door. However, you can hear someone working in the garage...",
+	"first_dialog": [
+		"Hello?",
+		"Oh hey, you're one of my students from last year right? How's summer going for ya?",
+		"Anyway, what brings you to my humble home this fine day?",
+		"Ah! How convenient, I was just about to do that after I finished fixing my car! Just one thing before you start - ",
+		"The weeds in my yard have been really aggressive recently, so I tried buying some ultra high powered weedkiller - I bought several barrels.",
+		"The only issue is that it turns out that the weedkiller is super reactive - in short, it explodes easily and sets everything on fire.",
+		"I can't get a refund on my order so I'm just storing them in my backyard.",
+		"I've rigged up a basic sprinkler system to put out any accidental fires but I won't gaurantee it will work.",
+	],
+	"player_dialog": [
+		"Oh, hey there Mr. George...",
+		"Fine.",
+		"I'm looking for work mowing lawns.",
+		"...",
+		"...",
+		"Oh, yikes.",
+		"...",
+		"Uhm... okay?"
+	],
+	"first_job_offer": "To trigger a sprinkler, just hit it with any projectile. Now, don't go about burning down my hedges, okay?"
+}

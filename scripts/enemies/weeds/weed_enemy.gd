@@ -39,6 +39,11 @@ var engaged: bool = false
 func _ready() -> void:
 	$Healthbar.hide()
 
+	# Set random frame for animation
+	var sprite_frames: SpriteFrames = $AnimatedSprite2D.sprite_frames
+	var frame: int = randi_range(0, sprite_frames.get_frame_count($AnimatedSprite2D.animation))
+	$AnimatedSprite2D.set_frame(frame)
+
 	if !$/root/Main.lawn_loaded:
 		return
 

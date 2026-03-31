@@ -55,6 +55,9 @@ func update_selected_slot_with_keys() -> void:
 	if !can_use_inventory():
 		return
 
+	if $/root/Main/HUD.cheat_console_open():
+		return
+
 	# Use keys to select the slot
 	var prev_selected: int = selected
 	for i in range(KEYS.size()):
@@ -67,7 +70,7 @@ func update_selected_slot_with_keys() -> void:
 func _input(event: InputEvent) -> void:
 	# Do not process input if hidden
 	if !can_use_inventory():
-		return
+		return	
 
 	if event is InputEventMouseButton:
 		if !event.is_pressed():
