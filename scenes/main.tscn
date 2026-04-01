@@ -50,15 +50,15 @@ script = ExtResource("3_tefeu")
 [node name="AudioListener2D" type="AudioListener2D" parent="Player" unique_id=1128162155]
 current = true
 
+[node name="PenaltyParticle" parent="Player" unique_id=480127416 instance=ExtResource("5_tbgi4")]
+position = Vector2(0, 6)
+texture = SubResource("ViewportTexture_fv21b")
+first_instance = true
+
 [node name="Neighborhood" parent="." unique_id=1501943024 instance=ExtResource("3_sugp2")]
 metadata/_edit_lock_ = true
 
 [node name="HUD" parent="." unique_id=2047694319 instance=ExtResource("4_jyhfs")]
-
-[node name="PenaltyParticle" parent="." unique_id=480127416 instance=ExtResource("5_tbgi4")]
-position = Vector2(8, -120)
-texture = SubResource("ViewportTexture_fv21b")
-first_instance = true
 
 [node name="Sfx" type="Node" parent="." unique_id=1253209665]
 
