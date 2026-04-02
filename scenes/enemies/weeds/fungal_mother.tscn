@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b60yupijenmi2"]
+[gd_scene format=3 uid="uid://b60yupijenmi2"]
 
 [ext_resource type="Texture2D" uid="uid://c1mwbw0kon1tr" path="res://assets/textures/shadow.png" id="1_1vqx6"]
 [ext_resource type="Script" uid="uid://b5yev4utgyplb" path="res://scripts/enemies/weeds/fungal_mother.gd" id="1_qusam"]
@@ -118,8 +118,8 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="FungalMother" type="Area2D"]
-scale = Vector2(0.75, 0.75)
+[node name="FungalMother" type="Area2D" unique_id=1660629858]
+scale = Vector2(0.85, 0.85)
 script = ExtResource("1_qusam")
 fungal_baby_scene = ExtResource("2_1qnks")
 bullet_scene = ExtResource("2_jdys8")
@@ -128,30 +128,30 @@ max_shoot_distance = 180.0
 explosion_bullet_count = 8
 max_health = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=459850734]
 position = Vector2(0, -11.5)
 shape = SubResource("RectangleShape2D_pt0u8")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=211112237]
 scale = Vector2(0.4375, 0.30769232)
 texture = ExtResource("1_1vqx6")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1500850463]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_pt0u8")
 animation = &"down"
 autoplay = "down"
 
-[node name="ContactDamageZone" parent="." instance=ExtResource("3_3606t")]
+[node name="ContactDamageZone" parent="." unique_id=1462027802 instance=ExtResource("3_3606t")]
 position = Vector2(0, -4.75)
 scale = Vector2(1.25, 1.25)
 damage_amt = 2
 attack_cooldown = 1.25
 
-[node name="BulletSpawnPoint" type="Node2D" parent="."]
+[node name="BulletSpawnPoint" type="Node2D" parent="." unique_id=969190504]
 position = Vector2(0, -14)
 
-[node name="Healthbar" parent="." instance=ExtResource("4_i36cd")]
+[node name="Healthbar" parent="." unique_id=943111568 instance=ExtResource("4_i36cd")]
 offset_top = -27.0
 offset_bottom = -25.0
 
