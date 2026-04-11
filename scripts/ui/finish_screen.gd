@@ -24,6 +24,8 @@ func add_labels(labels: Array, sfx_id: String) -> void:
 func activate() -> void:
 	if $/root/Main/Player.health <= 0:
 		return
+	if !$/root/Main.lawn_loaded:
+		return
 	timer = DELAY
 	show()
 	$TileMapLayer.hide()
@@ -136,9 +138,13 @@ func _process(delta: float) -> void:
 				label_display_timer *= 1.5
 
 func _on_return_pressed() -> void:
+	if !visible:
+		return
 	get_tree().paused = false
 	hide()
 	var main: Main = $/root/Main
+	if !main.lawn_loaded:
+		return
 	main.play_sfx("Click")
 	var prev_money: int = main.money
 	main.lawns_mowed += 1

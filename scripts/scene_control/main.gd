@@ -233,19 +233,24 @@ func save_progress() -> void:
 		printerr("Error: could not save, can not open: ", save_path)
 		return
 
+	var file_contents: String = ""
 	# Store the main data
 	var main_json = JSON.stringify(save())
-	save_file.store_line(main_json)
+	# save_file.store_line(main_json)
+	file_contents += main_json + "\n"
 
 	# Store the player data
 	var player_json = JSON.stringify(player.save())
-	save_file.store_line(player_json)
+	# save_file.store_line(player_json)
+	file_contents += player_json + "\n"
 
 	# Store the neighborhood data
 	var neighborhood_data = neighborhood.save()
 	for data in neighborhood_data:
 		var json = JSON.stringify(data)
-		save_file.store_line(json)
+		# save_file.store_line(json)
+		file_contents += json + "\n"
+	save_file.store_string(file_contents)
 
 func get_job_list_str() -> String:
 	var job_list_str: String = ""
