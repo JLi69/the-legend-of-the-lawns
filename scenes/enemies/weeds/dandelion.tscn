@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dldjh58bcnk0l"]
+
+[ext_resource type="Script" uid="uid://cgkwbmgvx7x4v" path="res://scripts/enemies/weeds/dandelion.gd" id="1_qe2pe"]
+[ext_resource type="Texture2D" uid="uid://c1mwbw0kon1tr" path="res://assets/textures/shadow.png" id="1_vyctv"]
+[ext_resource type="PackedScene" uid="uid://7u1in8lvdbqm" path="res://scenes/enemies/bullets/seed_bullet.tscn" id="2_4fdbq"]
+[ext_resource type="Texture2D" uid="uid://cw2yf18j7kmqq" path="res://assets/textures/enemies/weeds/dandelion.png" id="2_hfoe0"]
+[ext_resource type="PackedScene" uid="uid://b0wa7n410abxn" path="res://scenes/enemies/contact_damage_zone.tscn" id="3_px7vq"]
+[ext_resource type="PackedScene" uid="uid://dv3lwtiudcy5r" path="res://scenes/enemies/healthbar.tscn" id="4_tiiso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ovr2"]
+size = Vector2(16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fdbq"]
+atlas = ExtResource("2_hfoe0")
+region = Rect2(0, 0, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kutc"]
+atlas = ExtResource("2_hfoe0")
+region = Rect2(17, 0, 17, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6anhc"]
+atlas = ExtResource("2_hfoe0")
+region = Rect2(34, 0, 17, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyctv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fdbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kutc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6anhc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Dandelion" type="Area2D" unique_id=1324024653]
+scale = Vector2(0.65, 0.65)
+script = ExtResource("1_qe2pe")
+bullet_scene = ExtResource("2_4fdbq")
+bullet_cooldown = 3.0
+max_shoot_distance = 160.0
+max_health = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223216757]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_1ovr2")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=853061264]
+scale = Vector2(0.385, 0.3)
+texture = ExtResource("1_vyctv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=801026812]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_vyctv")
+
+[node name="ContactDamageZone" parent="." unique_id=1035391756 instance=ExtResource("3_px7vq")]
+position = Vector2(0, -8)
+scale = Vector2(1.3, 1.3)
+damage_amt = 2
+
+[node name="BulletSpawnPoint" type="Node2D" parent="." unique_id=1275919032]
+position = Vector2(0, -10.769232)
+
+[node name="Healthbar" parent="." unique_id=1647789540 instance=ExtResource("4_tiiso")]
+offset_top = -22.0
+offset_bottom = -20.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="hit" from="." to="." method="_on_hit"]
