@@ -6,18 +6,22 @@ const SETTINGS_PATH: String = "user://settings.json"
 static var master_volume: float = 1.0
 static var lawn_mower_volume: float = 1.0
 static var ui_volume: float = 1.0
+# fullscreen mode
+static var fullscreen: bool = false
 
 # Reset settings values to their default
 static func reset() -> void:
 	master_volume = 1.0
 	lawn_mower_volume = 1.0
 	ui_volume = 1.0
+	fullscreen = false
 
 static func save() -> void:
 	var data = {
 		"master_volume" : master_volume,
 		"lawn_mower_volume" : lawn_mower_volume,
 		"ui_volume" : ui_volume,
+		"fullscreen" : fullscreen 
 	}
 	var json_str = JSON.stringify(data)
 	var file = FileAccess.open(SETTINGS_PATH, FileAccess.WRITE)
@@ -40,6 +44,7 @@ static func load() -> void:
 	master_volume = clamp(Save.get_val(json.data, "master_volume", 1.0), 0.0, 1.0)
 	lawn_mower_volume = clamp(Save.get_val(json.data, "lawn_mower_volume", 1.0), 0.0, 1.0)
 	ui_volume = clamp(Save.get_val(json.data, "ui_volume", 1.0), 0.0, 1.0)
+	fullscreen = bool(Save.get_val(json.data, "fullscreen", false))
 
 static func apply_settings() -> void:
 	# Apply master volume
@@ -51,3 +56,8 @@ static func apply_settings() -> void:
 	# Apply UI volume
 	var ui = AudioServer.get_bus_index("UI")
 	AudioServer.set_bus_volume_db(ui, linear_to_db(ui_volume))
+	# Apply fullscreen
+	if fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)

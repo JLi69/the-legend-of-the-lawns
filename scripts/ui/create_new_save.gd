@@ -5,7 +5,7 @@ extends Control
 func activate() -> void:
 	show()
 	$Name/Error.text = ""
-	$Name/TextEdit.text = ""
+	$Name/LineEdit.text = ""
 
 func _on_back_pressed() -> void:
 	var main: Main = $/root/Main	
@@ -15,9 +15,9 @@ func _on_back_pressed() -> void:
 func _on_start_pressed() -> void:	
 	$/root/Main/HUD.reset()
 	# Make sure we have a valid name
-	var player_name: String = $Name/TextEdit.text
+	var player_name: String = $Name/LineEdit.text
 	if player_name.is_empty():
-		player_name = $Name/TextEdit.placeholder_text
+		player_name = $Name/LineEdit.placeholder_text
 
 	# Make sure the string isn't only whitespace
 	if player_name.strip_edges().is_empty():
