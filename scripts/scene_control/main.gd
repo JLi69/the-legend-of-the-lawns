@@ -141,7 +141,7 @@ func update_hud_lawn(delta: float) -> void:
 
 	# Display the lawn progress bar
 	if $Player.health > 0:
-		$HUD.update_progress_bar($Lawn.get_perc_cut(), $Lawn.weeds_killed, $Lawn.total_weeds)
+		$HUD.update_progress_bar($Lawn)
 	else:
 		$HUD/Control/ProgressBar.hide()
 	# Update health bar
@@ -160,7 +160,7 @@ func update_hud_neighborhood() -> void:
 	# hide info text if talking to a neighbor
 	$HUD/Control/InfoText.visible = !$HUD.npc_menu_open() and !$HUD.quest_screen_open()
 	
-	$HUD.update_progress_bar(-1.0, 0, 0) # -1.0 hides the progress bar
+	$HUD.update_progress_bar(null) # A null lawn hides the progress bar
 	$HUD.update_health_bar(0, 0)
 	$HUD.hide_timer()
 	# Update stamina bar

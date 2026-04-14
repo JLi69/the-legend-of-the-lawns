@@ -27,12 +27,18 @@ class_name Nest
 
 func _ready() -> void:
 	$Healthbar.hide()
+	
+	var lawn: Lawn = get_node_or_null("/root/Main/Lawn")
+	if lawn:
+		lawn.nest_count += 1
+		lawn.nests[get_path()] = true
 
 func player_in_range() -> bool:
 	return (player.global_position - global_position).length() < max_player_dist
 
 func explode() -> void:
 	var lawn: Lawn = get_node_or_null("/root/Main/Lawn")
+	lawn.nests_destroyed += 1
 	var explosion: GPUParticles2D = explosion_scene.instantiate()
 	explosion.global_position = $Sprite2D.global_position
 	explosion.scale *= 0.5

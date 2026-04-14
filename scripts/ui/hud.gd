@@ -72,19 +72,26 @@ func toggle_pause_menu() -> void:
 	get_tree().paused = $Control/PauseMenu.visible
 
 # updates progress bar based on the given percent (0.0 to 1.0)
-func update_progress_bar(percent: float, weeds_killed: int, total_weeds: int) -> void:
+func update_progress_bar(lawn: Lawn) -> void:
 	# used for the neighborhood
-	if percent < 0.0:
+	if lawn == null:
 		$Control/ProgressBar.hide()
 		return
 
+	var percent: float = lawn.get_perc_cut()
 	$Control/ProgressBar.show()
 	$Control/ProgressBar.size.x = percent * $Control/ProgressBar/ProgressBackground.size.x
 	$Control/ProgressBar.color = progress_bar_gradient.sample(percent)
-	if percent < 1.0 or weeds_killed >= total_weeds:
+	if percent < 1.0:
 		$Control/ProgressBar/ProgressBarPercent.text = "Lawn Mowed: %d%%" % int(percent * 100)
+	elif lawn.weeds_killed < lawn.total_weeds:
+		$Control/ProgressBar/ProgressBarPercent.text = "Kill Weeds: %d/%d" % [ lawn.weeds_killed, lawn.total_weeds ]
+	elif lawn.nests_destroyed < lawn.nest_count:
+		$Control/ProgressBar/ProgressBarPercent.text = "Destroy Nests: %d/%d" % [ lawn.nests_destroyed, lawn.nest_count ]
+	elif lawn.bosses_killed < lawn.boss_count:
+		$Control/ProgressBar/ProgressBarPercent.text = "Kill Bosses: %d/%d" % [ lawn.bosses_killed, lawn.boss_count ]
 	else:
-		$Control/ProgressBar/ProgressBarPercent.text = "Kill Weeds: %d/%d" % [ weeds_killed, total_weeds ]
+		$Control/ProgressBar/ProgressBarPercent.text = "Lawn Mowed: 100%"
 
 # Similar as update_progress_bar but with the health bar
 func update_health_bar(health: int, max_health: int) -> void:

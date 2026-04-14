@@ -24,6 +24,11 @@ func _ready() -> void:
 	scale = Vector2(0.0, 0.0)
 	grow = true
 
+	var lawn: Lawn = get_node_or_null("/root/Main/Lawn")
+	if lawn:
+		lawn.boss_count += 1
+		lawn.bosses[get_path()] = true
+
 func shoot_bullet(angle: float) -> void:
 	var bullet: EnemyBullet = bullet_scene.instantiate()
 	bullet.global_position = $BulletSpawnPoint.global_position
@@ -77,6 +82,8 @@ func _process(delta: float) -> void:
 			hide()
 			shrink = false
 			if health <= 0 and !$RoarSfx.playing:
+				var lawn: Lawn = get_node_or_null("/root/Main/Lawn")
+				lawn.bosses_killed += 1
 				queue_free()
 	if grow:
 		scale.x += delta * 3.0

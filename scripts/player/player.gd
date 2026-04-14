@@ -674,6 +674,21 @@ func load(data: Dictionary) -> void:
 	time_bonus_level = max(Save.get_val(data, "time_bonus_level", 0), 0)
 	armor_level = max(Save.get_val(data, "armor_level", 0), 0)
 
+func get_closest(node_paths: Dictionary) -> NodePath:
+	var min_dist: float = -1.0
+	var point_to: NodePath = ""
+	for path: NodePath in node_paths:
+		var node: Node2D = get_node_or_null(path)
+		if node == null:
+			continue
+		if !node.visible:
+			continue
+		var dist: float = (node.global_position - global_position).length()
+		if dist < min_dist or min_dist < 0.0:
+			point_to = path
+			min_dist = dist
+	return point_to
+
 func update_enemy_arrow() -> void:
 	var lawn: Lawn = get_node_or_null("/root/Main/Lawn")
 	if lawn == null:
@@ -684,16 +699,15 @@ func update_enemy_arrow() -> void:
 		$EnemyArrow.point_to = ""
 		return
 
-	$EnemyArrow.point_to = ""
-	var min_dist: float = -1.0
-	for path: NodePath in lawn.weeds:
-		var weed: WeedEnemy = get_node_or_null(path)
-		if weed == null:
-			continue
-		var dist: float = (weed.global_position - global_position).length()
-		if dist < min_dist or min_dist < 0.0:
-			$EnemyArrow.point_to = path
-			min_dist = dist
+	$EnemyArrow.point_to = get_closest(lawn.weeds)	
+	if str($EnemyArrow.point_to) != "":
+		return
+
+	$EnemyArrow.point_to = get_closest(lawn.nests)	
+	if str($EnemyArrow.point_to) != "":
+		return
+
+	$EnemyArrow.point_to = get_closest(lawn.bosses)
 
 func update_lawn_mower_arrow() -> void:
 	var lawn: Lawn = get_node_or_null("/root/Main/Lawn")
