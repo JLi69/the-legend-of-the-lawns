@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://jpv0e5id5kg4" path="res://assets/textures/decorations/painting.png" id="43_lygeb"]
 [ext_resource type="Texture2D" uid="uid://8ie1qtueenbu" path="res://assets/textures/decorations/couch.png" id="46_5t5wj"]
 [ext_resource type="PackedScene" uid="uid://ws2gds4yg1b" path="res://scenes/lawns/tam_lawn.tscn" id="46_maaj1"]
+[ext_resource type="PackedScene" uid="uid://dd6oi75xgeaic" path="res://scenes/lawns/rob_lawn.tscn" id="47_8wdp2"]
 [ext_resource type="PackedScene" uid="uid://e44sam5dbx4w" path="res://scenes/decorations/potted_plant1.tscn" id="48_0l5da"]
 [ext_resource type="PackedScene" uid="uid://giinl7cmkx52" path="res://scenes/decorations/potted_plant2.tscn" id="49_6sx2y"]
 [ext_resource type="PackedScene" uid="uid://uh2q8jylpyj2" path="res://scenes/decorations/potted_plant3.tscn" id="50_s3i68"]
@@ -472,6 +473,7 @@ level = 8
 [node name="NeighborRob" parent="Neighbors" unique_id=1607810157 instance=ExtResource("3_tqujx")]
 position = Vector2(-280, 229)
 display_name = "Neighbor Rob"
+lawn_template = ExtResource("47_8wdp2")
 level = 8
 
 [node name="Alien" parent="Neighbors" unique_id=2063998224 instance=ExtResource("3_tqujx")]
