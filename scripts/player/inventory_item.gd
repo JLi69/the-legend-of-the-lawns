@@ -35,7 +35,7 @@ const COOLDOWNS: Dictionary = {
 	"insecticide" : 45.0,
 	"drone_controller" : 80.0,
 	"fireworks" : 80.0,
-	"water_bottle_pack" : 3.0,
+	"water_bottle_pack" : 1.0,
 	"water_jug" : 12.0,
 }
 const DEFAULT_COOLDOWN: float = 1.0
