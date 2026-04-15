@@ -1,0 +1,15 @@
+{
+	"first_dialog": [
+		"Oh hey there kiddo, do you need anything?",
+		"Oh, how nice of you! My lawn probably needs a good cut, especially after all the rain recently. There's just one small thing you should know.",
+		"Recently some little fellas, I forget what they're called, hedge or shrub demons? Anyway, they built some mounds in my backyard and have been kind of territorial with them. They've attacked my cat whenever she gets too close.",
+		"Now, I don't appreciate squatters and I really don't like it when said squatters hurt my cat so I would appreciate it if you were to... evict them by any means possible. Does that sound good?"
+	],
+	"player_dialog": [
+		"Hi, I'm here to mow your lawn!",
+		"Okay...",
+		"...",
+		"Sure."
+	],
+	"first_job_offer": "Alright then! Show those shrub demons who's boss!"
+}

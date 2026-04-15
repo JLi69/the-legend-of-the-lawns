@@ -14,9 +14,9 @@ const USE_COUNTS: Dictionary = {
 	"fireworks" : 3,
 	# Weapons
 	"weedkiller" : 65,
-	"acidic_weedkiller" : 55,
-	"super_weedkiller" : 50,
-	"ultra_weedkiller" : 50,
+	"acidic_weedkiller" : 45,
+	"super_weedkiller" : 35,
+	"ultra_weedkiller" : 20,
 	"water_bottle_pack" : 50,
 	"water_jug" : 10,
 	"ice" : 25,
