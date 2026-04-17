@@ -1,8 +1,8 @@
 extends Mushroom
 
 @export var fungal_baby_scene: PackedScene
-const MIN_SPAWN_TIME: float = 4.0
-const MAX_SPAWN_TIME: float = 8.0
+const MIN_SPAWN_TIME: float = 8.0
+const MAX_SPAWN_TIME: float = 12.0
 @onready var spawn_timer: float = 2.0
 # In tile units
 const MIN_SPAWN_DIST: float = 2.0

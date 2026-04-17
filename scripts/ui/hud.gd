@@ -89,7 +89,7 @@ func update_progress_bar(lawn: Lawn) -> void:
 	elif lawn.nests_destroyed < lawn.nest_count:
 		$Control/ProgressBar/ProgressBarPercent.text = "Destroy Nests: %d/%d" % [ lawn.nests_destroyed, lawn.nest_count ]
 	elif lawn.bosses_killed < lawn.boss_count:
-		$Control/ProgressBar/ProgressBarPercent.text = "Kill Bosses: %d/%d" % [ lawn.bosses_killed, lawn.boss_count ]
+		$Control/ProgressBar/ProgressBarPercent.text = "Defeat Enemies: %d/%d" % [ lawn.bosses_killed, lawn.boss_count ]
 	else:
 		$Control/ProgressBar/ProgressBarPercent.text = "Lawn Mowed: 100%"
 

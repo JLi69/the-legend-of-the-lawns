@@ -154,6 +154,15 @@ static var list: Array[Quest] = [
 		),
 		[]
 	),
+
+	# Quest 9
+	Quest.new(
+		Reward.new(
+			"$7",
+			func(main: Main) -> void: main.money += 7
+		),
+		[]
+	),
 ]
 
 static func get_quest(index: int) -> Quest:
