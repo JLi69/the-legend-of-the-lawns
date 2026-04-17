@@ -36,7 +36,10 @@ func shoot(angle_offset: float = 0.0) -> bool:
 	else:	
 		var selected: int = $/root/Main/HUD/Control/InventoryGUI.selected
 		var selected_item: InventoryItem = player.inventory.get_item(selected)	
-		if selected_item:	
+		if selected_item:
+			if selected_item.cooldown > 0.0:
+				return false
+
 			match selected_item.id:
 				"weedkiller":
 					bullet = weedkiller_bullet_scene.instantiate()
@@ -47,19 +50,19 @@ func shoot(angle_offset: float = 0.0) -> bool:
 					bullet.modulate = Color8(255, 0, 255)
 					bullet.damage = 3
 					selected_item.uses_left -= 1
-				"super_weedkiller":
+				"super_weedkiller":	
 					bullet = weedkiller_bullet_scene.instantiate()
 					bullet.modulate = Color8(0, 255, 255)
 					bullet.damage = 4
 					selected_item.uses_left -= 1
+					selected_item.cooldown = InventoryItem.get_cooldown(selected_item.id)
 				"ultra_weedkiller":
 					bullet = weedkiller_bullet_scene.instantiate()
 					bullet.modulate = Color8(255, 0, 0)
 					bullet.damage = 5
 					selected_item.uses_left -= 1
+					selected_item.cooldown = InventoryItem.get_cooldown(selected_item.id)
 				"water_jug":
-					if selected_item.cooldown > 0.0:
-						return false
 					bullet = mega_bullet_scene.instantiate()
 					selected_item.uses_left -= 1
 					selected_item.cooldown = InventoryItem.get_cooldown(selected_item.id)
