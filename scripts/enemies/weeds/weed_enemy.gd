@@ -21,7 +21,7 @@ extends Area2D
 @export var boss: bool = false
 @export var grow_delay: float = 0.0
 var freeze_timer: float = 0.0
-const FREEZE_TIME: float = 5.0
+const FREEZE_TIME: float = 8.0
 
 @onready var health: int = max_health 
 @onready var shoot_timer: float = bullet_cooldown

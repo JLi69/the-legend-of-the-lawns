@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://dwm571dc4civd" path="res://assets/textures/decorations/control_poster.png" id="38_ad8ph"]
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/hunter_dialog.json" id="38_i07me"]
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/george_dialog.json" id="38_s4g4y"]
+[ext_resource type="PackedScene" uid="uid://cidr0r520kjqc" path="res://scenes/lawns/poofball_lawn.tscn" id="39_31djh"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/mom_intro_dialog.json" id="39_78k8p"]
 [ext_resource type="Texture2D" uid="uid://cg7h2eha218hg" path="res://assets/textures/decorations/birb_run_poster.png" id="39_f70if"]
 [ext_resource type="Texture2D" uid="uid://bva25eo4vevtm" path="res://assets/textures/decorations/bed.png" id="40_tr241"]
@@ -459,7 +460,13 @@ dialog_json = ExtResource("38_i07me")
 position = Vector2(504, -540)
 animation = &"mrs_poofball"
 display_name = "Mrs. Poofball"
+lawn_template = ExtResource("39_31djh")
 level = 9
+wage = 30
+bonus_base = 4
+max_bonus = 20
+flower_penalty = 2
+hedge_penalty = 2
 use_female_voice = true
 
 [node name="NeighborJames" parent="Neighbors" unique_id=635300219 instance=ExtResource("3_tqujx")]

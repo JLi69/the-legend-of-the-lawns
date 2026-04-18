@@ -16,6 +16,7 @@ extends CharacterBody2D
 @export var immune_to_friendly_fire: bool = false
 @export var immune_to_fire: bool = false
 @export var immune_to_freeze: bool = false
+@export var vulnerable_to_freeze: bool = false
 @onready var shoot_timer: float = bullet_cooldown
 @onready var health = max_health
 var path: PackedVector2Array = []
@@ -30,7 +31,7 @@ var fire_time: float = 0.0
 # Other hazards
 var hazards: Dictionary = {}
 # Freeze timer
-const FREEZE_TIME: float = 5.0
+const FREEZE_TIME: float = 8.0
 var freeze_timer: float = 0.0
 @onready var spawn_timer: float = spawn_animation_time
 
@@ -300,6 +301,8 @@ func _on_bullet_hitbox_area_entered(body: Node2D) -> void:
 		damage(body.damage)
 		if !immune_to_freeze and body.is_in_group("ice_bullet"):
 			freeze_timer = FREEZE_TIME
+			if vulnerable_to_freeze:
+				freeze_timer *= 2.5
 	elif body is EnemyBullet:
 		if !body.active():
 			return

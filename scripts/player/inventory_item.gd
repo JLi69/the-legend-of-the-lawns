@@ -13,7 +13,7 @@ const USE_COUNTS: Dictionary = {
 	"drone_controller" : 4,
 	"fireworks" : 3,
 	# Weapons
-	"weedkiller" : 65,
+	"weedkiller" : 75,
 	"acidic_weedkiller" : 45,
 	"super_weedkiller" : 35,
 	"ultra_weedkiller" : 20,

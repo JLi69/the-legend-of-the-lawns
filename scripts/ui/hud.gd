@@ -170,7 +170,10 @@ func set_buy_menu(item: Buy) -> void:
 	$Control/NPCMenu.set_buy_menu(item)
 
 func hide_neighbor_menu() -> void:
-	$Control/NPCMenu.hide_menu()
+	$Control/NPCMenu.hide()
+
+func alert(title: String, description: String, button_text: String) -> void:
+	$Control/NPCMenu.alert(title, description, button_text)
 
 func update_damage_flash(perc: float) -> void:
 	if perc <= 0.0:

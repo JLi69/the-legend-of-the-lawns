@@ -98,6 +98,7 @@ func load_lawn(lawn_template: PackedScene, difficulty_level: int) -> void:
 	$Player/Camera2D.position_smoothing_enabled = false
 
 func return_to_neighborhood() -> void:
+	$HUD.hide_neighbor_menu()
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	player.reset_health()
 	player.status_effects.clear()

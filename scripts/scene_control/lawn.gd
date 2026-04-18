@@ -30,6 +30,8 @@ var bosses_killed: int = 0
 var boss_count: int = 0
 var bosses: Dictionary = {}
 
+var killed_rabbit: bool = false
+
 # Key: tile position -> number of weeds at that position
 var weed_positions: Dictionary = {}
 
