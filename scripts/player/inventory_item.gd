@@ -28,7 +28,7 @@ const COOLDOWNS: Dictionary = {
 	"soda" : 33.0,
 	"ice_cream" : 40.0,
 	"tomato_seeds" : 80.0,
-	"boom_shroom_spores" : 25.0,
+	"boom_shroom_spores" : 35.0,
 	"gasoline" : 35.0,
 	"shield_generator" : 90.0,
 	"electric_doodad" : 50.0,
