@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dkuhevs5nmf32" path="res://scenes/enemies/mobile/evil_gnome.tscn" id="6_8ef7q"]
 [ext_resource type="PackedScene" uid="uid://cedaoxv5oda2b" path="res://scenes/enemies/flowers/flower_spawner.tscn" id="6_jq12f"]
 [ext_resource type="PackedScene" uid="uid://d3dbcnyk3dtej" path="res://scenes/enemies/mobile/poofball.tscn" id="8_q03h4"]
-[ext_resource type="PackedScene" uid="uid://boiyvtxjuw0rf" path="res://scenes/enemies/mobile/shrub_demon_mound.tscn" id="8_wuocx"]
 
 [node name="Lawn" unique_id=1949302452 instance=ExtResource("1_myuwb")]
 time_limit = 300.0
@@ -27,13 +26,13 @@ position = Vector2(74, 5)
 position = Vector2(122, 0)
 
 [node name="Enemyspawner" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="0" unique_id=1228304465 instance=ExtResource("3_igx63")]
-position = Vector2(-269, -80)
+position = Vector2(-262, -87)
 
 [node name="Enemyspawner2" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="1" unique_id=707314313 instance=ExtResource("3_igx63")]
 position = Vector2(-24, -83)
 
 [node name="Enemyspawner3" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="2" unique_id=891401222 instance=ExtResource("3_igx63")]
-position = Vector2(-28, 77)
+position = Vector2(-236, 84)
 
 [node name="Flowerspawner" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="3" unique_id=564213730 instance=ExtResource("6_jq12f")]
 position = Vector2(135, -125)
@@ -83,13 +82,5 @@ position = Vector2(107, 152)
 [node name="EvilGnome5" parent="MobileEnemies" parent_id_path=PackedInt32Array(119355386) index="6" unique_id=777484410 instance=ExtResource("6_8ef7q")]
 position = Vector2(-325, -7)
 
-[node name="ShrubDemonMound" parent="." index="7" unique_id=1242115820 instance=ExtResource("8_wuocx")]
-position = Vector2(-305, 142)
-max_health = 18
-
-[node name="ShrubDemonMound2" parent="." index="8" unique_id=841365379 instance=ExtResource("8_wuocx")]
-position = Vector2(-203, -127)
-max_health = 18
-
-[node name="Poofball" parent="." index="9" unique_id=1472097535 instance=ExtResource("8_q03h4")]
+[node name="Poofball" parent="." index="7" unique_id=1472097535 instance=ExtResource("8_q03h4")]
 position = Vector2(175, -1)
