@@ -37,6 +37,7 @@ const COOLDOWNS: Dictionary = {
 	"fireworks" : 80.0,
 	"water_bottle_pack" : 1.0,
 	"water_jug" : 12.0,
+	"acidic_weedkiller" : 0.75,
 	"super_weedkiller" : 1.5,
 	"ultra_weedkiller" : 3.0,
 }
