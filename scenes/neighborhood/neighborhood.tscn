@@ -73,7 +73,9 @@
 [ext_resource type="Texture2D" uid="uid://8ewunhlh6hu7" path="res://assets/textures/decorations/store_window.png" id="52_vmv0n"]
 [ext_resource type="PackedScene" uid="uid://bs6w222xibiuv" path="res://scenes/decorations/tv.tscn" id="53_rb5n6"]
 [ext_resource type="PackedScene" uid="uid://js2gvvvv4bla" path="res://scenes/decorations/store_display.tscn" id="53_sc68w"]
+[ext_resource type="JSON" path="res://assets/dialog/neighbors/nicole_dialog.json" id="53_tf4lq"]
 [ext_resource type="PackedScene" uid="uid://dux415njqmp1m" path="res://scenes/interactable/buy.tscn" id="54_532a6"]
+[ext_resource type="JSON" path="res://assets/dialog/neighbors/helen_dialog.json" id="55_41mb4"]
 [ext_resource type="Texture2D" uid="uid://dagtt6ra0h7dw" path="res://assets/textures/decorations/sale_poster.png" id="55_ka6mv"]
 [ext_resource type="PackedScene" uid="uid://bvc7ww3cj7nqw" path="res://scenes/interactable/trash_can.tscn" id="56_4nkst"]
 [ext_resource type="PackedScene" uid="uid://cjee4hiyjwavr" path="res://scenes/decorations/checkout_counter.tscn" id="62_rb5n6"]
@@ -546,6 +548,7 @@ wage = 18
 max_bonus = 10
 flower_penalty = 2
 use_female_voice = true
+dialog_json = ExtResource("53_tf4lq")
 
 [node name="NeighborMalcom" parent="Neighbors" unique_id=182932571 instance=ExtResource("3_tqujx")]
 position = Vector2(360, -539)
@@ -576,6 +579,7 @@ level = 9
 wage = 18
 max_bonus = 10
 use_female_voice = true
+dialog_json = ExtResource("55_41mb4")
 
 [node name="FastTravel" type="Node2D" parent="." unique_id=845814038]
 y_sort_enabled = true

@@ -1,0 +1,16 @@
+{
+	"unavailable_msg": "The door is locked...\nYou feel the ground shake for a minute...",
+	"first_dialog": [
+		"Willo-? Oh, sorry, I thought you were my friend. How can I help you?",
+		"Sure, why not. My friend typically helps me out with my yard work when she's around so without her it's been a little bit more difficult...",
+		"She usually is able to cast some magic spells, well beyond my understanding, to keep away some of the more... aggressive wildlife.",
+		"I don't think my yard is as safe as it once was - especially with the worms migrating after the new data center was built outside the city."
+	],
+	"player_dialog": [
+		"Do you need your lawn mowed?",
+		"How so?",
+		"Okay...",
+		"Uhm, what?"
+	],
+	"first_job_offer": "Don't worry about it, just be careful. So are you still interested in helping out?"
+}

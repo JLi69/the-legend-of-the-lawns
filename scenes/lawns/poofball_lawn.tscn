@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://18au7p7nyvb1" path="res://scripts/lawn_generators/basic_lawn_generator.gd" id="2_f2j7i"]
 [ext_resource type="PackedScene" uid="uid://bxgj76gitliya" path="res://scenes/enemies/weeds/enemy_spawner.tscn" id="3_igx63"]
 [ext_resource type="PackedScene" uid="uid://b32ibsy1iagox" path="res://scenes/enemies/mobile/killer_rabbit.tscn" id="5_0m5qm"]
+[ext_resource type="PackedScene" uid="uid://dsh13hyj8wfp6" path="res://scenes/enemies/mobile/mob_spawner.tscn" id="5_wuocx"]
 [ext_resource type="PackedScene" uid="uid://dkuhevs5nmf32" path="res://scenes/enemies/mobile/evil_gnome.tscn" id="6_8ef7q"]
 [ext_resource type="PackedScene" uid="uid://cedaoxv5oda2b" path="res://scenes/enemies/flowers/flower_spawner.tscn" id="6_jq12f"]
+[ext_resource type="PackedScene" uid="uid://d1jwu43vb0643" path="res://scenes/enemies/mobile/shrub_demon.tscn" id="6_q03h4"]
 [ext_resource type="PackedScene" uid="uid://d3dbcnyk3dtej" path="res://scenes/enemies/mobile/poofball.tscn" id="8_q03h4"]
 
 [node name="Lawn" unique_id=1949302452 instance=ExtResource("1_myuwb")]
@@ -26,28 +28,36 @@ position = Vector2(74, 5)
 position = Vector2(122, 0)
 
 [node name="Enemyspawner" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="0" unique_id=1228304465 instance=ExtResource("3_igx63")]
-position = Vector2(-262, -87)
+position = Vector2(-254, -87)
 
 [node name="Enemyspawner2" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="1" unique_id=707314313 instance=ExtResource("3_igx63")]
-position = Vector2(-24, -83)
+position = Vector2(-30, -87)
 
 [node name="Enemyspawner3" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="2" unique_id=891401222 instance=ExtResource("3_igx63")]
-position = Vector2(-236, 84)
+position = Vector2(-254, 87)
 
-[node name="Flowerspawner" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="3" unique_id=564213730 instance=ExtResource("6_jq12f")]
+[node name="Enemyspawner4" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="3" unique_id=983784340 instance=ExtResource("3_igx63")]
+position = Vector2(-30, 87)
+
+[node name="Flowerspawner" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="4" unique_id=564213730 instance=ExtResource("6_jq12f")]
 position = Vector2(135, -125)
 difficulty = 3
 spawn_count = 4
 
-[node name="Flowerspawner2" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="4" unique_id=809036503 instance=ExtResource("6_jq12f")]
+[node name="Flowerspawner2" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="5" unique_id=809036503 instance=ExtResource("6_jq12f")]
 position = Vector2(136, 131)
 difficulty = 3
 spawn_count = 4
 
-[node name="Flowerspawner3" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="5" unique_id=243520147 instance=ExtResource("6_jq12f")]
+[node name="Flowerspawner3" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="6" unique_id=243520147 instance=ExtResource("6_jq12f")]
 position = Vector2(-394, 131)
 difficulty = 3
 spawn_count = 4
+
+[node name="MobSpawner" parent="Spawners" parent_id_path=PackedInt32Array(602942949) index="7" unique_id=1124692828 instance=ExtResource("5_wuocx")]
+position = Vector2(-148, 0)
+spawn_count = 5
+possible_enemies = Array[PackedScene]([ExtResource("6_q03h4")])
 
 [node name="KillerRabbit" parent="MobileEnemies" parent_id_path=PackedInt32Array(119355386) index="0" unique_id=2053728680 instance=ExtResource("5_0m5qm")]
 position = Vector2(-360, -139.00002)
