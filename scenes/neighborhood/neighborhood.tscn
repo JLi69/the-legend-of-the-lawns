@@ -29,7 +29,9 @@
 [ext_resource type="AudioStream" uid="uid://bravg6u55evt" path="res://assets/audio/sfx/male_talk.wav" id="18_vcx27"]
 [ext_resource type="PackedScene" uid="uid://1fh3tiwr4hty" path="res://scenes/enemies/flowers/blue_flower.tscn" id="19_4hcni"]
 [ext_resource type="PackedScene" uid="uid://dl4gikurgk4pb" path="res://scenes/lawns/jim_lawn.tscn" id="19_dys3o"]
+[ext_resource type="JSON" path="res://assets/dialog/npcs/fluffy_dialog.json" id="19_l6aok"]
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/bob_dialog.json" id="20_bmbxr"]
+[ext_resource type="JSON" path="res://assets/dialog/npcs/gnome_dialog.json" id="20_boqfi"]
 [ext_resource type="Texture2D" uid="uid://db3c1j4jldunq" path="res://assets/textures/npcs/hats/witchhat.png" id="21_6hoof"]
 [ext_resource type="PackedScene" uid="uid://hxirrs1or5r8" path="res://scenes/lawns/emily_lawn.tscn" id="21_dys3o"]
 [ext_resource type="PackedScene" uid="uid://1fi7xb3mewly" path="res://scenes/interactable/bus_stop.tscn" id="21_pqaru"]
@@ -54,6 +56,7 @@
 [ext_resource type="PackedScene" uid="uid://cidr0r520kjqc" path="res://scenes/lawns/poofball_lawn.tscn" id="39_31djh"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/mom_intro_dialog.json" id="39_78k8p"]
 [ext_resource type="Texture2D" uid="uid://cg7h2eha218hg" path="res://assets/textures/decorations/birb_run_poster.png" id="39_f70if"]
+[ext_resource type="JSON" path="res://assets/dialog/neighbors/poofball_dialog.json" id="40_56e4w"]
 [ext_resource type="Texture2D" uid="uid://bva25eo4vevtm" path="res://assets/textures/decorations/bed.png" id="40_tr241"]
 [ext_resource type="PackedScene" uid="uid://bjqvksf8i8pgk" path="res://scenes/lawns/paul_lawn.tscn" id="41_0cus8"]
 [ext_resource type="Texture2D" uid="uid://mhf7o0ftg6r7" path="res://assets/textures/decorations/window.png" id="41_iequl"]
@@ -287,6 +290,7 @@ animation = &"fluffy"
 flip_h = true
 display_name = "Fluffy"
 can_talk = false
+dialog_json = ExtResource("19_l6aok")
 
 [node name="Gnome" parent="NPCs" unique_id=648216747 instance=ExtResource("4_dcvy4")]
 position = Vector2(-63, 248.00002)
@@ -294,6 +298,23 @@ scale = Vector2(0.6, 0.6)
 animation = &"gnome"
 display_name = "Lawn Gnome"
 can_talk = false
+dialog_json = ExtResource("20_boqfi")
+
+[node name="Gnome2" parent="NPCs" unique_id=1740838731 instance=ExtResource("4_dcvy4")]
+position = Vector2(466, -510)
+scale = Vector2(0.6, 0.6)
+animation = &"gnome"
+display_name = "Lawn Gnome"
+can_talk = false
+dialog_json = ExtResource("20_boqfi")
+
+[node name="Gnome3" parent="NPCs" unique_id=979747412 instance=ExtResource("4_dcvy4")]
+position = Vector2(-249, 250)
+scale = Vector2(0.6, 0.6)
+animation = &"gnome"
+display_name = "Lawn Gnome"
+can_talk = false
+dialog_json = ExtResource("20_boqfi")
 
 [node name="Decorations" type="Node2D" parent="." unique_id=1445640183]
 y_sort_enabled = true
@@ -470,6 +491,7 @@ max_bonus = 12
 flower_penalty = 2
 hedge_penalty = 2
 use_female_voice = true
+dialog_json = ExtResource("40_56e4w")
 
 [node name="NeighborJames" parent="Neighbors" unique_id=635300219 instance=ExtResource("3_tqujx")]
 position = Vector2(488, 229)
