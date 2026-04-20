@@ -36,7 +36,10 @@ func _ready() -> void:
 func can_use_inventory() -> bool:
 	return visible and !player.water_gun.visible and !player.lawn_mower_active() and !get_tree().paused
 
-func can_use_item() -> bool:	
+func can_use_item() -> bool:
+	if $/root/Main/HUD.npc_menu_open():
+		return false
+
 	var selected_item: InventoryItem = player.inventory.get_item(selected)
 	if selected_item == null:
 		return false

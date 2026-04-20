@@ -172,8 +172,9 @@ func set_buy_menu(item: Buy) -> void:
 func hide_neighbor_menu() -> void:
 	$Control/NPCMenu.hide()
 
-func alert(title: String, description: String, button_text: String) -> void:
+func alert(title: String, description: String, button_text: String, can_move: bool = false) -> void:
 	$Control/NPCMenu.alert(title, description, button_text)
+	$Control/NPCMenu.player_can_move = can_move
 
 func update_damage_flash(perc: float) -> void:
 	if perc <= 0.0:
@@ -195,6 +196,9 @@ func num_as_time_string(num: float) -> String:
 
 func npc_menu_open() -> bool:
 	return $Control/NPCMenu.visible
+
+func npc_menu_can_move() -> bool:
+	return $Control/NPCMenu.player_can_move
 
 func quest_screen_open() -> bool:
 	return $Control/QuestScreen/InfoScreen.visible

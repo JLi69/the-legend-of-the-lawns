@@ -5,8 +5,8 @@ var pause_timer: float = 0.0
 var pause_timer_cooldown: float = 0.0
 var hostile: bool = false
 
-const ANGER_TEXT: String = """MY POOR FLUFFY!!!!
-YOU MONSTER!!!!!
+const ANGER_TEXT: String = """MY POOR FLUFFY!!! 
+YOU MONSTER!!!
 """
 
 func get_animation() -> String:
@@ -27,6 +27,7 @@ func calculate_velocity() -> Vector2:
 		enemy_speed *= 1.2
 	else:
 		enemy_speed *= 0.8
+	enemy_speed = clamp(enemy_speed, 48.0, 96.0)
 	return super.calculate_velocity().normalized() * enemy_speed
 
 func _process(delta: float) -> void:	
@@ -39,7 +40,7 @@ func _process(delta: float) -> void:
 	set_sprite_dir()
 	$ContactDamageZone.disabled = !hostile
 	if lawn.killed_rabbit and !hostile:
-		$/root/Main/HUD.alert("Mrs. Poofball", ANGER_TEXT, "Run!")
+		$/root/Main/HUD.alert("Mrs. Poofball", ANGER_TEXT, "RUN!", true)
 		$FemaleTalk.play()
 		hostile = true
 
@@ -47,6 +48,8 @@ func damage(_amt: int) -> void:
 	hit.emit()
 
 func _on_hit() -> void:
+	if !hostile:
+		return
 	if pause_timer_cooldown <= 0.0:
-		pause_timer = 1.5
-	pause_timer_cooldown = 6.0
+		pause_timer = 3.0
+	pause_timer_cooldown = 8.0

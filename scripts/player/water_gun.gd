@@ -97,7 +97,11 @@ func _process(delta: float) -> void:
 		
 	update_transform()
 
-	if shoot_timer <= 0.0 and Input.is_action_pressed("shoot_primary") and !$/root/Main/HUD.npc_menu_open():
+	var npc_menu_open: bool = $/root/Main/HUD.npc_menu_open() and !$/root/Main/HUD.npc_menu_can_move()
+	if shoot_timer <= 0.0 and Input.is_action_pressed("shoot_primary") and !npc_menu_open:
+		var npc_menu = $/root/Main/HUD/Control/NPCMenu
+		if npc_menu.mouse_inside() and $/root/Main/HUD.npc_menu_open():
+			return
 		var selected: int = $/root/Main/HUD/Control/InventoryGUI.selected
 		var selected_item: InventoryItem = player.inventory.get_item(selected)
 		if selected_item and selected_item.id == "water_bottle_pack":

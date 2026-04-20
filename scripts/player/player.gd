@@ -554,7 +554,8 @@ func _physics_process(_delta: float) -> void:
 
 	# movement
 	# don't move when menu is open
-	if !$/root/Main/HUD.npc_menu_open() and !$/root/Main/HUD.quest_screen_open() and can_move:
+	var npc_menu_open: bool = $/root/Main/HUD.npc_menu_open() and !$/root/Main/HUD.npc_menu_can_move()
+	if !npc_menu_open and !$/root/Main/HUD.quest_screen_open() and can_move:
 		if Input.is_action_pressed("move_up"):
 			velocity.y -= 1.0
 		if Input.is_action_pressed("move_down"):
