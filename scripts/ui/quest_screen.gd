@@ -92,6 +92,8 @@ func get_quest_button_text(neighbors: Array) -> Array[String]:
 	var button_texts: Array[String] = []	
 	for neighbor: NeighborNPC in neighbors:
 		var text: String = " %s" % neighbor.display_name
+		if neighbor.secret and neighbor.first_time:
+			text = " ???"
 		if neighbor.times_mowed > 0:
 			text += " (DONE)"
 		button_texts.push_back(text)

@@ -181,15 +181,10 @@ static var list: Array[Quest] = [
 	# Quest 11
 	Quest.new(
 		Reward.new(
-			"None",
-			func(_main: Main) -> void: pass
+			"$7",
+			func(main: Main) -> void: main.money += 7
 		),
-		[
-			Goal.new(
-				"PLACEHOLDER", 
-				func(main: Main) -> bool: return false
-			),
-		]
+		[]
 	),
 ]
 
