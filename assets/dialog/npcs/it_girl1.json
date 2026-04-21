@@ -1,0 +1,30 @@
+{
+	"first_dialog": [
+		"*She is reading what appears to be a manual for some kind of programming language.*",
+		"Wait, what? Sorry, no can do, I'm on my break right now and I don't do customer service.",
+		"Okay, fine, if you really want help, I believe the store is still out of stock, the supply chain is completely screwed up and I don't know when it's going to be fixed. At least I can still fish parts out of the landfill to build my gaming PC.",
+		"However, I used to work at MicroTech... They fired me after I put in a virus in their new line of robots. They think those dang clankers can replace my job...",
+		"So yeah, I thought I was hosed but then I got a job at this store as IT support. The manager wants the robot fixed but I think someone tripped the backdoor so it's unfixable.",
+		"I'm just pretending to do stuff, they don't pay me enough to make me care anyway.",
+		"Okay, so back to my main point: I think I can help you get a Swapdeck.",
+		"Shh, be quiet, it's through... unofficial channels. I still have some connections at MicroTech and I think I can smuggle one into the store... for a price.",
+		"This is just between you and me, okay? I have to figure out some of the details still but come back to me later to talk about this once I have it sorted out. Now I would suggest going to the job board to raise some funds, I want some cash up front."
+	],
+	"player_dialog": [
+		"Um, hi, can you tell me where I can find a Swapdeck?",
+		"Oh come on, why is nobody here helping me?!",
+		"Aw man...",
+		"Um, okay?",
+		"...",
+		"...",
+		"WAIT REALLY?",
+		"Okay, I'm interested!",
+		"Alright, sounds good."
+	],
+	"possible_dialog": [
+		"I'm busy not working right now, talk to me later.",
+		"Ugh, what do you want? I need some alone time right now so can it wait?",
+		"*She's ignoring you*",
+		"Whatever your question is, it's above my pay grade."
+	]
+}

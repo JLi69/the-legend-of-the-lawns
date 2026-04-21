@@ -163,10 +163,37 @@ static var list: Array[Quest] = [
 		),
 		[]
 	),
+
+	# Quest 10
+	Quest.new(
+		Reward.new(
+			"$1",
+			func(main: Main) -> void: main.money += 1
+		),
+		[
+			Goal.new(
+				"Talk to IT Girl at the store.", 
+				func(main: Main) -> bool: return talked_to_npc(main, "Store/ITGirl")
+			),
+		]
+	),
+
+	# Quest 11
+	Quest.new(
+		Reward.new(
+			"None",
+			func(_main: Main) -> void: pass
+		),
+		[
+			Goal.new(
+				"PLACEHOLDER", 
+				func(main: Main) -> bool: return false
+			),
+		]
+	),
 ]
 
 static func get_quest(index: int) -> Quest:
 	if index >= 0 and index < list.size():
 		return list[index]
 	return null
-
