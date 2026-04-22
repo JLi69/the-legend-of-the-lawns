@@ -133,7 +133,7 @@ position = Vector2(0, -11.5)
 shape = SubResource("RectangleShape2D_pt0u8")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=211112237]
-scale = Vector2(0.4375, 0.30769232)
+scale = Vector2(0.44117647, 0.36199093)
 texture = ExtResource("1_1vqx6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1500850463]
@@ -149,7 +149,7 @@ damage_amt = 2
 attack_cooldown = 1.25
 
 [node name="BulletSpawnPoint" type="Node2D" parent="." unique_id=969190504]
-position = Vector2(0, -14)
+position = Vector2(0, -11.647058)
 
 [node name="Healthbar" parent="." unique_id=943111568 instance=ExtResource("4_i36cd")]
 offset_top = -27.0
