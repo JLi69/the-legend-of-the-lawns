@@ -1,0 +1,12 @@
+{
+	"unavailable_msg": "The door is locked...\nThere is a note: \"I am on a business trip right now, if it's urgent, please call my secretary.\"",
+	"first_dialog": [
+		"*He is on his phone, presumably calling someone about work*. Yes, yes, also tell Mr. Suit that we need to move the assets out of Siliconia and we are beginning investments into Aldorian fungal farms.",
+		"Hang on, sorry, some kid is bothering me right now and I need to handle it - \nOkay kid, what do you want? Make it quick, I need to get back to my call soon - millions of dollars are on the line."
+	],
+	"player_dialog": [
+		"Um, Hello?",
+		"Does your lawn need to be mowed?"
+	],
+	"first_job_offer": "Oh, of course. I'm a busy man and I just got back from my business trip so my yard could use a trim. Now if you excuse me, I have to handle the purchase of some cherry tomato futures."
+}

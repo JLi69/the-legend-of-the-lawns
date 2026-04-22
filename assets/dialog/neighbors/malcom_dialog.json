@@ -1,0 +1,16 @@
+{
+	"unavailable_msg": "The door is locked...\nThere appears to be an angry note from the HOA taped on the door.",
+	"first_dialog": [
+		"Hello! If you're here to sell me some of that high powered weedkiller, I'm not interested. I heard it's not good for the environment and your health.",
+		"Oh, alright then. I was actually procrastinating on that actually. The HOA has been really getting on my case about that.",
+		"It's just that I've done some research online and it seems that mowing lawns might have some negative effects on the local ecosystem - especially with how it affects the local shrub demon population.",
+		"I didn't want to contribute to the problem, especially after the new weedkiller factory and data center opened nearby."
+	],
+	"player_dialog": [
+		"I'm here to mow your lawn!",
+		"Okay",
+		"Oh, uhm, that's... interesting...",
+		"..."
+	],
+	"first_job_offer": "However, I'm tired of all of the angry letters and fines from the HOA. I also need to get my lawn mowed soon or I will get a $100 fine from those miserable geezers."
+}

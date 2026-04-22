@@ -82,7 +82,9 @@
 [ext_resource type="Texture2D" uid="uid://dagtt6ra0h7dw" path="res://assets/textures/decorations/sale_poster.png" id="55_ka6mv"]
 [ext_resource type="PackedScene" uid="uid://bvc7ww3cj7nqw" path="res://scenes/interactable/trash_can.tscn" id="56_4nkst"]
 [ext_resource type="PackedScene" uid="uid://j1o3nsqogkvk" path="res://scenes/lawns/malcom_lawn.tscn" id="57_xpodr"]
+[ext_resource type="JSON" path="res://assets/dialog/neighbors/malcom_dialog.json" id="58_jm8ja"]
 [ext_resource type="PackedScene" uid="uid://dv1kjcw51idgj" path="res://scenes/lawns/mrtie_lawn.tscn" id="58_p4k6h"]
+[ext_resource type="JSON" path="res://assets/dialog/neighbors/mrtie_dialog.json" id="60_uuxxi"]
 [ext_resource type="PackedScene" uid="uid://cjee4hiyjwavr" path="res://scenes/decorations/checkout_counter.tscn" id="62_rb5n6"]
 [ext_resource type="Texture2D" uid="uid://dyeg7yqiqumw5" path="res://assets/textures/decorations/mcmoneypants_painting.png" id="63_2fw6o"]
 [ext_resource type="Texture2D" uid="uid://32q8xuowprgl" path="res://assets/textures/decorations/swapdeck_poster.png" id="64_fwf17"]
@@ -589,6 +591,9 @@ animation = &"neighbor_malcom"
 display_name = "Neighbor Malcom"
 lawn_template = ExtResource("57_xpodr")
 level = 11
+wage = 20
+max_bonus = 10
+dialog_json = ExtResource("58_jm8ja")
 
 [node name="Bugman" parent="Neighbors" unique_id=356765324 instance=ExtResource("3_tqujx")]
 position = Vector2(1112, -539)
@@ -601,6 +606,9 @@ animation = &"mr_tie"
 display_name = "Mr. Tie"
 lawn_template = ExtResource("58_p4k6h")
 level = 11
+wage = 24
+max_bonus = 12
+dialog_json = ExtResource("60_uuxxi")
 
 [node name="Cyborg" parent="Neighbors" unique_id=107597408 instance=ExtResource("3_tqujx")]
 position = Vector2(-8, -539)
