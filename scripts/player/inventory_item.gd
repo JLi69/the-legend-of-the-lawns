@@ -181,7 +181,7 @@ func get_display_str() -> String:
 	else:
 		display_name = id
 	if uses_left == 1:
-		return "[%s, 1 use left)]" % display_name
+		return "[%s, 1 use left]" % display_name
 	else:
 		return "[%s, %d uses left]" % [ display_name, uses_left ]
 

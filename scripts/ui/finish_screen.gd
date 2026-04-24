@@ -61,7 +61,7 @@ func start_showing_menu() -> void:
 		current_wage_modifier -= hedge_penalty
 		add_labels([$Stats/HedgePenalty, $Stats/HedgeCommentText], "Penalty")
 		$Stats/HedgePenalty.text = "Hedge Penalty: -$%d" % hedge_penalty
-	
+		
 	var time_limit = $/root/Main/Lawn.time_limit
 	var time_bonus: int = 0
 	# Calculate the time bonus
@@ -89,6 +89,17 @@ func start_showing_menu() -> void:
 		else:
 			$Stats/TimeBonus.text = "Time Bonus: $%d (x%.2f)" % [ time_bonus, player.get_bonus_multiplier() ]
 		add_labels([$Stats/TimeBonus], "Money")
+	
+	$Stats/ItemText.hide()
+	if current_neighbor.give_item_list.size() > 0:
+		var rand_index: int = randi() % current_neighbor.give_item_list.size()
+		var rand_item: String = current_neighbor.give_item_list[rand_index]
+		if player.inventory.add_item(rand_item):
+			var display_name: String = rand_item
+			if rand_item in InventoryItem.DISPLAY_NAMES:
+				display_name = InventoryItem.DISPLAY_NAMES[rand_item]
+			$Stats/ItemText.text = "New Item! +%s" % display_name
+			add_labels([$Stats/ItemText], "Money")
 
 	# Payment
 	var payment = max(main.current_wage + current_wage_modifier, 0)

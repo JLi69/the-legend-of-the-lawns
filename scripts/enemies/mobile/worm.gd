@@ -160,4 +160,4 @@ func _on_area_entered(area: Area2D) -> void:
 		if !area.active():
 			return
 		area.explode()
-		damage(1)
+		damage(area.damage)

@@ -48,6 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://pff21d58ll8s" path="res://scenes/interactable/door.tscn" id="37_kcquo"]
 [ext_resource type="PackedScene" uid="uid://jwexany1pixc" path="res://scenes/lawns/hunter_lawn.tscn" id="37_kg5j4"]
 [ext_resource type="PackedScene" uid="uid://d2cgyyt8ay06h" path="res://scenes/lawns/george_lawn.tscn" id="37_lse0k"]
+[ext_resource type="PackedScene" uid="uid://bhn1g2pujwmc" path="res://scenes/lawns/willow_lawn.tscn" id="37_pkfx3"]
 [ext_resource type="Texture2D" uid="uid://brunwv4cwnhk8" path="res://assets/textures/decorations/photo.png" id="38_00oce"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/dad_intro_dialog.json" id="38_8tbsa"]
 [ext_resource type="Texture2D" uid="uid://dwm571dc4civd" path="res://assets/textures/decorations/control_poster.png" id="38_ad8ph"]
@@ -460,8 +461,10 @@ dialog_json = ExtResource("26_yfbpo")
 position = Vector2(1064, -155)
 animation = &"willow"
 display_name = "Willow"
+lawn_template = ExtResource("37_pkfx3")
 level = 11
 secret = true
+give_item_list = ["tomato_seeds", "boom_shroom_spores", "boom_shroom_spores", "weedkiller"]
 use_female_voice = true
 
 [node name="Hat" type="AnimatedSprite2D" parent="Neighbors/Willow" unique_id=694260478]
@@ -487,6 +490,7 @@ animation = &"neighbor_hunter"
 display_name = "Neighbor Hunter"
 lawn_template = ExtResource("37_kg5j4")
 level = 7
+give_item_list = ["acidic_weedkiller"]
 wage = 15
 max_bonus = 8
 hedge_penalty = 0
@@ -543,6 +547,7 @@ animation = &"neighbor_george"
 display_name = "Neighbor George"
 lawn_template = ExtResource("37_lse0k")
 level = 5
+give_item_list = ["weedkiller"]
 bonus_base = 2
 max_bonus = 7
 flower_penalty = 2
@@ -564,6 +569,7 @@ position = Vector2(-280, 229)
 display_name = "Neighbor Rob"
 lawn_template = ExtResource("47_8wdp2")
 level = 8
+give_item_list = ["ice_cream", "chocolate"]
 wage = 16
 max_bonus = 10
 dialog_json = ExtResource("50_mncw8")
