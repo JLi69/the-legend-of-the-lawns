@@ -27,9 +27,9 @@ tile_set = ExtResource("1_frppp")
 
 [node name="Title" type="Label" parent="." unique_id=256756535]
 layout_mode = 0
-offset_top = 31.0
+offset_top = 45.0
 offset_right = 1152.0
-offset_bottom = 107.0
+offset_bottom = 121.0
 theme_override_colors/font_shadow_color = Color(0.6255971, 0.6255971, 0.62559694, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_outline_size = 2
@@ -41,9 +41,9 @@ vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1030662196]
 layout_mode = 0
-offset_top = 532.0
+offset_top = 544.0
 offset_right = 1152.0
-offset_bottom = 606.0
+offset_bottom = 618.0
 alignment = 1
 
 [node name="Return" type="Button" parent="HBoxContainer" unique_id=676457585]
@@ -56,9 +56,9 @@ Neighborhood"
 
 [node name="Stats" type="VBoxContainer" parent="." unique_id=392840848]
 layout_mode = 0
-offset_top = 115.0
+offset_top = 129.0
 offset_right = 1152.0
-offset_bottom = 510.0
+offset_bottom = 524.0
 
 [node name="Wage" type="Label" parent="Stats" unique_id=240989385]
 custom_minimum_size = Vector2(0, 46)

@@ -98,7 +98,7 @@ func start_showing_menu() -> void:
 			var display_name: String = rand_item
 			if rand_item in InventoryItem.DISPLAY_NAMES:
 				display_name = InventoryItem.DISPLAY_NAMES[rand_item]
-			$Stats/ItemText.text = "New Item! +%s" % display_name
+			$Stats/ItemText.text = "New Item! (+%s)" % display_name
 			add_labels([$Stats/ItemText], "Money")
 
 	# Payment
