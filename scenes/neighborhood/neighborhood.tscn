@@ -41,6 +41,7 @@
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/nancy_dialog.json" id="24_nofqt"]
 [ext_resource type="PackedScene" uid="uid://ptblx0eoqvua" path="res://scenes/lawns/nancy_lawn.tscn" id="24_xefxb"]
 [ext_resource type="PackedScene" uid="uid://bkn3rcq86gyqb" path="res://scenes/lawns/chloe_lawn.tscn" id="25_62p1y"]
+[ext_resource type="PackedScene" uid="uid://bfrhyuagid5eh" path="res://scenes/enemies/weeds/mushroom.tscn" id="26_803xe"]
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/emily_dialog.json" id="26_yfbpo"]
 [ext_resource type="PackedScene" uid="uid://d32yummmyhpuj" path="res://scenes/neighborhood/job_board.tscn" id="28_wj70i"]
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/chloe_dialog.json" id="34_7rdka"]
@@ -52,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://brunwv4cwnhk8" path="res://assets/textures/decorations/photo.png" id="38_00oce"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/dad_intro_dialog.json" id="38_8tbsa"]
 [ext_resource type="Texture2D" uid="uid://dwm571dc4civd" path="res://assets/textures/decorations/control_poster.png" id="38_ad8ph"]
+[ext_resource type="JSON" path="res://assets/dialog/neighbors/willow_dialog.json" id="38_h0h8e"]
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/hunter_dialog.json" id="38_i07me"]
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/george_dialog.json" id="38_s4g4y"]
 [ext_resource type="PackedScene" uid="uid://cidr0r520kjqc" path="res://scenes/lawns/poofball_lawn.tscn" id="39_31djh"]
@@ -397,6 +399,15 @@ position = Vector2(381, -522)
 [node name="Yellowflower8" parent="Decorations" unique_id=2139192513 instance=ExtResource("5_d4j3b")]
 position = Vector2(402, -531)
 
+[node name="Mushroom" parent="Decorations" unique_id=76360191 instance=ExtResource("26_803xe")]
+position = Vector2(1113.0001, -136)
+
+[node name="Mushroom2" parent="Decorations" unique_id=1960061336 instance=ExtResource("26_803xe")]
+position = Vector2(1092, -117.000015)
+
+[node name="Mushroom3" parent="Decorations" unique_id=2012076011 instance=ExtResource("26_803xe")]
+position = Vector2(1021.0002, -124)
+
 [node name="Neighbors" type="Node2D" parent="." unique_id=198279139]
 y_sort_enabled = true
 
@@ -465,7 +476,10 @@ lawn_template = ExtResource("37_pkfx3")
 level = 11
 secret = true
 give_item_list = ["tomato_seeds", "boom_shroom_spores", "boom_shroom_spores", "weedkiller"]
+wage = 25
+max_bonus = 16
 use_female_voice = true
+dialog_json = ExtResource("38_h0h8e")
 
 [node name="Hat" type="AnimatedSprite2D" parent="Neighbors/Willow" unique_id=694260478]
 z_index = 1
