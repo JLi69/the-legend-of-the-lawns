@@ -95,10 +95,7 @@ func start_showing_menu() -> void:
 		var rand_index: int = randi() % current_neighbor.give_item_list.size()
 		var rand_item: String = current_neighbor.give_item_list[rand_index]
 		if player.inventory.add_item(rand_item):
-			var display_name: String = rand_item
-			if rand_item in InventoryItem.DISPLAY_NAMES:
-				display_name = InventoryItem.DISPLAY_NAMES[rand_item]
-			$Stats/ItemText.text = "New Item! (+%s)" % display_name
+			$Stats/ItemText/AnimatedSprite2D.animation = rand_item
 			add_labels([$Stats/ItemText], "Money")
 
 	# Payment

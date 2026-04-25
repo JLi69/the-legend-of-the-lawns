@@ -96,6 +96,7 @@
 [ext_resource type="JSON" path="res://assets/dialog/npcs/cashier_guy_dialog.json" id="66_bg1hm"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/robot_dialog.json" id="66_qqjl7"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/it_girl1.json" id="89_vnrcm"]
+[ext_resource type="JSON" path="res://assets/dialog/npcs/it_girl2.json" id="97_a61lq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0lcp"]
 atlas = ExtResource("21_6hoof")
@@ -1462,6 +1463,15 @@ min_level = 10
 max_level = 11
 use_female_voice = true
 dialog_json = ExtResource("89_vnrcm")
+
+[node name="ITGirl2" parent="Store" unique_id=1837688747 instance=ExtResource("4_dcvy4")]
+position = Vector2(3, 888)
+animation = &"it_girl"
+display_name = "IT Girl"
+min_level = 12
+max_level = 13
+use_female_voice = true
+dialog_json = ExtResource("97_a61lq")
 
 [connection signal="body_entered" from="SkipDay" to="SkipDay" method="_on_body_entered"]
 [connection signal="body_exited" from="SkipDay" to="SkipDay" method="_on_body_exited"]

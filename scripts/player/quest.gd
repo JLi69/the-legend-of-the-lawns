@@ -186,6 +186,34 @@ static var list: Array[Quest] = [
 		),
 		[]
 	),
+
+	# Quest 12
+	Quest.new(
+		Reward.new(
+			"$1",
+			func(main: Main) -> void: main.money += 1
+		),
+		[
+			Goal.new(
+				"Talk to IT Girl at the store.", 
+				func(main: Main) -> bool: return talked_to_npc(main, "Store/ITGirl2")
+			),
+		]
+	),
+
+	# Quest 13
+	Quest.new(
+		Reward.new(
+			"Swapdeck available in store!",
+			func(main: Main) -> void: main.money -= 100
+		),
+		[
+			Goal.new(
+				"Earn $100 to pay IT Girl's\nsmuggling fee.",
+				func(main: Main) -> bool: return main.money >= 100
+			),
+		]
+	),
 ]
 
 static func get_quest(index: int) -> Quest:

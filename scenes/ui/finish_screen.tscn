@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://5ovepoc8woop" path="res://assets/tileset.tres" id="1_frppp"]
 [ext_resource type="Script" uid="uid://bmm383cy7pfhf" path="res://scripts/ui/finish_screen.gd" id="1_nicm2"]
 [ext_resource type="FontFile" uid="uid://b83lr4reqbm0y" path="res://assets/fonts/8BitOperator/8bitOperatorPlus8-Regular.ttf" id="2_m00dn"]
+[ext_resource type="SpriteFrames" uid="uid://djfxgqly8pts3" path="res://assets/item_icon_animation.tres" id="4_piuhf"]
 
 [node name="Finishscreen" type="Control" unique_id=887075648]
 process_mode = 3
@@ -140,8 +141,15 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/font = ExtResource("2_m00dn")
 theme_override_font_sizes/font_size = 32
-text = "New Item! +ITEM_TEXT"
+text = "New Item!"
 horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Stats/ItemText" unique_id=1823209062]
+position = Vector2(688.9999, 10)
+rotation = 0.5235988
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("4_piuhf")
+animation = &"chocolate"
 
 [node name="Earned" type="Label" parent="Stats" unique_id=825412982]
 custom_minimum_size = Vector2(0, 48)
