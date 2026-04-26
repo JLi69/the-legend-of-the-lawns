@@ -21,6 +21,8 @@ var times_mowed: int = 0
 var cooldown: int = 0
 @export var level: int = -1
 @export var knock_sound: AudioStreamPlayer
+@export var secret: bool = false
+@export var give_item_list: PackedStringArray = []
 
 @export_group("Wage Info")
 @export var wage: int = 10
@@ -84,7 +86,9 @@ func set_menu() -> void:
 	$/root/Main/HUD.set_neighbor_menu(self)
 	$/root/Main/Player.can_move = true
 	$/root/Main/Player.interact_text = interact_text
-	knock_sound.disconnect("finished", set_menu)
+	var connections = knock_sound.get_signal_connection_list("finished")
+	for conn in connections:
+		knock_sound.disconnect("finished", conn.callable)
 
 func _process(_delta: float) -> void:
 	if disabled:

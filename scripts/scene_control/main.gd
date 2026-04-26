@@ -98,6 +98,7 @@ func load_lawn(lawn_template: PackedScene, difficulty_level: int) -> void:
 	$Player/Camera2D.position_smoothing_enabled = false
 
 func return_to_neighborhood() -> void:
+	$HUD.hide_neighbor_menu()
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	player.reset_health()
 	player.status_effects.clear()
@@ -141,7 +142,7 @@ func update_hud_lawn(delta: float) -> void:
 
 	# Display the lawn progress bar
 	if $Player.health > 0:
-		$HUD.update_progress_bar($Lawn.get_perc_cut(), $Lawn.weeds_killed, $Lawn.total_weeds)
+		$HUD.update_progress_bar($Lawn)
 	else:
 		$HUD/Control/ProgressBar.hide()
 	# Update health bar
@@ -160,7 +161,7 @@ func update_hud_neighborhood() -> void:
 	# hide info text if talking to a neighbor
 	$HUD/Control/InfoText.visible = !$HUD.npc_menu_open() and !$HUD.quest_screen_open()
 	
-	$HUD.update_progress_bar(-1.0, 0, 0) # -1.0 hides the progress bar
+	$HUD.update_progress_bar(null) # A null lawn hides the progress bar
 	$HUD.update_health_bar(0, 0)
 	$HUD.hide_timer()
 	# Update stamina bar
@@ -233,19 +234,24 @@ func save_progress() -> void:
 		printerr("Error: could not save, can not open: ", save_path)
 		return
 
+	var file_contents: String = ""
 	# Store the main data
 	var main_json = JSON.stringify(save())
-	save_file.store_line(main_json)
+	# save_file.store_line(main_json)
+	file_contents += main_json + "\n"
 
 	# Store the player data
 	var player_json = JSON.stringify(player.save())
-	save_file.store_line(player_json)
+	# save_file.store_line(player_json)
+	file_contents += player_json + "\n"
 
 	# Store the neighborhood data
 	var neighborhood_data = neighborhood.save()
 	for data in neighborhood_data:
 		var json = JSON.stringify(data)
-		save_file.store_line(json)
+		# save_file.store_line(json)
+		file_contents += json + "\n"
+	save_file.store_string(file_contents)
 
 func get_job_list_str() -> String:
 	var job_list_str: String = ""

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b1shkd3nhlmls"]
+[gd_scene format=3 uid="uid://b1shkd3nhlmls"]
 
 [ext_resource type="Texture2D" uid="uid://c3twwpqwkgu2u" path="res://assets/textures/enemies/mobile/fungal_baby.png" id="1_a084a"]
 [ext_resource type="Texture2D" uid="uid://c1mwbw0kon1tr" path="res://assets/textures/shadow.png" id="1_od5hv"]
@@ -123,55 +123,55 @@ size = Vector2(7.499999, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apska"]
 size = Vector2(13.333332, 18.333332)
 
-[node name="FungalBaby" type="CharacterBody2D"]
+[node name="FungalBaby" type="CharacterBody2D" unique_id=2069172656]
 scale = Vector2(0.6, 0.6)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_wp067")
 explosion_flash_gradient = SubResource("Gradient_oe85s")
 explosion_scene = ExtResource("2_fe1kk")
-speed = 96.0
+speed = 68.0
 max_chase_distance = 500.0
 max_health = 5
 explosion_bullet_count = 3
 bullet_scene = ExtResource("2_oe85s")
 bullet_cooldown = -1.0
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=2047390005]
 scale = Vector2(0.37500003, 0.30769232)
 texture = ExtResource("1_od5hv")
 
-[node name="SpawnShadow" type="Sprite2D" parent="."]
+[node name="SpawnShadow" type="Sprite2D" parent="." unique_id=2092064984]
 visible = false
 scale = Vector2(0.62499994, 0.3076923)
 texture = ExtResource("1_od5hv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=720249259]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_jramf")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1325467323]
 position = Vector2(0, -2.4999995)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_jramf")
 
-[node name="ContactDamageZone" parent="." instance=ExtResource("4_7xnw5")]
+[node name="ContactDamageZone" parent="." unique_id=1734373684 instance=ExtResource("4_7xnw5")]
 position = Vector2(0, -8.33333)
 scale = Vector2(1.5, 1.5)
 
-[node name="Healthbar" parent="." instance=ExtResource("5_apska")]
+[node name="Healthbar" parent="." unique_id=324298907 instance=ExtResource("5_apska")]
 offset_top = -21.000008
 offset_bottom = -19.000008
 
-[node name="BulletHitbox" type="Area2D" parent="."]
+[node name="BulletHitbox" type="Area2D" parent="." unique_id=1317528426]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletHitbox" unique_id=2087635287]
 position = Vector2(0, -9.166666)
 shape = SubResource("RectangleShape2D_apska")
 
-[node name="BulletSpawnPoint" type="Node2D" parent="."]
+[node name="BulletSpawnPoint" type="Node2D" parent="." unique_id=538597237]
 position = Vector2(-2.3841855e-07, -10)
 
 [connection signal="hit" from="." to="." method="_on_hit"]

@@ -17,6 +17,7 @@ var wage_text: String = ""
 var wage_index: int = 0
 const WAGE_TIME: float = 0.2
 var timer: float = 0.0
+var player_can_move: bool = false
 
 func set_description_text(text: String) -> void:
 	description_text = text
@@ -384,7 +385,20 @@ This will permanently remove it from your inventory.""" % selected_item.get_disp
 
 	show()
 
+func alert(title: String, description: String, button_text: String) -> void:
+	set_menu_name(title)
+	set_wage_text("")
+	set_description_text(description)
+	reset_buttons()
+	buttons[0].show()
+	buttons[0].text = button_text
+	buttons[0].connect("pressed", on_leave_pressed)
+	show()
+
 func on_leave_pressed() -> void:
+	player_can_move = false
+	var player: Player = $/root/Main/Player
+	player.water_gun.shoot_timer = player.water_gun.SHOOT_COOLDOWN
 	$/root/Main.play_sfx("Click")
 	hide()
 	hide_neighbor()
@@ -404,7 +418,7 @@ func _process(delta: float) -> void:
 		$Menu/VBoxContainer/Wage.hide()
 	else:
 		$Menu/VBoxContainer/Wage.show()
-
+	
 	if wage_index >= wage_text.length() and description_index >= description_text.length():
 		return
 
@@ -421,3 +435,7 @@ func _process(delta: float) -> void:
 		$Menu/VBoxContainer/Wage.text += char(wage_text.unicode_at(wage_index))
 		wage_index += 1
 		timer -= step
+
+func mouse_inside() -> bool:
+	var rect: Rect2 = $NoMouseZone.get_global_rect()
+	return rect.has_point(get_global_mouse_position())

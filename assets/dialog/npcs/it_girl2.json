@@ -1,0 +1,21 @@
+{
+	"first_dialog": [
+		"Oh, hey there kid, I finally got in touch with some of my contacts at the Swapdeck factory and we might actually be able to get you a Swapdeck!",
+		"Dude, be quiet, I told you... we're obtaining it through... unofficial methods.",
+		"Well first of all, you're going to still have to buy the Swapdeck from the store.",
+		"No, because I'm not trying to get fired. Secondly, smuggling it in ain't going to be free, I need $100 up front.",
+		"Shhh, I told you, be quiet! And yes, you heard me right, I want 100 bucks up front before I smuggle the Swapdeck in. Rent ain't cheap in the city.",
+		"Just discretely leave $100 by the job board outside and I'll get the Swapdeck into the store, do we have a deal?"
+	],
+	"player_dialog": [
+		"Wait, REALLY?!!",
+		"Okay, okay, so what do I have to do?",
+		"What? Aw man, can't you just give it to me?",
+		"What?!",
+		"Okay...",
+		"Sure..."
+	],
+	"possible_dialog": [
+		"Do you have my $100 yet? If not, then get back to mowing lawns."
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"first_dialog": [
+		"Do you need anything? By the way, if you're here to sell me that new high-powered weed killer, I'm not interested.",
+		"Oh, no, I'm not Bob. I'm his identical twin Rob. We get confused a lot. Mom also liked him better...",
+		"So, what do you want? I don't have all day to yap about my family tree.",
+		"Oh, you're that kid that's been going around the neighborhood and mowing people's lawns? Well then, I've heard some decent things about you - sure why not. Just be careful: the weeds have gotten even more aggressive over the past couple of days.",
+		"Something's going on but I don't know what..."
+	],
+	"player_dialog": [
+		"Wait, Neighbor Bob?!",
+		"Oh.",
+		"Do you need your lawn mowed?",
+		"Uhm... okay?",
+		"..."
+	],
+	"first_job_offer": "Sorry about that, I've been listening to Neighbor Hunter's conspiracy podcast too much recently. So yeah, are you still willing to mow my lawn?"
+}

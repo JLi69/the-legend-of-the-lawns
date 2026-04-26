@@ -163,10 +163,6 @@ offset_top = 587.0
 offset_right = 410.0
 offset_bottom = 639.0
 
-[node name="NPCMenu" parent="Control" unique_id=2084685899 instance=ExtResource("6_5pdws")]
-visible = false
-layout_mode = 1
-
 [node name="InfoText" type="Label" parent="Control" unique_id=1823214251]
 layout_mode = 0
 offset_left = 1.0
@@ -237,6 +233,10 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(1, 0, 0, 0.501961)
+
+[node name="NPCMenu" parent="Control" unique_id=2084685899 instance=ExtResource("6_5pdws")]
+visible = false
+layout_mode = 1
 
 [node name="PauseMenu" parent="Control" unique_id=150444384 instance=ExtResource("4_047uy")]
 visible = false

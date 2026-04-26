@@ -12,6 +12,7 @@ extends AnimatedSprite2D
 @export var first_time: bool = true
 @export var min_level: int = -1
 @export var max_level: int = -1
+@export var hide_before_quest_completed: bool = false
 
 @export_group("Dialog")
 @export var use_female_voice: bool = false
@@ -29,8 +30,11 @@ var player_in_area: bool = false
 func _ready() -> void:
 	if interact_text.is_empty():
 		interact_text = "talk to %s" % display_name
-
+	
 	play(animation)
+	var rand_frame: int = randi_range(0, sprite_frames.get_frame_count(animation))
+	set_frame(rand_frame)
+	frame_progress = randf_range(0.0, 1.0)
 	Dialog.set_npc_dialog_from_json(self, dialog_json)
 
 func generate_dialog() -> void:
@@ -44,6 +48,7 @@ func generate_dialog() -> void:
 
 func _process(_delta: float) -> void:
 	var main: Main = $/root/Main
+	var quest_completed: bool = (Quest.get_quest(main.current_level) == null) or Quest.get_quest(main.current_level).completed(main)
 	if min_level > main.current_level:
 		hide()
 		$Area2D/CollisionShape2D.disabled = true
@@ -52,7 +57,11 @@ func _process(_delta: float) -> void:
 		hide()
 		$Area2D/CollisionShape2D.disabled = true
 		return
-	elif max_level == main.current_level and max_level >= 0 and Quest.get_quest(main.current_level).completed(main):
+	elif max_level == main.current_level and max_level >= 0 and quest_completed and !hide_before_quest_completed:
+		hide()
+		$Area2D/CollisionShape2D.disabled = true
+		return
+	elif max_level == main.current_level and max_level >= 0 and hide_before_quest_completed:
 		hide()
 		$Area2D/CollisionShape2D.disabled = true
 		return

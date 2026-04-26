@@ -1,0 +1,25 @@
+{
+	"possible_dialog": [
+		"My lawn needs to be mowed today but I don't think my back can handle it...",
+		"My husband Harold is away and I need help with the lawn.",
+		"I see you saw my post on the job board, well then, be good to Fluffy and don't be a hooligan!",
+		"Come closer, I can't see you! Oh, you're here to mow my lawn."
+	],
+	"reject_dialog": [
+		"Sorry, I don't think my lawn needs to be mowed today. Would you like one of my freshly baked cookies instead?"
+	],
+	"unavailable_msg": "The door is locked...\nThe rabbit in the front yard is glaring at you.",
+	"first_dialog": [
+		"Who is it? Come closer, I can't see you clearly!",
+		"Oh, yes, of course! These old bones aren't what they used to be... You're such a kind young man helping out an old lady like me.",
+		"Just to let you know, my rabbit Fluffy lives in the backyard, he might look mean but he wouldn't hurt a soul! I know he's a breed of killer rabbit but he's harmless and such a sweetheart.",
+		"I wouldn't know what I'd do without him, he always keeps me company whenever my husband Harold is away."
+	],
+	"player_dialog": [
+		"Do you need help mowing your lawn?",
+		"Thanks.",
+		"Uhm, okay?",
+		"..."
+	],
+	"first_job_offer": "Now, I nearly forgot, my lawn needs to be mowed today."
+}

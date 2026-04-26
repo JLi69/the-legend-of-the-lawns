@@ -1,0 +1,24 @@
+{
+	"possible_dialog": [
+		"The wasps rebuilt their nest in my backyard, can you clear it out?",
+		"I need another exterminator, the other one got stung so badly by the wasps he was sent to the hospital.",
+		"I would like the wasp nest in my backyard cleared out.",
+		"I don't know why the wasps keep building their nest in my backyard but I need them cleared out again."
+	],
+	"reject_dialog": [
+		"Whatever it is, I don't want to buy it.",
+		"I'm not interested in purchasing anything."
+	],
+	"unavailable_msg": "The door is locked...\nYou see a giant wasp nest in the bushes - you should probably avoid going near it.",
+	"first_dialog": [
+		"Hello, are you the exterminator that I hired?",
+		"Well then, I'm not interested in whatever you're trying to sell. *He starts closing the door*",
+		"Oh, well then, great! Some wasps built a giant nest in my backyard and I need it removed, can you do that?"
+	],
+	"player_dialog": [
+		"Uhm... no?",
+		"Wait! I... misspoke. I am the exterminator.",
+		"Sure, would you like your lawn mowed as well?"
+	],
+	"first_job_offer": "I was planning on mowing my lawn after the wasp nest was removed but sure, why not."
+}

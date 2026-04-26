@@ -22,12 +22,15 @@ func _ready() -> void:
 	var camera: GameCamera = $/root/Main/Player/Camera2D
 	camera.add_trauma(1.0)
 	super._ready()
+	lawn.boss_count += 1
+	lawn.bosses[get_path()] = true
 
 func explode() -> void:
+	lawn.bosses_killed += 1
 	var blood: GPUParticles2D = blood_scene.instantiate()
 	blood.global_position = $AnimatedSprite2D.global_position
 	blood.scale *= 2.5
-	$/root/Main/Lawn.add_child(blood)
+	lawn.add_child(blood)
 	super.explode()
 	queue_free()
 

@@ -1,0 +1,9 @@
+{
+	"first_dialog": [
+		"Hey there kid, what's up?"
+	],
+	"player_dialog": [
+		"I'm here to mow your lawn!"
+	],
+	"first_job_offer": "Okay, I guess my lawn could use a cut today. Just watch out for the wasp nests."
+}

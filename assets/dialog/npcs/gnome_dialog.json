@@ -1,0 +1,15 @@
+{
+	"first_dialog": [
+		"You swear you see the gnome's eyes flash red for a second.",
+		"This thing is creeping you out, you should go..."
+	],
+	"player_dialog": [
+		"...",
+		"Leave"
+	],
+	"possible_dialog": [
+		"Something about this gnome doesn't feel right...",
+		"Lawn gnomes creep you out...",
+		"Did the lawn gnome's eyes just flash red for a second?!"
+	]
+}

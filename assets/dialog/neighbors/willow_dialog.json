@@ -1,0 +1,43 @@
+{
+	"possible_dialog": [
+		"I think we are ready for another experiment!",
+		"The disturbance has gotten really strong over the past few days, I think we should do another experiment.",
+		"I just finished processing the data from the last experiment, but we need more data so are you up to helping out with another experiment?"
+	],
+	"reject_dialog": [
+		"Sorry, I'm still analyzing the data from the last experiment, come back later.",
+		"Can it wait? I'm running some other experiments right now.",
+		"I saw some men in black suits walking around the neighborhood. I think they're looking for me, so I've got to lay low for a couple of days.",
+		"I pulled an all nighter crunching data from experiments so can you come back later? I need to get some sleep..."
+	],
+	"unavailable_msg": "The house appears to be abandoned, but there is a sign saying \"FOR RENT\" in the front yard.",
+	"first_dialog": [
+		"Greetings! I saw you in my crystal ball the other day and I've been expecting you...",
+		"Oh, sorry, I forgot that saying that kind of freaks out those inexperienced with magic. By the way, I'm Willow. I just got out of university for the year but I'm currently... investigating something of high importance.",
+		"Okay, just between you and me, there has recently been an... imbalance in the natural magical field. It's causing a lot of weird things to happen, such as weeds becoming more agressive and shrub demons to prematurely migrate.",
+		"I think part of it is due to the construction of a new data center to the north along with a weedkiller factory to the west but there seems to be a much larger disturbance as well...",
+		"I've been trying to track down this disturbance over the past few weeks - it hasn't been easy. I think some powerful people are trying to stop me, that's why you have to keep this secret.",
+		"I've recently tracked down the main source of the magical field disturbance to this neighborhood. I started renting this house to continue my investigation here.",
+		"It also helps that some of my friends live nearby and my sister got a job at the nearby store so I can reach out to them for help if I need it. I still need to stay on the down low though.",
+		"Now, I still don't know a lot of things about the disturbance but I have figured out that it is slowly corrupting the life in in the lawns with an evil that could very well cause a collapse in the magical field...",
+		"Yes, as it would render everything within a 100 km radius around here uninhabitable for human life.",
+		"Now, this is where you come in. I still need to do some more research to track down the source of the disturbance but I have noticed that my backyard for this house seems especially exposed.",
+		"A lot of the data suggests that excessive lawn mowing and weedkiller usage is part of the problem but I also have some evidence that it might also be part of the solution. You've been mowing people's lawns a lot recently, right?",
+		"I need your help with some experiments - namely I just need you to mow my lawn while I collect some data. I can give you some magical spores and seeds as a bonus."
+	],
+	"player_dialog": [
+		"Wait, wait?!",
+		"Huh?",
+		"Okay...",
+		"...",
+		"Uhm, okay?",
+		"...",
+		"...",
+		"Should I be concerned about this collapse?",
+		"Yikes.",
+		"Okay...",
+		"Yes...",
+		"Okay..."
+	],
+	"first_job_offer": "I assume that you don't want the magical field around this neighborhood to collapse, so do we have a deal?"
+}

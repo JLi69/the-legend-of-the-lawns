@@ -1,0 +1,18 @@
+{
+	"first_dialog": [
+		"*Fluffy glares at you.*",
+		"*Fluffy bites you!*",
+		"*Fluffy glares at you.*"
+	],
+	"player_dialog": [
+		"...",
+		"Ow!",
+		"You should go..."
+	],
+	"possible_dialog": [
+		"*Fluffy tries to bite you!*",
+		"*Fluffy glares at you.*",
+		"*Fluffy twitches his nose.*",
+		"*Fluffy wiggles his tail.*"
+	]
+}

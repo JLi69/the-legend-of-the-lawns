@@ -13,10 +13,10 @@ const USE_COUNTS: Dictionary = {
 	"drone_controller" : 4,
 	"fireworks" : 3,
 	# Weapons
-	"weedkiller" : 65,
-	"acidic_weedkiller" : 55,
-	"super_weedkiller" : 50,
-	"ultra_weedkiller" : 50,
+	"weedkiller" : 75,
+	"acidic_weedkiller" : 45,
+	"super_weedkiller" : 35,
+	"ultra_weedkiller" : 20,
 	"water_bottle_pack" : 50,
 	"water_jug" : 10,
 	"ice" : 25,
@@ -28,15 +28,18 @@ const COOLDOWNS: Dictionary = {
 	"soda" : 33.0,
 	"ice_cream" : 40.0,
 	"tomato_seeds" : 80.0,
-	"boom_shroom_spores" : 25.0,
+	"boom_shroom_spores" : 35.0,
 	"gasoline" : 35.0,
 	"shield_generator" : 90.0,
 	"electric_doodad" : 50.0,
 	"insecticide" : 45.0,
 	"drone_controller" : 80.0,
 	"fireworks" : 80.0,
-	"water_bottle_pack" : 3.0,
+	"water_bottle_pack" : 1.0,
 	"water_jug" : 12.0,
+	"acidic_weedkiller" : 0.75,
+	"super_weedkiller" : 1.5,
+	"ultra_weedkiller" : 3.0,
 }
 const DEFAULT_COOLDOWN: float = 1.0
 
@@ -178,7 +181,7 @@ func get_display_str() -> String:
 	else:
 		display_name = id
 	if uses_left == 1:
-		return "[%s, 1 use left)]" % display_name
+		return "[%s, 1 use left]" % display_name
 	else:
 		return "[%s, %d uses left]" % [ display_name, uses_left ]
 

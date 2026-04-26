@@ -21,6 +21,17 @@ var flowers_destroyed: int = 0
 var weeds_killed: int = 0
 var total_weeds: int = 0
 var weeds: Dictionary = {}
+
+var nests_destroyed: int = 0
+var nest_count: int = 0
+var nests: Dictionary = {}
+
+var bosses_killed: int = 0
+var boss_count: int = 0
+var bosses: Dictionary = {}
+
+var killed_rabbit: bool = false
+
 # Key: tile position -> number of weeds at that position
 var weed_positions: Dictionary = {}
 
@@ -159,7 +170,13 @@ func water_gun_interaction() -> void:
 		drop_water_gun()
 
 func lawn_completed() -> bool:
-	return cut_grass_tiles >= total_grass_tiles and weeds_killed >= total_weeds
+	if weeds_killed < total_weeds:
+		return false
+	if bosses_killed < boss_count:
+		return false
+	if nests_destroyed < nest_count:
+		return false
+	return cut_grass_tiles >= total_grass_tiles
 
 func spawn_weeds(pos: Vector2) -> void:
 	var weights = Spawning.get_weed_spawn_weights(max(difficulty - 1, 0))
@@ -188,7 +205,7 @@ func spawn_weeds(pos: Vector2) -> void:
 		)
 
 func spawn_mobs(pos: Vector2) -> void:	
-	var weights = Spawning.get_mob_spawn_weights(difficulty)
+	var weights = Spawning.get_mob_spawn_weights(max(difficulty - 1, 0))
 	if weights.is_empty():
 		return
 

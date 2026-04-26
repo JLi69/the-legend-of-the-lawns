@@ -554,7 +554,8 @@ func _physics_process(_delta: float) -> void:
 
 	# movement
 	# don't move when menu is open
-	if !$/root/Main/HUD.npc_menu_open() and !$/root/Main/HUD.quest_screen_open() and can_move:
+	var npc_menu_open: bool = $/root/Main/HUD.npc_menu_open() and !$/root/Main/HUD.npc_menu_can_move()
+	if !npc_menu_open and !$/root/Main/HUD.quest_screen_open() and can_move:
 		if Input.is_action_pressed("move_up"):
 			velocity.y -= 1.0
 		if Input.is_action_pressed("move_down"):
@@ -674,6 +675,21 @@ func load(data: Dictionary) -> void:
 	time_bonus_level = max(Save.get_val(data, "time_bonus_level", 0), 0)
 	armor_level = max(Save.get_val(data, "armor_level", 0), 0)
 
+func get_closest(node_paths: Dictionary) -> NodePath:
+	var min_dist: float = -1.0
+	var point_to: NodePath = ""
+	for path: NodePath in node_paths:
+		var node: Node2D = get_node_or_null(path)
+		if node == null:
+			continue
+		if !node.visible:
+			continue
+		var dist: float = (node.global_position - global_position).length()
+		if dist < min_dist or min_dist < 0.0:
+			point_to = path
+			min_dist = dist
+	return point_to
+
 func update_enemy_arrow() -> void:
 	var lawn: Lawn = get_node_or_null("/root/Main/Lawn")
 	if lawn == null:
@@ -684,16 +700,15 @@ func update_enemy_arrow() -> void:
 		$EnemyArrow.point_to = ""
 		return
 
-	$EnemyArrow.point_to = ""
-	var min_dist: float = -1.0
-	for path: NodePath in lawn.weeds:
-		var weed: WeedEnemy = get_node_or_null(path)
-		if weed == null:
-			continue
-		var dist: float = (weed.global_position - global_position).length()
-		if dist < min_dist or min_dist < 0.0:
-			$EnemyArrow.point_to = path
-			min_dist = dist
+	$EnemyArrow.point_to = get_closest(lawn.weeds)	
+	if str($EnemyArrow.point_to) != "":
+		return
+
+	$EnemyArrow.point_to = get_closest(lawn.nests)	
+	if str($EnemyArrow.point_to) != "":
+		return
+
+	$EnemyArrow.point_to = get_closest(lawn.bosses)
 
 func update_lawn_mower_arrow() -> void:
 	var lawn: Lawn = get_node_or_null("/root/Main/Lawn")

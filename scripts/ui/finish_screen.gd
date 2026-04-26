@@ -24,6 +24,8 @@ func add_labels(labels: Array, sfx_id: String) -> void:
 func activate() -> void:
 	if $/root/Main/Player.health <= 0:
 		return
+	if !$/root/Main.lawn_loaded:
+		return
 	timer = DELAY
 	show()
 	$TileMapLayer.hide()
@@ -59,7 +61,7 @@ func start_showing_menu() -> void:
 		current_wage_modifier -= hedge_penalty
 		add_labels([$Stats/HedgePenalty, $Stats/HedgeCommentText], "Penalty")
 		$Stats/HedgePenalty.text = "Hedge Penalty: -$%d" % hedge_penalty
-	
+		
 	var time_limit = $/root/Main/Lawn.time_limit
 	var time_bonus: int = 0
 	# Calculate the time bonus
@@ -87,6 +89,14 @@ func start_showing_menu() -> void:
 		else:
 			$Stats/TimeBonus.text = "Time Bonus: $%d (x%.2f)" % [ time_bonus, player.get_bonus_multiplier() ]
 		add_labels([$Stats/TimeBonus], "Money")
+	
+	$Stats/ItemText.hide()
+	if current_neighbor.give_item_list.size() > 0:
+		var rand_index: int = randi() % current_neighbor.give_item_list.size()
+		var rand_item: String = current_neighbor.give_item_list[rand_index]
+		if player.inventory.add_item(rand_item):
+			$Stats/ItemText/AnimatedSprite2D.animation = rand_item
+			add_labels([$Stats/ItemText], "Money")
 
 	# Payment
 	var payment = max(main.current_wage + current_wage_modifier, 0)
@@ -136,9 +146,13 @@ func _process(delta: float) -> void:
 				label_display_timer *= 1.5
 
 func _on_return_pressed() -> void:
+	if !visible:
+		return
 	get_tree().paused = false
 	hide()
 	var main: Main = $/root/Main
+	if !main.lawn_loaded:
+		return
 	main.play_sfx("Click")
 	var prev_money: int = main.money
 	main.lawns_mowed += 1

@@ -1,0 +1,21 @@
+{
+	"first_dialog": [
+		"Okay kid, I see you got me my $100. Just in time too, my landlord was about to evict me for missing rent for the third time. So thanks for that.",
+		"Anyway, as promised, I smuggled the Swapdeck into the store, it's in the back storage room right now.",
+		"Unfortunately, it seems that the computer part supply chain breakdown has become so bad that some scalpers ripped out a bunch of parts from the Swapdeck and it's basically just an expensive paperweight right now.",
+		"Sheesh, you gotta work on your inside voice. Yeah, those jerks tore out the RAM, GPU, and battery and are probably selling them on the black market to some desperate gamers. However, I can repair the Swapdeck for you.",
+		"Well, first I need the parts to actually, you know, make the Swapdeck work. Like I said earlier, the computer part supply chain got screwed up pretty badly by the war in Siliconia so we're going to need to be... creative in how we source our parts.",
+		"Don't worry about it, you still need to save up money to actually buy the Swapdeck, right? So work on that for a bit while I sort out the details on how we're going to get the parts. Are you okay with that?"
+	],
+	"player_dialog": [
+		"You're welcome?",
+		"Why isn't it out here for me to buy?",
+		"What?!",
+		"Wait, really?! How long will that take?",
+		"Okay...",
+		"Sure."
+	],
+	"possible_dialog": [
+		"Kid, be patient, I'm still trying to figure out where we can source the parts to fix the Swapdeck, I just need a little bit more time."
+	]
+}
