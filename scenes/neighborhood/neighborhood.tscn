@@ -88,6 +88,7 @@
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/malcom_dialog.json" id="58_jm8ja"]
 [ext_resource type="PackedScene" uid="uid://dv1kjcw51idgj" path="res://scenes/lawns/mrtie_lawn.tscn" id="58_p4k6h"]
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/mrtie_dialog.json" id="60_uuxxi"]
+[ext_resource type="PackedScene" uid="uid://buheoinf6a4kd" path="res://scenes/lawns/bugman_lawn.tscn" id="62_nsl0s"]
 [ext_resource type="PackedScene" uid="uid://cjee4hiyjwavr" path="res://scenes/decorations/checkout_counter.tscn" id="62_rb5n6"]
 [ext_resource type="Texture2D" uid="uid://dyeg7yqiqumw5" path="res://assets/textures/decorations/mcmoneypants_painting.png" id="63_2fw6o"]
 [ext_resource type="Texture2D" uid="uid://32q8xuowprgl" path="res://assets/textures/decorations/swapdeck_poster.png" id="64_fwf17"]
@@ -478,7 +479,7 @@ lawn_template = ExtResource("37_pkfx3")
 level = 11
 secret = true
 give_item_list = ["tomato_seeds", "boom_shroom_spores", "boom_shroom_spores", "weedkiller"]
-wage = 25
+wage = 30
 max_bonus = 16
 use_female_voice = true
 dialog_json = ExtResource("38_h0h8e")
@@ -621,8 +622,12 @@ dialog_json = ExtResource("58_jm8ja")
 position = Vector2(1112, -539)
 animation = &"bugman"
 display_name = "Bugman"
+lawn_template = ExtResource("62_nsl0s")
 level = 15
 secret = true
+wage = 24
+max_bonus = 12
+flower_penalty = 2
 
 [node name="MrTie" parent="Neighbors" unique_id=1335934980 instance=ExtResource("3_tqujx")]
 position = Vector2(232.00002, -539)
