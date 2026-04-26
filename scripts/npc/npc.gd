@@ -12,6 +12,7 @@ extends AnimatedSprite2D
 @export var first_time: bool = true
 @export var min_level: int = -1
 @export var max_level: int = -1
+@export var hide_before_quest_completed: bool = false
 
 @export_group("Dialog")
 @export var use_female_voice: bool = false
@@ -56,7 +57,11 @@ func _process(_delta: float) -> void:
 		hide()
 		$Area2D/CollisionShape2D.disabled = true
 		return
-	elif max_level == main.current_level and max_level >= 0 and quest_completed:
+	elif max_level == main.current_level and max_level >= 0 and quest_completed and !hide_before_quest_completed:
+		hide()
+		$Area2D/CollisionShape2D.disabled = true
+		return
+	elif max_level == main.current_level and max_level >= 0 and hide_before_quest_completed:
 		hide()
 		$Area2D/CollisionShape2D.disabled = true
 		return
