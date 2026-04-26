@@ -314,7 +314,10 @@ func set_buy_menu(item: Buy) -> void:
 	current_neighbor = null
 	reset_buttons()
 
-	set_menu_name("Buy %s?" % item.display_name)
+	if item.price == 0:
+		set_menu_name("Pick up %s?" % item.display_name)
+	else:
+		set_menu_name("Buy %s?" % item.display_name)
 	set_wage_text("")
 	set_description_text(item.description)
 
@@ -323,15 +326,24 @@ func set_buy_menu(item: Buy) -> void:
 	buttons[0].connect("pressed", on_leave_pressed)
 
 	buttons[1].show()
-	buttons[1].text = "Yes ($%d)" % item.price
+	if item.price == 0:
+		buttons[1].text = "Yes"
+	else:
+		buttons[1].text = "Yes ($%d)" % item.price
 	buttons[1].connect(
 		"pressed",
 		func() -> void:
-			$/root/Main.play_sfx("Money")
+			if item.price == 0:
+				$/root/Main.play_sfx("Click")
+			else:
+				$/root/Main.play_sfx("Money")
 			item.buy()
 			reset_buttons()
 			
-			set_menu_name("Bought %s!" % item.display_name)
+			if item.price == 0:
+				set_menu_name("Picked up %s!" % item.display_name)
+			else:
+				set_menu_name("Bought %s!" % item.display_name)
 			set_description_text("%s" % item.buy_text)
 
 			buttons[0].show()

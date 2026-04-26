@@ -302,7 +302,7 @@ func _on_bullet_hitbox_area_entered(body: Node2D) -> void:
 		if !immune_to_freeze and body.is_in_group("ice_bullet"):
 			freeze_timer = FREEZE_TIME
 			if vulnerable_to_freeze:
-				freeze_timer *= 2.5
+				freeze_timer *= 3.0
 	elif body is EnemyBullet:
 		if !body.active():
 			return

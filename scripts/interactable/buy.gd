@@ -130,6 +130,8 @@ func _process(_delta: float) -> void:
 		player.interact_text = get_interact_text()
 
 func get_interact_text() -> String:
+	if price == 0:
+		return "Pick up %s - [SPACE]" % display_name
 	return "Buy %s - [SPACE]" % display_name
 
 func _on_body_entered(body: Node2D) -> void:
