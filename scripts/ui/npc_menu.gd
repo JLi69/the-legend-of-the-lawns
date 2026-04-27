@@ -292,7 +292,6 @@ func skip_day() -> void:
 
 func set_skip_day_menu() -> void:
 	current_npc = null
-	current_neighbor = null
 	reset_buttons()
 
 	set_menu_name("Your House")
@@ -311,7 +310,6 @@ func set_skip_day_menu() -> void:
 
 func set_buy_menu(item: Buy) -> void:
 	current_npc = null
-	current_neighbor = null
 	reset_buttons()
 
 	if item.price == 0:
@@ -358,7 +356,6 @@ func set_buy_menu(item: Buy) -> void:
 
 func set_trash_menu() -> void:
 	current_npc = null
-	current_neighbor = null
 	reset_buttons()
 
 	var main: Main = $/root/Main

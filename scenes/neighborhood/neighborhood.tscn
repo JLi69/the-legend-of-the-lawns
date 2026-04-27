@@ -648,6 +648,9 @@ display_name = "Cyborg"
 lawn_template = ExtResource("65_dxt8e")
 level = 15
 secret = true
+wage = 24
+max_bonus = 15
+flower_penalty = 3
 
 [node name="NeighborHelen" parent="Neighbors" unique_id=1931606776 instance=ExtResource("3_tqujx")]
 position = Vector2(888, -539)
