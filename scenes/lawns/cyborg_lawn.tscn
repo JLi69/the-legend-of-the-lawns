@@ -16,6 +16,14 @@
 [ext_resource type="JSON" path="res://assets/dialog/npcs/cyborg_npc_dialog.json" id="13_jsuec"]
 [ext_resource type="Texture2D" uid="uid://mhf7o0ftg6r7" path="res://assets/textures/decorations/window.png" id="13_y16k8"]
 [ext_resource type="PackedScene" uid="uid://boiyvtxjuw0rf" path="res://scenes/enemies/mobile/shrub_demon_mound.tscn" id="15_3iduu"]
+[ext_resource type="PackedScene" uid="uid://e44sam5dbx4w" path="res://scenes/decorations/potted_plant1.tscn" id="16_wuarm"]
+[ext_resource type="PackedScene" uid="uid://uh2q8jylpyj2" path="res://scenes/decorations/potted_plant3.tscn" id="17_jm7wy"]
+[ext_resource type="PackedScene" uid="uid://drxrq6wvc1ach" path="res://scenes/decorations/table.tscn" id="18_n7whw"]
+[ext_resource type="PackedScene" uid="uid://b7p5uc1ws7c3d" path="res://scenes/decorations/robot_head.tscn" id="19_b7k7u"]
+[ext_resource type="PackedScene" uid="uid://ce7up7cj58f7w" path="res://scenes/decorations/jar1.tscn" id="20_amxfo"]
+[ext_resource type="PackedScene" uid="uid://dc0pf5stwpebk" path="res://scenes/decorations/jar2.tscn" id="21_kaoig"]
+[ext_resource type="PackedScene" uid="uid://citm7hst78ivs" path="res://scenes/decorations/chemistry_machine.tscn" id="22_dmh0r"]
+[ext_resource type="PackedScene" uid="uid://cgfyu45dlhk8j" path="res://scenes/decorations/server.tscn" id="23_vn4vn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qiisy"]
 size = Vector2(210, 169)
@@ -183,6 +191,49 @@ texture = ExtResource("13_y16k8")
 position = Vector2(50, 530)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("13_y16k8")
+
+[node name="ExplosiveBarrel" parent="Lab" index="6" unique_id=471552924 instance=ExtResource("12_rlovv")]
+position = Vector2(58, 563)
+
+[node name="ExplosiveBarrel2" parent="Lab" index="7" unique_id=1441570035 instance=ExtResource("12_rlovv")]
+position = Vector2(41, 564)
+
+[node name="PottedPlant1" parent="Lab" index="8" unique_id=1445961081 instance=ExtResource("16_wuarm")]
+position = Vector2(-85, 565)
+
+[node name="PottedPlant3" parent="Lab" index="9" unique_id=3870832 instance=ExtResource("17_jm7wy")]
+position = Vector2(75, 563)
+
+[node name="PottedPlant4" parent="Lab" index="10" unique_id=2050615417 instance=ExtResource("17_jm7wy")]
+position = Vector2(88, 565)
+
+[node name="Table" parent="Lab" index="11" unique_id=2028076181 instance=ExtResource("18_n7whw")]
+position = Vector2(-50, 569)
+
+[node name="ExplosiveBarrel" parent="Lab/Table" index="2" unique_id=842157017 instance=ExtResource("12_rlovv")]
+position = Vector2(-16, -15)
+
+[node name="RobotHead" parent="Lab/Table" index="3" unique_id=1655633695 instance=ExtResource("19_b7k7u")]
+position = Vector2(16, -15)
+
+[node name="Jar1" parent="Lab/Table" index="4" unique_id=1339520445 instance=ExtResource("20_amxfo")]
+position = Vector2(-5, -14)
+
+[node name="Jar2" parent="Lab/Table" index="5" unique_id=1859612477 instance=ExtResource("21_kaoig")]
+position = Vector2(4, -15)
+scale = Vector2(-0.5, 0.5)
+
+[node name="ExplosiveBarrel3" parent="Lab" index="12" unique_id=1125551664 instance=ExtResource("12_rlovv")]
+position = Vector2(81, 642)
+
+[node name="ExplosiveBarrel5" parent="Lab" index="13" unique_id=1563832160 instance=ExtResource("12_rlovv")]
+position = Vector2(-80, 631)
+
+[node name="ChemistryMachine" parent="Lab" index="14" unique_id=510048467 instance=ExtResource("22_dmh0r")]
+position = Vector2(54.000004, 582.00006)
+
+[node name="Server" parent="Lab" index="15" unique_id=722577949 instance=ExtResource("23_vn4vn")]
+position = Vector2(20, 564)
 
 [node name="ExplosiveBarrel" parent="." index="9" unique_id=10992554 instance=ExtResource("12_rlovv")]
 position = Vector2(397, 45)
