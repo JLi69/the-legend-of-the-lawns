@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dux415njqmp1m" path="res://scenes/interactable/buy.tscn" id="8_8cb0c"]
 [ext_resource type="PackedScene" uid="uid://g5qtancilglp" path="res://scenes/neighborhood/npc.tscn" id="10_qiisy"]
 [ext_resource type="PackedScene" uid="uid://c07jh4tyii0gs" path="res://scenes/lawn_features/explosive_barrel.tscn" id="12_rlovv"]
+[ext_resource type="JSON" path="res://assets/dialog/npcs/cyborg_npc_dialog.json" id="13_jsuec"]
 [ext_resource type="Texture2D" uid="uid://mhf7o0ftg6r7" path="res://assets/textures/decorations/window.png" id="13_y16k8"]
+[ext_resource type="PackedScene" uid="uid://boiyvtxjuw0rf" path="res://scenes/enemies/mobile/shrub_demon_mound.tscn" id="15_3iduu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qiisy"]
 size = Vector2(210, 169)
@@ -120,6 +122,7 @@ shape = SubResource("RectangleShape2D_qiisy")
 
 [node name="Door" parent="Lab" index="1" unique_id=1860237197 node_paths=PackedStringArray("go_to") instance=ExtResource("6_qklgw")]
 position = Vector2(0, 560)
+interact_text = "Go outside"
 go_to = NodePath("../../PlayerSpawn2")
 
 [node name="StoreDisplay" parent="Lab" index="2" unique_id=42241849 instance=ExtResource("7_cddtp")]
@@ -169,6 +172,7 @@ position = Vector2(-64, 612)
 animation = &"cyborg"
 display_name = "Cyborg"
 first_time = false
+dialog_json = ExtResource("13_jsuec")
 
 [node name="Window" type="Sprite2D" parent="Lab" index="4" unique_id=810235744]
 position = Vector2(-50, 530)
@@ -203,3 +207,12 @@ position = Vector2(-407, 7.9999847)
 
 [node name="ExplosiveBarrel8" parent="." index="16" unique_id=227728618 instance=ExtResource("12_rlovv")]
 position = Vector2(-442, -3.0000153)
+
+[node name="ShrubDemonMound" parent="." index="17" unique_id=1242115820 instance=ExtResource("15_3iduu")]
+position = Vector2(348, -432)
+
+[node name="ShrubDemonMound2" parent="." index="18" unique_id=1224262375 instance=ExtResource("15_3iduu")]
+position = Vector2(-348, -432)
+
+[node name="ShrubDemonMound3" parent="." index="19" unique_id=857743190 instance=ExtResource("15_3iduu")]
+position = Vector2(-420, 83)

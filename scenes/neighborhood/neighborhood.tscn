@@ -91,12 +91,14 @@
 [ext_resource type="PackedScene" uid="uid://buheoinf6a4kd" path="res://scenes/lawns/bugman_lawn.tscn" id="62_nsl0s"]
 [ext_resource type="PackedScene" uid="uid://cjee4hiyjwavr" path="res://scenes/decorations/checkout_counter.tscn" id="62_rb5n6"]
 [ext_resource type="Texture2D" uid="uid://dyeg7yqiqumw5" path="res://assets/textures/decorations/mcmoneypants_painting.png" id="63_2fw6o"]
+[ext_resource type="JSON" path="res://assets/dialog/neighbors/bugman_dialog.json" id="63_epxny"]
 [ext_resource type="Texture2D" uid="uid://32q8xuowprgl" path="res://assets/textures/decorations/swapdeck_poster.png" id="64_fwf17"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/martin_dialog.json" id="65_2qen0"]
 [ext_resource type="PackedScene" uid="uid://cpor73ufxkk0e" path="res://scenes/lawns/cyborg_lawn.tscn" id="65_dxt8e"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/mr_manager_dialog.json" id="65_xio3b"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/cashier_guy_dialog.json" id="66_bg1hm"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/robot_dialog.json" id="66_qqjl7"]
+[ext_resource type="JSON" path="res://assets/dialog/neighbors/cyborg_dialog.json" id="67_7pbd7"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/it_girl1.json" id="89_vnrcm"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/it_girl2.json" id="97_a61lq"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/it_girl3.json" id="98_yc5ru"]
@@ -630,6 +632,7 @@ give_item_list = ["insecticide"]
 wage = 24
 max_bonus = 12
 flower_penalty = 2
+dialog_json = ExtResource("63_epxny")
 
 [node name="MrTie" parent="Neighbors" unique_id=1335934980 instance=ExtResource("3_tqujx")]
 position = Vector2(232.00002, -539)
@@ -651,6 +654,7 @@ secret = true
 wage = 24
 max_bonus = 15
 flower_penalty = 3
+dialog_json = ExtResource("67_7pbd7")
 
 [node name="NeighborHelen" parent="Neighbors" unique_id=1931606776 instance=ExtResource("3_tqujx")]
 position = Vector2(888, -539)
