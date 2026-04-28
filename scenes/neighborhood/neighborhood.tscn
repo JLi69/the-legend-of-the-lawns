@@ -99,6 +99,11 @@
 [ext_resource type="JSON" path="res://assets/dialog/npcs/cashier_guy_dialog.json" id="66_bg1hm"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/robot_dialog.json" id="66_qqjl7"]
 [ext_resource type="JSON" path="res://assets/dialog/neighbors/cyborg_dialog.json" id="67_7pbd7"]
+[ext_resource type="PackedScene" uid="uid://c50prixpfdx14" path="res://scenes/lawns/store_lawn.tscn" id="70_4nqm5"]
+[ext_resource type="AudioStream" uid="uid://bljuxksg17toe" path="res://assets/audio/sfx/drone_shoot.wav" id="70_qo1hn"]
+[ext_resource type="AudioStream" uid="uid://eyyq58oktsp" path="res://assets/audio/sfx/click.wav" id="71_qo1hn"]
+[ext_resource type="JSON" path="res://assets/dialog/neighbors/robot_neighbor_dialog.json" id="71_tsyeq"]
+[ext_resource type="Script" uid="uid://3am5ms0m2qq1" path="res://scripts/npc/neighbor_controller.gd" id="72_0nn5q"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/it_girl1.json" id="89_vnrcm"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/it_girl2.json" id="97_a61lq"]
 [ext_resource type="JSON" path="res://assets/dialog/npcs/it_girl3.json" id="98_yc5ru"]
@@ -482,7 +487,6 @@ display_name = "Willow"
 lawn_template = ExtResource("37_pkfx3")
 level = 11
 secret = true
-give_item_list = ["tomato_seeds", "boom_shroom_spores", "boom_shroom_spores", "weedkiller"]
 wage = 30
 max_bonus = 16
 use_female_voice = true
@@ -511,7 +515,6 @@ animation = &"neighbor_hunter"
 display_name = "Neighbor Hunter"
 lawn_template = ExtResource("37_kg5j4")
 level = 7
-give_item_list = ["acidic_weedkiller"]
 wage = 15
 max_bonus = 8
 hedge_penalty = 0
@@ -568,7 +571,6 @@ animation = &"neighbor_george"
 display_name = "Neighbor George"
 lawn_template = ExtResource("37_lse0k")
 level = 5
-give_item_list = ["weedkiller"]
 bonus_base = 2
 max_bonus = 7
 flower_penalty = 2
@@ -590,7 +592,6 @@ position = Vector2(-280, 229)
 display_name = "Neighbor Rob"
 lawn_template = ExtResource("47_8wdp2")
 level = 8
-give_item_list = ["ice_cream", "chocolate"]
 wage = 16
 max_bonus = 10
 dialog_json = ExtResource("50_mncw8")
@@ -629,7 +630,6 @@ display_name = "Bugman"
 lawn_template = ExtResource("62_nsl0s")
 level = 15
 secret = true
-give_item_list = ["insecticide"]
 wage = 24
 max_bonus = 12
 flower_penalty = 2
@@ -667,6 +667,32 @@ wage = 18
 max_bonus = 10
 use_female_voice = true
 dialog_json = ExtResource("55_41mb4")
+
+[node name="Robot" parent="Neighbors" unique_id=1784388205 node_paths=PackedStringArray("knock_sound", "custom_talk_audio") instance=ExtResource("3_tqujx")]
+position = Vector2(750, -139)
+animation = &"robot"
+display_name = "StoreCorp Lawn Robot"
+always_visible = true
+lawn_template = ExtResource("70_4nqm5")
+level = 17
+knock_sound = NodePath("Click")
+at_store = true
+wage = 24
+max_bonus = 12
+custom_talk_audio = NodePath("CustomVoice")
+knock_subtitle = ""
+interact_text = "Press [SPACE] to talk to StoreCorp Lawn Robot."
+dialog_json = ExtResource("71_tsyeq")
+
+[node name="CustomVoice" type="AudioStreamPlayer" parent="Neighbors/Robot" unique_id=721670915]
+stream = ExtResource("70_qo1hn")
+
+[node name="Click" type="AudioStreamPlayer" parent="Neighbors/Robot" unique_id=1731705687]
+stream = ExtResource("71_qo1hn")
+
+[node name="NeighborController" type="Node2D" parent="Neighbors/Robot" unique_id=80650588 node_paths=PackedStringArray("required_npcs")]
+script = ExtResource("72_0nn5q")
+required_npcs = [NodePath("../../../Store/ITGirl4")]
 
 [node name="FastTravel" type="Node2D" parent="." unique_id=845814038]
 y_sort_enabled = true
@@ -1467,8 +1493,10 @@ position = Vector2(16, 826.00006)
 animation = &"robot"
 display_name = "StoreCorp Robot"
 min_level = 6
-can_talk = false
 dialog_json = ExtResource("66_qqjl7")
+
+[node name="CustomVoice" type="AudioStreamPlayer" parent="Store/Robot" unique_id=1095783524]
+stream = ExtResource("70_qo1hn")
 
 [node name="CashierGuy" parent="Store" unique_id=375736299 instance=ExtResource("4_dcvy4")]
 position = Vector2(-121.00001, 756)

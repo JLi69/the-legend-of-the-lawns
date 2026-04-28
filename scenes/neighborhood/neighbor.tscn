@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://drly5tsh74tap" path="res://assets/textures/npcs/neighbors/neighbor_malcom.png" id="11_gxlkt"]
 [ext_resource type="Texture2D" uid="uid://bbmfaewycp5te" path="res://assets/textures/npcs/neighbors/neighbor_tam.png" id="12_vvqom"]
 [ext_resource type="Texture2D" uid="uid://bq8y31l40yd33" path="res://assets/textures/npcs/neighbors/neighbor_nicole.png" id="12_xmkr0"]
+[ext_resource type="Texture2D" uid="uid://b235qhfs52p4u" path="res://assets/textures/npcs/robot.png" id="20_57n6d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axs78"]
 atlas = ExtResource("1_hytdr")
@@ -174,6 +175,14 @@ region = Rect2(0, 0, 18, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xi17n"]
 atlas = ExtResource("12_vvqom")
+region = Rect2(18, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sywk4"]
+atlas = ExtResource("20_57n6d")
+region = Rect2(0, 0, 18, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11f2s"]
+atlas = ExtResource("20_57n6d")
 region = Rect2(18, 0, 18, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scknv"]
@@ -393,6 +402,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"neighbor_tam",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sywk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11f2s")
+}],
+"loop": true,
+"name": &"robot",
 "speed": 2.0
 }, {
 "frames": [{

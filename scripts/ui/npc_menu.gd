@@ -64,7 +64,9 @@ func set_menu_unavailable(neighbor: NeighborNPC) -> void:
 
 # This is the message displayed if the neighbor does not need their lawn mowed.
 func set_menu_reject(neighbor: NeighborNPC) -> void:
-	if neighbor.use_female_voice:
+	if neighbor.custom_talk_audio:
+		neighbor.custom_talk_audio.play()
+	elif neighbor.use_female_voice:
 		$/root/Main.play_sfx("FemaleTalk")
 	else:
 		$/root/Main.play_sfx("MaleTalk")
@@ -92,7 +94,9 @@ func advance_first_dialog(neighbor: NeighborNPC, index: int) -> void:
 # when they first meet them.
 func set_menu_first(neighbor: NeighborNPC, index: int) -> void:
 	if neighbor.first_dialog[index] != "...":
-		if neighbor.use_female_voice:
+		if neighbor.custom_talk_audio:
+			neighbor.custom_talk_audio.play()
+		elif neighbor.use_female_voice:
 			$/root/Main.play_sfx("FemaleTalk")
 		else:
 			$/root/Main.play_sfx("MaleTalk")
@@ -115,7 +119,9 @@ func set_menu_first(neighbor: NeighborNPC, index: int) -> void:
 
 # This is the menu displayed if the player can mow the neighbor's lawn.
 func set_mowing_menu(neighbor: NeighborNPC) -> void:
-	if neighbor.use_female_voice:
+	if neighbor.custom_talk_audio:
+		neighbor.custom_talk_audio.play()
+	elif neighbor.use_female_voice:
 		$/root/Main.play_sfx("FemaleTalk")
 	else:
 		$/root/Main.play_sfx("MaleTalk")
