@@ -671,7 +671,7 @@ dialog_json = ExtResource("55_41mb4")
 [node name="Robot" parent="Neighbors" unique_id=1784388205 node_paths=PackedStringArray("knock_sound", "custom_talk_audio") instance=ExtResource("3_tqujx")]
 position = Vector2(750, -139)
 animation = &"robot"
-display_name = "StoreCorp Lawn Robot"
+display_name = "Store Corp. Lawn Robot"
 always_visible = true
 lawn_template = ExtResource("70_4nqm5")
 level = 17

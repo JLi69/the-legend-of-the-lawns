@@ -76,7 +76,8 @@ func generate_dialog() -> void:
 			return
 		current_dialog = reject_dialog[randi() % len(reject_dialog)]
 		return
-	if first_time and !first_dialog.is_empty():
+	if times_mowed == 0 and !first_dialog.is_empty():
+		current_dialog = first_job_offer
 		return
 	
 	if possible_dialog.is_empty():
