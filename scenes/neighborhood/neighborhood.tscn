@@ -1491,7 +1491,7 @@ dialog_json = ExtResource("65_2qen0")
 [node name="Robot" parent="Store" unique_id=13456353 instance=ExtResource("4_dcvy4")]
 position = Vector2(16, 826.00006)
 animation = &"robot"
-display_name = "StoreCorp Robot"
+display_name = "Store Corp. Robot"
 min_level = 6
 dialog_json = ExtResource("66_qqjl7")
 
