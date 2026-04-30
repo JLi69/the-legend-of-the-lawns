@@ -669,7 +669,7 @@ use_female_voice = true
 dialog_json = ExtResource("55_41mb4")
 
 [node name="Robot" parent="Neighbors" unique_id=1784388205 node_paths=PackedStringArray("knock_sound", "custom_talk_audio") instance=ExtResource("3_tqujx")]
-position = Vector2(750, -139)
+position = Vector2(745, -156)
 animation = &"robot"
 display_name = "Store Corp. Lawn Robot"
 always_visible = true
@@ -693,6 +693,7 @@ stream = ExtResource("71_qo1hn")
 [node name="NeighborController" type="Node2D" parent="Neighbors/Robot" unique_id=80650588 node_paths=PackedStringArray("required_npcs")]
 script = ExtResource("72_0nn5q")
 required_npcs = [NodePath("../../../Store/ITGirl4")]
+disable_after_first_time = true
 
 [node name="FastTravel" type="Node2D" parent="." unique_id=845814038]
 y_sort_enabled = true
